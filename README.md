@@ -1,2 +1,0 @@
-# secure-mail
-Ionic project

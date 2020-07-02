@@ -1,0 +1,8 @@
+{
+  "name": "Secure Mail",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "5a5d5795"
+}
