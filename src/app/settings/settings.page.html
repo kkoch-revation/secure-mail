@@ -1,9 +1,36 @@
-<ion-header>
-  <ion-toolbar>
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title>Settings</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+	<form  #form="ngForm" (ngSubmit)="submitForm(form)">
+  <ion-item>
+    <ion-label position="floating">First Name</ion-label>
+    <ion-input type="text" required="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Last Name</ion-label>
+    <ion-input type="text" required="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Email</ion-label>
+    <ion-input type="email" required="true"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Password</ion-label>
+    <ion-input type="password" required="true"></ion-input>
+  </ion-item>
+
+    <ion-button TYPE="submit" color="primary" class="ion-margin-vertical" >
+        <ion-icon slot="start" name="save"></ion-icon>
+        Save Settings
+    </ion-button>
+	</form>
+	
 
 </ion-content>
