@@ -46,8 +46,14 @@ export class AppComponent implements OnInit {
       title: 'Settings',
       url: '/settings/Settings',
       icon: 'settings'
+    },
+    {
+      title: 'Weather',
+      url: '/weather/Weather',
+      icon: 'sunny'
     }
   ];
+	
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(

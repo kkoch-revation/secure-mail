@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'settings/:id',
     loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'weather/:id',
+    loadChildren: () => import('./weather/weather.module').then( m => m.WeatherPageModule)
   }
 ];
 
