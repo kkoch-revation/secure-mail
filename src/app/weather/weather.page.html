@@ -11,12 +11,9 @@
 	<ion-card no-margin>
 		<ion-item>
             <ion-icon name="star" slot="start"></ion-icon>
-            <ion-label>{{ data ? data : 'Fred' }}</ion-label>
+            <ion-label>{{ data.username ? data : '-' }}</ion-label>
         </ion-item>
         <p *ngIf="!error;else errorContent">{{ data ? data : '-' }}</p>
 		<ng-template #errorContent><p><span style="color: red;">{{error}}</span></p></ng-template>
-        <!--<ion-item>City: {{ data.name }} </ion-item>
-        <ion-item>Country: {{ data.sys.country }} </ion-item>
-        <ion-item>Coordinates: {{ data.coord.lon }}, {{ data.coord.lat }} </ion-item>-->
 	</ion-card>
 </ion-content>

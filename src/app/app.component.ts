@@ -13,6 +13,16 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public appPages = [
     {
+      title: 'Communicator',
+      url: '/communicator/communicator',
+      icon: 'chatbox-ellipses'
+    },
+    {
+      title: 'Settings',
+      url: '/settings/Settings',
+      icon: 'settings'
+    },
+    {
       title: 'Inbox',
       url: '/folder/Inbox',
       icon: 'mail'
@@ -42,11 +52,7 @@ export class AppComponent implements OnInit {
       url: '/folder/Spam',
       icon: 'warning'
     },
-    {
-      title: 'Settings',
-      url: '/settings/Settings',
-      icon: 'settings'
-    },
+  
     {
       title: 'Weather',
       url: '/weather/Weather',

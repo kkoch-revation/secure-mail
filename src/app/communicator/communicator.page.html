@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-margin-vertical">Communicator</ion-title>
+		<ion-searchbar class="ion-margin-vertical"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+	<form  #form="ngForm" (ngSubmit)="submitForm(form)">
+  <ion-item>
+    <ion-label position="floating">Search</ion-label>
+    <ion-input type="search"></ion-input>
+  </ion-item>
+    <ion-button TYPE="submit" color="secondary" class="ion-margin-vertical" >
+        <ion-icon slot="start" name="search"></ion-icon>
+        Search
+    </ion-button>
+	</form>
+	
+	<ion-grid>
+
+		<ion-row>
+			<ion-col size="3">
+				<ion-list>
+					<ion-item>
+						<ion-label>Pokémon Yellow</ion-label>
+					</ion-item>
+					<ion-item>
+						<ion-label>Mega Man X</ion-label>
+					</ion-item>
+					<ion-item>
+						<ion-label>The Legend of Zelda</ion-label>
+					</ion-item>
+					<ion-item>
+						<ion-label>Pac-Man</ion-label>
+					</ion-item>
+					<ion-item>
+						<ion-label>Super Mario World</ion-label>
+					</ion-item>
+				</ion-list>
+			</ion-col>
+			<ion-col>
+				ion-col
+			</ion-col>
+			<ion-col size="6">
+				ion-col [size="6"]
+			</ion-col>
+		</ion-row>
+		
+	</ion-grid>
+	
+</ion-content>
