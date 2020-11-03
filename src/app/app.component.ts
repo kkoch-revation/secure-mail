@@ -34,7 +34,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Contacts',
-      url: '/contacts/all',
+      url: '/contacts/Contacts',
       icon: 'people'
     },
     {
@@ -79,37 +79,37 @@ export class AppComponent implements OnInit {
     public contactFolders = [
       {
         title: 'All Contacts',
-        url: '/contacts/all',
+        url: '/contacts/Contacts',
         icon: 'people-circle'
       },
       {
+        title: 'Hunt Groups',
+        url: '/folder/Hunt Groups',
+        icon: 'folder'
+      },
+      {
         title: 'Recent Sessions',
-        url: '/contacts/recent',
+        url: '/folder/Recent Sessions',
         icon: 'folder'
       },
       {
         title: 'Sales & Marketing',
-        url: '/contacts/sales',
+        url: '/folder/Sales & Marketing',
         icon: 'folder'
       },
       {
         title: 'System Engineers',
-        url: '/folder/engineers',
+        url: '/folder/System Engineers',
         icon: 'folder'
       },
       {
         title: 'Core Development',
-        url: '/folder/development',
+        url: '/folder/Core Development',
         icon: 'folder'
       },
       {
         title: 'Operations',
-        url: '/folder/operations',
-        icon: 'folder'
-      },
-      {
-        title: 'Hunt Groups',
-        url: '/folder/huntGroups',
+        url: '/folder/Operations',
         icon: 'folder'
       }
     ];    
@@ -135,6 +135,12 @@ export class AppComponent implements OnInit {
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.mailPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+    }
+  }
+  ngOnInit() {
+    const path = window.location.pathname.split('folder/')[1];
+    if (path !== undefined) {
+      this.selectedIndex = this.contactFolders.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
   }
 }

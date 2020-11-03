@@ -1,6 +1,6 @@
 <ion-app>
-  <ion-split-pane contentId="app">
-    <ion-menu contentId="app" type="overlay" class="app">
+  <ion-split-pane contentId="page">
+    <ion-menu contentId="page" type="overlay" class="app">
       <ion-content>
 				<ion-grid class="app-menu">
 					<ion-row>
@@ -14,6 +14,8 @@
 								</ion-menu-toggle>
 							</ion-list>
 						</ion-col>
+						
+						
 						<ion-col id="">
 							<ion-header>
 								<ion-toolbar color="medium">
@@ -30,7 +32,10 @@
 									</ion-item>
 								</ion-menu-toggle>
 							</ion-list>
-
+						<!--</ion-col>
+						
+						
+						<ion-col id="" class=""> -->
 							<ion-header>
 								<ion-toolbar color="medium">
 									<ion-title>Contacts</ion-title>
@@ -47,12 +52,14 @@
 									</ion-item>
 								</ion-menu-toggle>
 							</ion-list>
+							
+							
 					  </ion-col>
 					</ion-row>
 				</ion-grid>
       </ion-content>
     </ion-menu>
-    <ion-router-outlet id="app"></ion-router-outlet>
+    <ion-router-outlet id="page"></ion-router-outlet>
   </ion-split-pane>
 	 
 </ion-app>

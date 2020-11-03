@@ -142,6 +142,9 @@ ion-menu ion-list.apps {
 	left: -50000px;
 	}
 }
+ion-menu.app {
+	background-color: var(--ion-color-light);
+}
 ion-menu.app ion-content {
 	--padding-start:0;
 	--padding-end: 0;
