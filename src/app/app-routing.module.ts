@@ -2,14 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  /*{
-    path: '',
-    redirectTo: 'communicator',
-    pathMatch: 'full'
-  },*/
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
   },
   {
     path: 'settings/:id',
@@ -23,14 +19,17 @@ const routes: Routes = [
     path: 'folder/:id',
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
-
   {
-    path: 'weather/:id',
-    loadChildren: () => import('./weather/weather.module').then( m => m.WeatherPageModule)
+    path: 'dashboard/:id',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
-    path: 'tabs',
-    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
+    path: 'appointments/:id',
+    loadChildren: () => import('./appointments/appointments.module').then( m => m.AppointmentsPageModule)
+  },
+  {
+    path: 'contacts',
+    loadChildren: () => import('./contacts/contacts.module').then( m => m.ContactsPageModule)
   }
 ];
 

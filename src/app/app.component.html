@@ -1,29 +1,109 @@
 <ion-app>
-  <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
+  <ion-split-pane contentId="app">
+    <ion-menu contentId="app" type="overlay" class="app">
       <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>LinkLive 9</ion-list-header>
-          <ion-note>kkoch@revation.com</ion-note>
+				<ion-grid class="app-menu">
+					<ion-row>
+						<ion-col class="apps">
+							<ion-list id="app-list" class="apps">
+								<ion-menu-toggle auto-hide="false" *ngFor="let p of apps; let i = index">
+									<ion-item class="app-link" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" color="dark" lines="none" detail="false" [class.selected]="selectedIndex == i">
+										<ion-icon size="large" slot="end" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+										<ion-label>{{ p.title }}</ion-label>
+									</ion-item>
+								</ion-menu-toggle>
+							</ion-list>
+						</ion-col>
+						<ion-col id="">
+							<ion-header>
+								<ion-toolbar color="medium">
+									<ion-title>Secure Mail</ion-title>
+								</ion-toolbar>
+							</ion-header>
+							<ion-list id="inbox-list" class=""  lines="full">
+								<ion-list-header>LinkLive 9</ion-list-header>
+							  <ion-note>kkoch@revation.com</ion-note>
+								<ion-menu-toggle auto-hide="false" *ngFor="let p of mailPages; let i = index">
+									<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+										<ion-icon size="large" slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+										<ion-label>{{ p.title }}</ion-label>
+									</ion-item>
+								</ion-menu-toggle>
+							</ion-list>
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
-
-        <!--<ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
-
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
-        </ion-list>-->
+							<ion-header>
+								<ion-toolbar color="medium">
+									<ion-title>Contacts</ion-title>
+								</ion-toolbar>
+							</ion-header>
+							<ion-searchbar showCancelButton="focus"></ion-searchbar>
+							<ion-list id="contactFolders" class=""  lines="full">
+								<ion-list-header>LinkLive 9</ion-list-header>
+							  <ion-note>kkoch@revation.com</ion-note>
+								<ion-menu-toggle auto-hide="false" *ngFor="let p of contactFolders; let i = index">
+									<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+										<ion-icon size="large" slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+										<ion-label>{{ p.title }}</ion-label>
+									</ion-item>
+								</ion-menu-toggle>
+							</ion-list>
+					  </ion-col>
+					</ion-row>
+				</ion-grid>
       </ion-content>
     </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
+    <ion-router-outlet id="app"></ion-router-outlet>
   </ion-split-pane>
+	 
 </ion-app>
+<!--ion-app>
+  <ion-split-pane contentId="app">
+    <ion-menu contentId="app" type="overlay" class="app">
+      <ion-content>
+				<ion-grid class="app-menu">
+					<ion-row>
+						<ion-col class="apps">
+							<ion-list id="app-list" class="apps">
+								<ion-menu-toggle auto-hide="false" *ngFor="let p of apps; let i = index">
+									<ion-item class="app-link" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" color="dark" lines="none" detail="false" [class.selected]="selectedIndex == i">
+										<ion-icon size="large" slot="end" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+										<ion-label>{{ p.title }}</ion-label>
+									</ion-item>
+								</ion-menu-toggle>
+							</ion-list>
+						</ion-col>
+						<ion-col>
+							<ion-header>
+								<ion-toolbar color="medium">
+									<ion-title>Secure Mail</ion-title>
+								</ion-toolbar>
+							</ion-header>
+							<ion-list id="inbox-list" class=""  lines="full">
+								<ion-list-header>LinkLive 9</ion-list-header>
+							<ion-note>kkoch@revation.com</ion-note>
+								<ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
+									<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+										<ion-icon size="large" slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+										<ion-label>{{ p.title }}</ion-label>
+									</ion-item>
+								</ion-menu-toggle>
+							</ion-list>
+					</ion-col>
+
+
+					</ion-row>
+				</ion-grid>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="app"></ion-router-outlet>
+  </ion-split-pane>
+	 
+</ion-app-->
+					<!--<ion-list id="labels-list">
+						<ion-list-header>Labels</ion-list-header>
+
+						<ion-item *ngFor="let label of labels" lines="none">
+							<ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+							<ion-label>{{ label }}</ion-label>
+						</ion-item>
+					</ion-list>-->

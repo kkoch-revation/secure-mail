@@ -1,55 +1,126 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title class="ion-margin-vertical">Communicator</ion-title>
-		<ion-searchbar class="ion-margin-vertical"></ion-searchbar>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content class="ion-padding">
-	<form  #form="ngForm" (ngSubmit)="submitForm(form)">
-  <ion-item>
-    <ion-label position="floating">Search</ion-label>
-    <ion-input type="search"></ion-input>
-  </ion-item>
-    <ion-button TYPE="submit" color="secondary" class="ion-margin-vertical" >
-        <ion-icon slot="start" name="search"></ion-icon>
-        Search
-    </ion-button>
-	</form>
-	
-	<ion-grid>
+    <div class="ion-page" id="dash">
+      <ion-header>
+        <ion-toolbar color="medium">
+          <ion-buttons slot="start">
+            <ion-menu-toggle>
+              <ion-button>
+                <ion-icon slot="icon-only" name="menu"></ion-icon>
+              </ion-button>
+            </ion-menu-toggle>
+          </ion-buttons>
+          <ion-title>Communicator</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+				<ion-grid>
+					<ion-row>
+			<ion-col size="12" size-md="2">
+				
+  			<ion-header>
+					<ion-toolbar>
+    			<ion-title>Contacts</ion-title>
+						<ion-searchbar showCancelButton="focus"></ion-searchbar>
+		</ion-toolbar>
+				</ion-header>
+				
+				
+		<ion-list>
+			<ion-item nav-clear menu-close ng-click="toggleSubmenu()">
+				<ion-icon name="caret-down-circle"  class="ion-padding-end"></ion-icon>
+							<ion-label>Recent Sessions</ion-label></ion-item>
+            <ion-item nav-clear menu-close ng-show="submenu">
+                <ion-list>
+                    <ion-item nav-clear menu-close>
+									<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+				<ion-label>Mike K.</ion-label>
+									</ion-item>
+                    <ion-item nav-clear menu-close>
+									<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+				<ion-label>Charlie G.</ion-label>
+									</ion-item>
+                    <ion-item nav-clear menu-close>
+									<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+				<ion-label>Hani Z.</ion-label></ion-item>
+                </ion-list>
+            </ion-item>
+            <ion-item nav-clear menu-close>
+							<ion-icon name="caret-forward-circle"  class="ion-padding-end"></ion-icon>
+							<ion-label>Sales &amp; Marketing</ion-label>
+			</ion-item>
+            <ion-item nav-clear menu-close>
+							<ion-icon name="caret-forward-circle"  class="ion-padding-end"></ion-icon>
+							<ion-label>Systems Engineers</ion-label>
+			</ion-item>
+            <ion-item nav-clear menu-close ng-show="submenu">
+							<ion-icon name="caret-down-circle"  class="ion-padding-end"></ion-icon>
+							<ion-label>Dev Team</ion-label>
+			</ion-item>
+			<ion-item>
+			<ion-list>
+			<ion-item>
+				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+				<ion-label>Mark P.</ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+				<ion-label>Mike K.</ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+				<ion-label>Dave K.</ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+				<ion-label>John C.</ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+				<ion-label>John R.</ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+				<ion-label>Hani Z.</ion-label>
+			</ion-item>
+			<ion-item>
+				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+				<ion-label>Karl K.</ion-label>
+			</ion-item>
+			</ion-list>
+			</ion-item>
+		</ion-list>
+    	</ion-col>			 
+			<ion-col size="12" size-md="4">
+      	<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    <ion-card-title>Card Title</ion-card-title>
+  </ion-card-header>
 
-		<ion-row>
-			<ion-col size="3">
-				<ion-list>
-					<ion-item>
-						<ion-label>Pokémon Yellow</ion-label>
-					</ion-item>
-					<ion-item>
-						<ion-label>Mega Man X</ion-label>
-					</ion-item>
-					<ion-item>
-						<ion-label>The Legend of Zelda</ion-label>
-					</ion-item>
-					<ion-item>
-						<ion-label>Pac-Man</ion-label>
-					</ion-item>
-					<ion-item>
-						<ion-label>Super Mario World</ion-label>
-					</ion-item>
-				</ion-list>
-			</ion-col>
-			<ion-col>
-				ion-col
-			</ion-col>
-			<ion-col size="6">
-				ion-col [size="6"]
-			</ion-col>
+  <ion-card-content>
+    Keep close to Nature's heart... and break clear away, once in awhile,
+    and climb a mountain or spend a week in the woods. Wash your spirit clean.
+  </ion-card-content>
+</ion-card>
+    	</ion-col>			 
+			<ion-col size="12" size-sm="6">
+      	<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+    <ion-card-title>Card Title</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Keep close to Nature's heart... and break clear away, once in awhile,
+    and climb a mountain or spend a week in the woods. Wash your spirit clean.
+  </ion-card-content>
+</ion-card>
+    	</ion-col>			 
 		</ion-row>
-		
-	</ion-grid>
+				</ion-grid>
+      </ion-content>
+    </div>
 	
-</ion-content>
+	
+	
+
