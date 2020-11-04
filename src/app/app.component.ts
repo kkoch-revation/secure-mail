@@ -111,6 +111,11 @@ export class AppComponent implements OnInit {
         title: 'Operations',
         url: '/folder/Operations',
         icon: 'folder'
+      },
+      {
+        title: 'Support & Systems Engineering',
+        url: '/folder/Support & Systems Engineering',
+        icon: 'folder'
       }
     ];    
 	

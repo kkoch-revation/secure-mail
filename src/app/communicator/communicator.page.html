@@ -13,111 +13,129 @@
         </ion-toolbar>
       </ion-header>
       <ion-content>
-				<ion-grid>
-					<ion-row>
-			<ion-col size="12" size-md="2">
-				
-  			<ion-header>
-					<ion-toolbar>
-    			<ion-title>Contacts</ion-title>
-						<ion-searchbar showCancelButton="focus"></ion-searchbar>
-		</ion-toolbar>
-				</ion-header>
-				
-				
-		<ion-list>
-			<ion-item nav-clear menu-close ng-click="toggleSubmenu()">
-				<ion-icon name="caret-down-circle"  class="ion-padding-end"></ion-icon>
-							<ion-label>Recent Sessions</ion-label></ion-item>
-            <ion-item nav-clear menu-close ng-show="submenu">
-                <ion-list>
-                    <ion-item nav-clear menu-close>
-									<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-				<ion-label>Mike K.</ion-label>
-									</ion-item>
-                    <ion-item nav-clear menu-close>
-									<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-				<ion-label>Charlie G.</ion-label>
-									</ion-item>
-                    <ion-item nav-clear menu-close>
-									<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-				<ion-label>Hani Z.</ion-label></ion-item>
-                </ion-list>
-            </ion-item>
-            <ion-item nav-clear menu-close>
-							<ion-icon name="caret-forward-circle"  class="ion-padding-end"></ion-icon>
-							<ion-label>Sales &amp; Marketing</ion-label>
-			</ion-item>
-            <ion-item nav-clear menu-close>
-							<ion-icon name="caret-forward-circle"  class="ion-padding-end"></ion-icon>
-							<ion-label>Systems Engineers</ion-label>
-			</ion-item>
-            <ion-item nav-clear menu-close ng-show="submenu">
-							<ion-icon name="caret-down-circle"  class="ion-padding-end"></ion-icon>
-							<ion-label>Dev Team</ion-label>
-			</ion-item>
-			<ion-item>
-			<ion-list>
-			<ion-item>
-				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-				<ion-label>Mark P.</ion-label>
-			</ion-item>
-			<ion-item>
-				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-				<ion-label>Mike K.</ion-label>
-			</ion-item>
-			<ion-item>
-				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-				<ion-label>Dave K.</ion-label>
-			</ion-item>
-			<ion-item>
-				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-				<ion-label>John C.</ion-label>
-			</ion-item>
-			<ion-item>
-				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-				<ion-label>John R.</ion-label>
-			</ion-item>
-			<ion-item>
-				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-				<ion-label>Hani Z.</ion-label>
-			</ion-item>
-			<ion-item>
-				<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-				<ion-label>Karl K.</ion-label>
-			</ion-item>
-			</ion-list>
-			</ion-item>
-		</ion-list>
-    	</ion-col>			 
-			<ion-col size="12" size-md="4">
-      	<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    <ion-card-title>Card Title</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile,
-    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-  </ion-card-content>
-</ion-card>
-    	</ion-col>			 
-			<ion-col size="12" size-sm="6">
-      	<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-    <ion-card-title>Card Title</ion-card-title>
-  </ion-card-header>
-
-  <ion-card-content>
-    Keep close to Nature's heart... and break clear away, once in awhile,
-    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-  </ion-card-content>
-</ion-card>
-    	</ion-col>			 
-		</ion-row>
-				</ion-grid>
+				<div class="rev-grid rev-grid-communicator">
+					
+					<div class="rev-queues-container">
+						<div class="rev-grid rev-grid-queue-module">
+							<div class="rev-media">
+								<h5>Media Goes Here</h5>
+							</div>
+						</div>
+					</div>
+					
+					<div class="rev-media-container">
+						<div class="rev-grid rev-grid-media-module">
+							<div class="rev-media">
+								<h5>Media Goes Here</h5>
+							</div>						
+							<div class="rev-toolbar">
+								<ion-toolbar>
+									<ion-buttons slot="start">
+										<ion-button>
+											<ion-icon slot="icon-only" name="document-attach-sharp"></ion-icon>
+										</ion-button>
+										<ion-button>
+											<ion-icon slot="icon-only" name="call-sharp"></ion-icon>
+										</ion-button>
+										<ion-button>
+											<ion-icon slot="icon-only" name="videocam-sharp"></ion-icon>
+										</ion-button>
+										<ion-button>
+											<ion-icon slot="icon-only" name="desktop-sharp"></ion-icon>
+										</ion-button>
+									</ion-buttons>
+									<ion-buttons slot="primary">
+										<ion-button>
+											<ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+										</ion-button>
+									</ion-buttons>
+								</ion-toolbar>
+							</div>
+						</div>
+					</div>
+					
+					<div class="rev-chat-container">
+						<div class="rev-grid rev-grid-chat-module">
+							<div class="rev-message-window">
+								<div class="chat">
+									<div class="mine messages">
+										<div class="message last">
+											Dude
+										 </div>
+									</div>
+									<div class="yours messages">
+										<div class="message">
+											Hey!
+										</div>
+										<div class="message">
+											You there?
+										</div>
+										<div class="message last">
+											Hello, how's it going?
+										</div>
+									</div>
+									<div class="mine messages">
+										<div class="message">
+											Great thanks!
+										</div> 
+										<div class="message last">
+											How about you?
+										 </div>
+									</div>
+									<div class="yours messages">
+										<div class="message last">
+											Dude, get this: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+										</div>
+									</div>
+									<div class="mine messages">
+										<div class="message">
+											No way
+										</div> 
+										<div class="message last">
+											Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum?
+										 </div>
+									</div>
+									<div class="yours messages">
+										<div class="message">
+											Dude, not even.  
+										</div>
+										<div class="message last">
+											For example, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
+										</div>
+									</div>	
+								</div>
+							</div>
+							<div class="rev-message-input">
+								<div class="relative">
+								<ion-item>
+									<ion-label position="floating">Message</ion-label>
+									<ion-textarea class="rev-message-textarea"></ion-textarea>
+								</ion-item>
+								<ion-button class="btn-message-input">
+									<ion-icon slot="icon-only" name="arrow-up"></ion-icon>
+								</ion-button>
+								</div>
+							</div>
+							<div class="rev-toolbar">
+								<ion-toolbar>
+									<ion-buttons slot="secondary">
+										<ion-button>
+											<ion-icon slot="icon-only" name="person-circle"></ion-icon>
+										</ion-button>
+										<ion-button>
+											<ion-icon slot="icon-only" name="search"></ion-icon>
+										</ion-button>
+									</ion-buttons>
+									<ion-buttons slot="primary">
+										<ion-button>
+											<ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+										</ion-button>
+									</ion-buttons>
+								</ion-toolbar>
+							</div>
+						</div>
+					</div>
+				</div>
       </ion-content>
     </div>
 	

@@ -226,3 +226,12 @@
     --ion-tab-bar-background: #1f1f1f;
   }
 }
+// REV Content Wrapper 
+.rev-content-wrapper {
+	display: grid;
+	place-items: center;
+	width: 100%;
+  height: 100%;
+  overflow: auto;
+  }
+// REV variables
