@@ -1,6 +1,13 @@
 
     <div class="ion-page" id="dash">
-      <ion-header>
+      
+      <ion-content>
+				<div class="rev-grid rev-grid-communicator">
+					
+					<div class="rev-queues-container">
+						<div class="rev-grid rev-grid-queue-module">
+							<ion-content>
+	<ion-header>
         <ion-toolbar color="medium">
           <ion-buttons slot="start">
             <ion-menu-toggle>
@@ -9,37 +16,54 @@
               </ion-button>
             </ion-menu-toggle>
           </ion-buttons>
-          <ion-title>Communicator</ion-title>
+          <ion-title>Sessions</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content>
-				<div class="rev-grid rev-grid-communicator">
-					
-					<div class="rev-queues-container">
-						<div class="rev-grid rev-grid-queue-module">
-							
-							<div class="rev-media">
+								
+								<ion-card>
+								<ion-list-header color="success">Now Visiting</ion-list-header>
+								<ion-grid>
+									<ion-row>
+										<ion-col>
+											<ion-list>
+												<span class="session-detail">Richard B.</span>
+												<span class="session-detail">(123) 456-7890</span>
+												<span class="session-detail">04:45</span>
+											</ion-list>
+										</ion-col>
+										<ion-col>
+											<ion-list>
+											<ion-button expand="block" fill="outline" color="danger" slot="end" size="small">End</ion-button>
+											</ion-list>
+										</ion-col>
+									</ion-row>
+								</ion-grid>
+								</ion-card>
+								<ion-card>
+								<ion-list-header color="warning">Session Ended</ion-list-header>
+								<ion-grid>
+									<ion-row>
+										<ion-col>
+											<ion-list>
+												<span class="session-detail">Richard B.</span>
+												<span class="session-detail">(123) 456-7890</span>
+												<span class="session-detail">04:45</span>
+											</ion-list>
+										</ion-col>
+										<ion-col>
+											<ion-list>
+											<ion-button expand="block" fill="outline" color="medium" slot="end" size="small">Close</ion-button>
+											</ion-list>
+										</ion-col>
+									</ion-row>
+								</ion-grid>
+								</ion-card>
 
-								<h5>Queues Go Here</h5>
-
-
-<ion-card>
-  <ion-item>
-    <ion-icon name="file-tray-full-sharp" slot="start"></ion-icon>
-    <ion-label>Session</ion-label>
-    <ion-button fill="outline" slot="end">View</ion-button>
-  </ion-item>
-
-  <ion-card-content>
-    This is content, without any paragraph or header tags,
-    within an ion-card-content element.
-  </ion-card-content>
-</ion-card>
 
 <ion-card>
   <ion-item href="#" class="ion-activated">
     <ion-icon name="wifi" slot="start"></ion-icon>
-    <ion-label>Card Link Item 1 activated</ion-label>
+    <ion-label>Card Link Item 1 </ion-label>
   </ion-item>
 
   <ion-item href="#">
@@ -49,7 +73,7 @@
 
   <ion-item class="ion-activated">
     <ion-icon name="warning" slot="start"></ion-icon>
-    <ion-label>Card Button Item 1 activated</ion-label>
+    <ion-label>Card Button Item 1 blah blahb blahb blah</ion-label>
   </ion-item>
 
   <ion-item>
@@ -57,12 +81,24 @@
     <ion-label>Card Button Item 2</ion-label>
   </ion-item>
 </ion-card>
-							</div>
+							</ion-content>
 						</div>
 					</div>
 					
 					<div class="rev-media-container">
 						<div class="rev-grid rev-grid-media-module">
+							<ion-header>
+								<ion-toolbar color="medium">
+									<ion-buttons slot="start">
+										<ion-menu-toggle>
+											<ion-button>
+												<ion-icon slot="icon-only" name="menu"></ion-icon>
+											</ion-button>
+										</ion-menu-toggle>
+									</ion-buttons>
+									<ion-title><ion-icon></ion-icon>Share Video &amp; Desktop</ion-title>
+								</ion-toolbar>
+							</ion-header>
 							<div class="rev-media">
 								<h5>Media Goes Here</h5>
 							</div>						
@@ -98,7 +134,7 @@
 								<div class="chat">
 									<div class="mine messages">
 										<div class="message last">
-											Dude
+											Hello
 										 </div>
 									</div>
 									<div class="yours messages">
@@ -122,7 +158,7 @@
 									</div>
 									<div class="yours messages">
 										<div class="message last">
-											Dude, get this: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+											Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 										</div>
 									</div>
 									<div class="mine messages">
@@ -135,7 +171,7 @@
 									</div>
 									<div class="yours messages">
 										<div class="message">
-											Dude, not even.  
+											I don't think so ...  
 										</div>
 										<div class="message last">
 											For example, ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  
@@ -161,7 +197,7 @@
 											<ion-icon slot="icon-only" name="person-circle"></ion-icon>
 										</ion-button>
 										<ion-button>
-											<ion-icon slot="icon-only" name="search"></ion-icon>
+											<ion-icon slot="icon-only" name="keypad-sharp"></ion-icon>
 										</ion-button>
 									</ion-buttons>
 									<ion-buttons slot="primary">
