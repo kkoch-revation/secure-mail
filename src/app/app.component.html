@@ -15,6 +15,7 @@
 							</ion-list>
 					</div>
 					<div class="rev-menu">
+					  <div class="menu-mail ">
 							<ion-header>
 								<ion-toolbar color="medium">
 									<ion-title>Secure Mail</ion-title>
@@ -30,6 +31,44 @@
 									</ion-item>
 								</ion-menu-toggle>
 							</ion-list>
+						</div>
+						<div class="menu-communicator">
+						  <ion-header>
+								<ion-toolbar color="medium">
+									<ion-title>Communicator</ion-title>
+								</ion-toolbar>
+							</ion-header>
+							
+							<ion-list id="communicatorFolders" class=""  lines="full">
+								<ion-list-header>LinkLive 9</ion-list-header>
+							  <ion-note>kkoch@revation.com</ion-note>
+								<ion-menu-toggle auto-hide="false" *ngFor="let p of communicatorFolders; let i = index">
+									<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+										<ion-icon size="large" slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+										<ion-label>{{ p.title }}</ion-label>
+									</ion-item>
+								</ion-menu-toggle>
+							</ion-list>
+							
+							
+								<ion-item   lines="full">
+									<ion-icon name="file-tray-full-sharp" slot="start" size="large"></ion-icon>
+									<ion-label>Support</ion-label>
+									<ion-button fill="outline" slot="end">View</ion-button>
+								</ion-item>
+								<ion-item>
+									<ion-label>Messages</ion-label>
+									<ion-badge slot="end" color="danger">2</ion-badge>
+								</ion-item>
+								<ion-item>
+									<ion-label>Customers</ion-label>
+									<ion-badge slot="end" color="danger">3</ion-badge>
+								</ion-item>
+							
+
+							
+						</div>
+						<div class="menu-contacts ">
 						<ion-header>
 								<ion-toolbar color="medium">
 									<ion-title>Contacts</ion-title>
@@ -46,6 +85,7 @@
 									</ion-item>
 								</ion-menu-toggle>
 							</ion-list>
+						</div>
 					</div>
 				</div>
 				</ion-content>

@@ -76,6 +76,23 @@ export class AppComponent implements OnInit {
         icon: 'warning'
       }
     ];
+    public communicatorFolders = [
+      {
+        title: 'Sales ACD',
+        url: '/communicator/Communicator',
+        icon: 'file-tray-full'
+      },
+      {
+        title: 'Service ACD',
+        url: '/communicator/Communicator',
+        icon: 'file-tray-full'
+      },
+      {
+        title: 'Support ACD',
+        url: '/communicator/Communicator',
+        icon: 'file-tray-full'
+      }
+     ];
     public contactFolders = [
       {
         title: 'All Contacts',
