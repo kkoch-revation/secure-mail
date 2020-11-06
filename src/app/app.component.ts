@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
     {
       title: 'Settings',
       url: '/settings/Settings',
-      icon: 'settings'
+      icon: 'cog'
     }  
   ];
 
@@ -48,49 +48,63 @@ export class AppComponent implements OnInit {
       {
         title: 'Inbox',
         url: '/folder/Inbox',
-        icon: 'mail'
+        icon: 'mail',
+        badge: '3',
+        color: 'danger'
       },
       {
         title: 'Outbox',
         url: '/folder/Outbox',
-        icon: 'paper-plane'
+        icon: 'paper-plane',
+        badge: ''
       },
       {
         title: 'Favorites',
         url: '/folder/Favorites',
-        icon: 'heart'
+        icon: 'heart',
+        badge: ''
       },
       {
         title: 'Archived',
         url: '/folder/Archived',
-        icon: 'archive'
+        icon: 'archive',
+        badge: ''
       },
       {
         title: 'Trash',
         url: '/folder/Trash',
-        icon: 'trash'
+        icon: 'trash',
+        badge: ''
       },
       {
         title: 'Spam',
         url: '/folder/Spam',
-        icon: 'warning'
+        icon: 'warning',
+        badge: '87',
+        color: 'warning'
       }
     ];
     public communicatorFolders = [
       {
         title: 'Sales ACD',
         url: '/communicator/Communicator',
-        icon: 'file-tray-full'
+        icon: 'file-tray-full',
+        badge: '7',
+        color: 'danger'
       },
       {
         title: 'Service ACD',
         url: '/communicator/Communicator',
-        icon: 'file-tray-full'
+        icon: 'file-tray-full',
+        badge: '',
+        color: ''
       },
       {
         title: 'Support ACD',
         url: '/communicator/Communicator',
-        icon: 'file-tray-full'
+        icon: 'file-tray-full',
+        badge: '2',
+        color: 'danger'
       }
      ];
     public contactFolders = [
@@ -157,12 +171,6 @@ export class AppComponent implements OnInit {
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.mailPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    }
-  }
-  ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
-    if (path !== undefined) {
-      this.selectedIndex = this.contactFolders.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
   }
 }

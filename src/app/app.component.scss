@@ -27,8 +27,8 @@ ion-menu.md ion-list#inbox-list {
 }
 
 ion-menu.md ion-list ion-list-header {
-  font-size: 1.5em;
-  font-weight: 600;
+  font-size: 1.25em;
+  font-weight: 400;
   min-height: 20px;
 }
 
@@ -147,18 +147,26 @@ ion-item.selected {
 }
 .rev-app-menu {
   grid-template-columns: minmax(64px, 64px) 1fr;
+	height: 100vh;
   padding: 0;
   margin: 0;
 }
 .rev-apps {
 	height: 100%;
 	background-color: var(--ion-color-dark);
-	border-right: 1px solid var(--ion-color-dark);
+	border-right: 0px solid var(--ion-color-dark);
 }
 .rev-menu {
+	height: 100%;
+	overflow: hidden;
+	overflow-y:auto;
 	ion-icon {
 		margin-left:0.5rem;
 		margin-right: 0.75rem;
+	}
+	/* Temp mockup styles */
+	.menu-mail, .menu-communicator, .menu-contacts {
+		height: 100vh;
 	}
 }
 
@@ -196,14 +204,16 @@ ion-menu.rev-main-menu ion-content, ion-menu.md.rev-main-menu ion-content, ion-m
 	--padding-top: 0;
 	--padding-bottom: 0;
 }
+.rev-menu-fab {
+	left: 34px;
+}
 
 // REV Content Wrapper 
 .rev-content-wrapper {
-    display: grid;
-    place-items: center;
+	display: grid;
+	place-items: center;
 	width: 100%;
   height: 100%;
-  
   resize: both;
   overflow: auto;
   }

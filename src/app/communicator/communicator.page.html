@@ -7,50 +7,50 @@
 					<div class="rev-queues-container">
 						<div class="rev-grid rev-grid-queue-module">
 							<ion-content>
-	<ion-header>
-        <ion-toolbar color="medium">
-          <ion-buttons slot="start">
-            <ion-menu-toggle>
-              <ion-button>
-                <ion-icon slot="icon-only" name="menu"></ion-icon>
-              </ion-button>
-            </ion-menu-toggle>
-          </ion-buttons>
-          <ion-title>Sessions</ion-title>
-        </ion-toolbar>
-      </ion-header>
+								<ion-header>
+									<ion-toolbar color="medium">
+										<ion-buttons slot="start">
+											<ion-menu-toggle>
+												<ion-button>
+													<ion-icon slot="icon-only" name="menu"></ion-icon>
+												</ion-button>
+											</ion-menu-toggle>
+										</ion-buttons>
+										<ion-title>Sessions</ion-title>
+									</ion-toolbar>
+								</ion-header>
 								
 								<ion-card>
-								<ion-list-header color="success">Now Visiting</ion-list-header>
-								<ion-grid>
-									<ion-row>
-										<ion-col>
-											<ion-list>
-												<span class="session-detail">Richard B.</span>
-												<span class="session-detail">(123) 456-7890</span>
-												<span class="session-detail">04:45</span>
-											</ion-list>
-										</ion-col>
-										<ion-col>
-											<ion-list>
-											<ion-button expand="block" fill="outline" color="danger" slot="end" size="small">End</ion-button>
-											</ion-list>
-										</ion-col>
-									</ion-row>
-								</ion-grid>
+									<ion-list-header color="light">Now Visiting</ion-list-header>
+									<ion-grid>
+										<ion-row>
+											<ion-col>
+												<ion-list size="8">
+													<span class="session-detail">Richard B.</span>
+													<span class="session-detail">(123) 456-7890</span>
+													<span class="session-detail">04:45</span>
+												</ion-list>
+											</ion-col>
+											<ion-col size="4">
+												<ion-list>
+												<ion-button expand="block" fill="outline" color="danger" slot="end" size="small">Leave</ion-button>
+												</ion-list>
+											</ion-col>
+										</ion-row>
+									</ion-grid>
 								</ion-card>
 								<ion-card>
-								<ion-list-header color="warning">Session Ended</ion-list-header>
+								<ion-list-header color="light">Session Ended</ion-list-header>
 								<ion-grid>
 									<ion-row>
-										<ion-col>
+										<ion-col size="8">
 											<ion-list>
-												<span class="session-detail">Richard B.</span>
+												<span class="session-detail">Jaime Epeneza</span>
 												<span class="session-detail">(123) 456-7890</span>
-												<span class="session-detail">04:45</span>
+												<span class="session-detail">32:59</span>
 											</ion-list>
 										</ion-col>
-										<ion-col>
+										<ion-col size="4">
 											<ion-list>
 											<ion-button expand="block" fill="outline" color="medium" slot="end" size="small">Close</ion-button>
 											</ion-list>
@@ -58,30 +58,66 @@
 									</ion-row>
 								</ion-grid>
 								</ion-card>
+								<ion-card>
+									<ion-list-header color="light">Active Session</ion-list-header>
+									<ion-grid>
+										<ion-row>
+											<ion-col size="8">
+												<ion-list>
+													<span class="session-detail">Charlene Bibbs</span>
+													<span class="session-detail">Doreen Carlton</span>
+													<span class="session-detail">Evelyn Richardson</span>
+													<span class="session-detail">12:02</span>
+												</ion-list>
+											</ion-col>
+											<ion-col size="4">
+												<ion-list>
+													<ion-button expand="block" fill="outline" color="primary" slot="end" size="small">Rejoin</ion-button>
+													<ion-button expand="block" fill="outline" color="danger" slot="end" size="small">Leave</ion-button>
+												</ion-list>
+											</ion-col>
+										</ion-row>
+									</ion-grid>
+								</ion-card>
+								<ion-card>
+									<ion-list-header color="light">Active Session</ion-list-header>
+									<ion-grid>
+										<ion-row>
+											<ion-col size="8">
+												<ion-list>
+													<span class="session-detail">Steve Rosenthal</span>
+													<span class="session-detail">(123) 654-8674</span>
+													<span class="session-detail">05:43</span>
+												</ion-list>
+											</ion-col>
+											<ion-col size="4">
+												<ion-list>
+													<ion-button expand="block" fill="outline" color="primary" slot="end" size="small">Rejoin</ion-button>
+													<ion-button expand="block" fill="outline" color="danger" slot="end" size="small">Leave</ion-button>
+												</ion-list>
+											</ion-col>
+										</ion-row>
+									</ion-grid>
+								</ion-card>
 
-
-<ion-card>
-  <ion-item href="#" class="ion-activated">
-    <ion-icon name="wifi" slot="start"></ion-icon>
-    <ion-label>Card Link Item 1 </ion-label>
-  </ion-item>
-
-  <ion-item href="#">
-    <ion-icon name="wine" slot="start"></ion-icon>
-    <ion-label>Card Link Item 2</ion-label>
-  </ion-item>
-
-  <ion-item class="ion-activated">
-    <ion-icon name="warning" slot="start"></ion-icon>
-    <ion-label>Card Button Item 1 blah blahb blahb blah</ion-label>
-  </ion-item>
-
-  <ion-item>
-    <ion-icon name="walk" slot="start"></ion-icon>
-    <ion-label>Card Button Item 2</ion-label>
-  </ion-item>
-</ion-card>
 							</ion-content>
+							<div class="rev-toolbar">
+								<ion-toolbar>
+									<ion-buttons slot="secondary">
+										<ion-button>
+											<ion-icon slot="icon-only" name="wine"></ion-icon>
+										</ion-button>
+										<ion-button>
+											<ion-icon slot="icon-only" name="file-tray-full"></ion-icon>
+										</ion-button>
+									</ion-buttons>
+									<ion-buttons slot="primary">
+										<ion-button>
+											<ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+										</ion-button>
+									</ion-buttons>
+								</ion-toolbar>
+							</div>
 						</div>
 					</div>
 					
@@ -96,7 +132,7 @@
 											</ion-button>
 										</ion-menu-toggle>
 									</ion-buttons>
-									<ion-title><ion-icon></ion-icon>Share Video &amp; Desktop</ion-title>
+									<ion-title>Share Video &amp; Desktop</ion-title>
 								</ion-toolbar>
 							</ion-header>
 							<div class="rev-media">
@@ -104,7 +140,7 @@
 							</div>						
 							<div class="rev-toolbar">
 								<ion-toolbar>
-									<ion-buttons slot="start">
+									<ion-buttons slot="secondary">
 										<ion-button>
 											<ion-icon slot="icon-only" name="document-attach-sharp"></ion-icon>
 										</ion-button>
@@ -130,6 +166,18 @@
 					
 					<div class="rev-chat-container">
 						<div class="rev-grid rev-grid-chat-module">
+							<ion-header>
+								<ion-toolbar color="medium">
+									<ion-buttons slot="start">
+										<ion-menu-toggle>
+											<ion-button>
+												<ion-icon slot="icon-only" name="menu"></ion-icon>
+											</ion-button>
+										</ion-menu-toggle>
+									</ion-buttons>
+									<ion-title>Message</ion-title>
+								</ion-toolbar>
+							</ion-header>
 							<div class="rev-message-window">
 								<div class="chat">
 									<div class="mine messages">
@@ -194,7 +242,7 @@
 								<ion-toolbar>
 									<ion-buttons slot="secondary">
 										<ion-button>
-											<ion-icon slot="icon-only" name="person-circle"></ion-icon>
+											<ion-icon slot="icon-only" name="happy-sharp"></ion-icon>
 										</ion-button>
 										<ion-button>
 											<ion-icon slot="icon-only" name="keypad-sharp"></ion-icon>
@@ -210,8 +258,12 @@
 						</div>
 					</div>
 				</div>
+				
       </ion-content>
     </div>
+
+
+
 	
 	
 	

@@ -34,18 +34,25 @@
 // QUEUE MODULE //
 .rev-grid-queue-module {
 	grid-template-rows: 1fr 57px;
-	height: calc(100vh - 56px);
-	
+	height: calc(100vh - -0px);
+
 	.session-detail {
 		display: block;
 		margin: 0.25em 0;
+	}
+	ion-card {
+		border: 1px solid var(--ion-color-medium);
+	}
+	ion-card .list-md, ion-card .list-ios {
+		padding-top: 0;
+		padding-bottom: 0;
 	}
 }
 
 // MEDIA MODULE //
 .rev-grid-media-module {
-	grid-template-rows: 1fr 57px;
-	height: calc(100vh - 56px);
+	grid-template-rows: 55px 1fr 57px;
+	height: calc(100vh - 0px);
 	
 	.rev-media {
 		width: 100%;
@@ -58,8 +65,8 @@
 						
 // CHAT MODULE //
 .rev-grid-chat-module {
-	grid-template-rows: 1fr 81px 57px;
-	height: calc(100vh - 56px);
+	grid-template-rows: 55px 1fr 84px 57px;
+	height: calc(100vh - 0px);
 }
 .rev-message-window {
 	height:100%;
@@ -74,13 +81,14 @@
 	ion-button.btn-message-input {
 		z-index: 100;
 		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		height: 100%;
+		top: 8px;
+		right: 8px;
+		bottom: 8px;
+		height: auto;
 		margin: 0;
 		padding: 0;
 		border-radius: 0;
+		
 	}
 	ion-icon {
 		color: var(--ion-color-contrast);

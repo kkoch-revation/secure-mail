@@ -27,6 +27,31 @@
   text-decoration: none;
 }
 */
+// BASE PAGE CONTENT GRID
+
+/*
+.rev-grid {
+	display: grid;
+}
+.rev-grid-contacts {
+	display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  padding: 0;
+  margin: 0;
+}
+.rev-contacts-container {
+	background-color: var(--ion-color-light);
+	grid-column: 1 / 2;
+	border-left: 1px solid var(--ion-color-medium);
+}
+.rev-contact-container {
+	background-color: var(--ion-color-light);
+	grid-column: 2 / 3;
+	border-left: 1px solid var(--ion-color-medium);
+}
+*/
+
+
 .rev-padding-50 {
 	padding: 0.5em;
 }
