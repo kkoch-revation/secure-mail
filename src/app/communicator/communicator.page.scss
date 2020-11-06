@@ -7,34 +7,34 @@
 }
 .rev-grid-communicator {
 	display: grid;
-  grid-template: auto 1fr auto / auto 1fr auto;
+  grid-template: 1fr auto auto / 1fr auto auto;
   padding: 0;
   margin: 0;
 }
-.rev-queues-container {
+.rev-media-container {
 	background-color: var(--ion-color-light);
 	grid-column: 1 / 2;
 	border-left: 1px solid var(--ion-color-medium);
-	min-width: 300px;
-	max-width: 300px;
-}
-.rev-media-container {
-	background-color: var(--ion-color-light);
-	grid-column: 2 / 3;
-	border-left: 1px solid var(--ion-color-medium);
 }
 .rev-chat-container {
-	grid-column: 3 / 4;
+	grid-column: 2 / 3;
 	border-left: 1px solid var(--ion-color-medium);
 	max-width: 400px;
+}
+.rev-queues-container {
+	background-color: var(--ion-color-light);
+	grid-column: 3 / 4;
+	border-left: 1px solid var(--ion-color-medium);
+	min-width: 300px;
+	max-width: 300px;
 }
 
 // MODULES //
 
 // QUEUE MODULE //
 .rev-grid-queue-module {
-	grid-template-rows: 1fr 57px;
-	height: calc(100vh - -0px);
+	grid-template-rows:  57px 1fr 57px;
+	height: calc(100vh - 0px);
 
 	.session-detail {
 		display: block;
@@ -42,10 +42,23 @@
 	}
 	ion-card {
 		border: 1px solid var(--ion-color-medium);
+		border-left: 10px solid var(--ion-color-medium);
+		//--background: var(--ion-color-light) !important;
+		ion-button {
+			position: absolute;
+			top: 0.5em;
+			right: 0;
+	}
+	}
+	ion-card.selected {
+		border-left: 10px solid var(--ion-color-success);
 	}
 	ion-card .list-md, ion-card .list-ios {
 		padding-top: 0;
 		padding-bottom: 0;
+	}
+	ion-card-title {
+		font-size: 1em;
 	}
 }
 

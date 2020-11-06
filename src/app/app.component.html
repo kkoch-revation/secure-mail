@@ -7,16 +7,27 @@
 					<div class="rev-apps">
 						<ion-list id="app-list" class="rev-apps">
 								<ion-menu-toggle auto-hide="false" *ngFor="let p of apps; let i = index">
-									<ion-item class="app-link" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" color="dark" lines="none" detail="false" [class.selected]="selectedIndex == i">
-										<ion-icon size="large" slot="end"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+									<ion-item class="app-link" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+										<ion-icon size="large"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
 										<ion-label>{{ p.title }}</ion-label>
+										<ion-badge color="danger">{{ p.badge }}</ion-badge>
+									</ion-item>
+								</ion-menu-toggle>
+							</ion-list>
+						<ion-list id="user-menu" class="rev-apps rev-userSettings">
+							<div class="grid-spacer"></div>	
+							<ion-menu-toggle auto-hide="false" *ngFor="let p of userMenu; let i = index">
+									<ion-item class="app-link" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+										<ion-icon size="large"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+										<ion-label>{{ p.title }}</ion-label>
+										<ion-badge color="danger">{{ p.badge }}</ion-badge>
 									</ion-item>
 								</ion-menu-toggle>
 							</ion-list>
 					</div>
 					<div class="rev-menu">
 						
-					  <div class="menu-mail ">
+					  <div class="rev-menu-mail ">
 							
 							<ion-header>
 								<ion-toolbar color="medium">
@@ -36,7 +47,7 @@
 							</ion-list>
 							
 						</div>
-						<div class="menu-communicator">
+						<div class="rev-menu-communicator">
 							
 						  <ion-header>
 								<ion-toolbar color="medium">
@@ -94,7 +105,7 @@
 
 							
 						</div>
-						<div class="menu-contacts ">
+						<div class="rev-menu-contacts ">
 						<ion-header>
 								<ion-toolbar color="medium">
 									<ion-title>Contacts</ion-title>
@@ -114,45 +125,25 @@
 						</div>
 					</div>
 				</div>
-				<ion-fab class="rev-menu-fab" vertical="bottom" horizontal="start" slot="fixed">
+	<ion-fab class="rev-menu-fab" vertical="bottom" horizontal="start" slot="fixed">
     <ion-fab-button color="success">
-      <ion-icon name="time-sharp" size="large"></ion-icon>
+      <ion-icon name="person-sharp" size="large"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="top">
 			<ion-card>
 				<ion-card-header color="primary">
 					<ion-card-subtitle>LINKLIVE9</ion-card-subtitle>
-					<ion-card-title>Status</ion-card-title>
+					<ion-card-title>Change Status</ion-card-title>
 				</ion-card-header>
 
-
         <ion-list id="fab-app-list">
-					<ion-item lines="none">
-						<ion-icon slot="start" name="apps"></ion-icon>
-						<ion-label>Dashboard</ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-icon slot="start" name="chatbox-ellipses"></ion-icon>
-						<ion-label>Communicator Console</ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-icon slot="start" name="mail"></ion-icon>
-						<ion-label>Secure Mail</ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-icon slot="start" name="calendar"></ion-icon>
-						<ion-label>Appointments</ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-icon slot="start" name="cog"></ion-icon>
-						<ion-label>Settings</ion-label>
-					</ion-item>
-					<ion-item lines="none">
-						<ion-icon slot="start" name="cog"></ion-icon>
-						<ion-label>Settings</ion-label>
-					</ion-item>          
+					<ion-menu-toggle auto-hide="false" *ngFor="let p of revStatus; let i = index">
+						<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+							<ion-icon color="{{ p.color }}" slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+							<ion-label>{{ p.title }}</ion-label>
+						</ion-item>
+					</ion-menu-toggle>        
         </ion-list>
-  
 
 			</ion-card>
 		</ion-fab-list>

@@ -25,7 +25,8 @@ export class AppComponent implements OnInit {
     {
       title: 'Secure Mail',
       url: '/folder/Inbox',
-      icon: 'mail'
+      icon: 'mail',
+      badge: '3'
     },
     {
       title: 'Appointments',
@@ -36,12 +37,19 @@ export class AppComponent implements OnInit {
       title: 'Contacts',
       url: '/contacts/Contacts',
       icon: 'people'
+    }
+  ];
+  public userMenu = [
+    {
+      title: 'Account Settings',
+      url: '/settings/Settings',
+      icon: 'person-circle'
     },
     {
-      title: 'Settings',
+      title: 'Application Settings',
       url: '/settings/Settings',
       icon: 'cog'
-    }  
+    }
   ];
 
     public mailPages = [
@@ -148,7 +156,69 @@ export class AppComponent implements OnInit {
         url: '/folder/Support & Systems Engineering',
         icon: 'folder'
       }
-    ];    
+    ]; 
+    public revStatus = [
+      {
+        title: 'Online',
+        url: '',
+        icon: 'ellipse',
+        color: 'success'
+      },
+      {
+        title: 'Busy',
+        url: '',
+        icon: 'ellipse',
+        color: 'warning'
+      },
+      {
+        title: 'Busy - Conference Internal',
+        url: '',
+        icon: 'ellipse',
+        color: 'warning'
+      },
+      {
+        title: 'Busy - Conference External',
+        url: '',
+        icon: 'ellipse',
+        color: 'warning'
+      },
+      {
+        title: 'Busy - Customer Site',
+        url: '',
+        icon: 'ellipse',
+        color: 'warning'
+      },
+      {
+        title: 'On the Phone',
+        url: '',
+        icon: 'ellipse',
+        color: 'warning'
+      },
+      {
+        title: 'Away',
+        url: '',
+        icon: 'ellipse',
+        color: 'danger'
+      },
+      {
+        title: 'Away - Customer Site',
+        url: '',
+        icon: 'ellipse',
+        color: 'danger'
+      },
+      {
+        title: 'Out to Lunch',
+        url: '',
+        icon: 'ellipse',
+        color: 'danger'
+      },
+      {
+        title: 'Be Right Back',
+        url: '',
+        icon: 'ellipse',
+        color: 'danger'
+      }
+     ];   
 	
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
