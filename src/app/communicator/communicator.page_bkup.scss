@@ -10,7 +10,6 @@
   grid-template: 1fr auto auto / 1fr auto auto;
   padding: 0;
   margin: 0;
-	height: 100vh;
 }
 .rev-media-container {
 	background-color: var(--ion-color-light);
@@ -21,71 +20,39 @@
 	grid-column: 2 / 3;
 	border-left: 1px solid var(--ion-color-medium);
 	max-width: 400px;
-	
 }
-/*
-.rev-chat-container.rev-hide {
-		border-left: 0px solid var(--ion-color-medium);
-	  width: 0; 
-		overflow: hidden;
-	}
-*/
 .rev-queues-container {
 	background-color: var(--ion-color-light);
 	grid-column: 3 / 4;
 	border-left: 1px solid var(--ion-color-medium);
-	min-width: 400px;
-	max-width: 400px;
-}
-.rev-controls-container {
-	grid-column: 1 / 4;
-	//border-top: 1px solid var(--ion-color-medium);
-	border-left: 1px solid var(--ion-color-medium);
-	background-color: greenyellow;
-  height: 57px;
+	min-width: 300px;
+	max-width: 300px;
 }
 
 // MODULES //
 
 // QUEUE MODULE //
 .rev-grid-queue-module {
-	grid-template-rows:  55px 1fr;
-	height: 100%;
+	grid-template-rows:  57px 1fr 57px;
+	height: calc(100vh - 0px);
 
 	.session-detail {
 		display: block;
-		margin: 0.25em 0.625em 0.625em 0.625em;
+		margin: 0.25em 0;
 	}
 	ion-card {
 		border: 1px solid var(--ion-color-medium);
 		border-left: 10px solid var(--ion-color-medium);
-		/*
+		//--background: var(--ion-color-light) !important;
 		ion-button {
 			position: absolute;
 			top: 0.5em;
 			right: 0;
-	}*/
-		ion-item {
-			--padding-top: 0px;
-			--padding-end: 0.25em;
-			--padding-bottom: 0px;
-			--padding-start: 0.25em;
-			--inner-padding-top: 0px;
-			--inner-padding-end: 0.25em;
-  		--inner-padding-bottom: 0px;
-			--inner-padding-start: 0.25em;
-		}
-		ion-label {font-size: 0.875em; font-weight: 500;}
-		ion-icon.activity-indicator {padding: 0 0.25em;}
-
+	}
 	}
 	ion-card.selected {
 		border-left: 10px solid var(--ion-color-success);
 	}
-	ion-card.ended {
-		border-left: 10px solid var(--ion-color-danger);
-	}
-	ion-card a {margin: 2px 0 0 5px; z-index: +1;}
 	ion-card .list-md, ion-card .list-ios {
 		padding-top: 0;
 		padding-bottom: 0;
@@ -97,95 +64,30 @@
 
 // MEDIA MODULE //
 .rev-grid-media-module {
-	grid-template-rows: 55px 1fr;
-	height: calc(100vh - 57px);
+	grid-template-rows: 55px 1fr 57px;
+	height: calc(100vh - 0px);
 	
 	.rev-media {
 		width: 100%;
-		height: calc(100% - 0);
+		height: 100%;
 		display: grid;
     place-items: center;
-		padding: 1em; 
-		overflow-y: auto;
-	}
-	/*
-	.grid-view {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-			//grid-template-rows: repeat(auto-fit, minmax(90px, 0.625fr));
-		  //grid-auto-rows: minmax(90px, 120px);
-		grid-template-rows: 1fr;
-		grid-row-gap: 1em;
-		grid-column-gap: 1em;
-		justify-content: center;
-
-		margin: auto auto;
-		list-style: none;
-	}
-	.grid-view >.rev-video-parent {
-		padding: 0;
-		background-color: var(--ion-color-medium);
-		min-width: 100%;
-		display: grid;
-		place-items: center;
-	}
-	.rev-video-parent:before {
-		content: "";
-		display: block;
-		height: 0;
-		width: 0;
-		padding-bottom: calc(9/16 * 100%);
-	}
-	*/
-	.rev-video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: minmax(1fr, 1fr);
-  grid-gap: 0.5em;
-	width: 100%;
-}
-.rev-video-parent {
-  background: rgba(0,0,0,0.125);
-  display: flex;
-	justify-content: center;
-}
-.rev-video-parent:before {
-  content: "";
-  display: block;
-  height: 0;
-  width: 0;
-  padding-bottom: calc(9/16 * 100%);
-}
-	.rev-video {
-		min-width: 100%;
-		display: grid;
-		place-items: center;
-		overflow: hidden;
-	}
-	.rev-video img {
-		width:auto;
-    height: 100%;
 	}
 }
 
 						
 // CHAT MODULE //
 .rev-grid-chat-module {
-	grid-template-rows: 55px calc(100vh - 196px) 80px;
-	height: calc(100vh - 56px);
-	ion-header {
-		grid-row: 1 / 2;
-	}
+	grid-template-rows: 55px 1fr 84px 57px;
+	height: calc(100vh - 0px);
 }
 .rev-message-window {
-	grid-row: 2 / 3;
 	height:100%;
 	padding: 1rem;
 	overflow: hidden;
 	overflow-y:auto;
 }
 .rev-message-input {
-	grid-row: 3 / 4;
 	height: 81px;
 	border-top: 1px solid var(--ion-color-medium);
 
@@ -206,24 +108,11 @@
 	}
 	.rev-message-textarea {
 		padding-right: 4em;
-		height: 30px;
-		max-height: 80px;
-		.textarea-wrapper {
-			height: 30px;
-		}
 	}
 }
 .rev-toolbar {
 	height: 57px;
 	border-top: 1px solid var(--ion-color-medium);
-	z-index: +1;
-	ion-toolbar {
-		height: 56px;
-		background-color: cadetblue;
-	}
-	ion-toolbar .toolbar-container {
-		  height: 56px;
-	  }
 }
 
 // CHAT BUBBLES //

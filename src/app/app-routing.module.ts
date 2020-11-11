@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'contacts/:id',
     loadChildren: () => import('./contacts/contacts.module').then( m => m.ContactsPageModule)
+  },
+  {
+    path: 'modal',
+    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   }
 ];
 

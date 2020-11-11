@@ -1,0 +1,316 @@
+.relative {
+  position: relative;
+}
+
+.rev-grid {
+  display: grid;
+}
+
+.rev-grid-communicator {
+  display: grid;
+  grid-template: 1fr auto auto / 1fr auto auto;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+}
+
+.rev-media-container {
+  background-color: var(--ion-color-light);
+  grid-column: 1 / 2;
+  border-left: 1px solid var(--ion-color-medium);
+}
+
+.rev-chat-container {
+  grid-column: 2 / 3;
+  border-left: 1px solid var(--ion-color-medium);
+  max-width: 400px;
+}
+
+/*
+.rev-chat-container.rev-hide {
+		border-left: 0px solid var(--ion-color-medium);
+	  width: 0; 
+		overflow: hidden;
+	}
+*/
+.rev-queues-container {
+  background-color: var(--ion-color-light);
+  grid-column: 3 / 4;
+  border-left: 1px solid var(--ion-color-medium);
+  min-width: 400px;
+  max-width: 400px;
+}
+
+.rev-controls-container {
+  grid-column: 1 / 4;
+  border-left: 1px solid var(--ion-color-medium);
+  background-color: greenyellow;
+  height: 57px;
+}
+
+.rev-grid-queue-module {
+  grid-template-rows: 55px 1fr;
+  height: 100%;
+}
+.rev-grid-queue-module .session-detail {
+  display: block;
+  margin: 0.25em 0.625em 0.625em 0.625em;
+}
+.rev-grid-queue-module ion-card {
+  border: 1px solid var(--ion-color-medium);
+  border-left: 10px solid var(--ion-color-medium);
+  	/*
+  	ion-button {
+  		position: absolute;
+  		top: 0.5em;
+  		right: 0;
+  }*/
+}
+.rev-grid-queue-module ion-card ion-item {
+  --padding-top: 0px;
+  --padding-end: 0.25em;
+  --padding-bottom: 0px;
+  --padding-start: 0.25em;
+  --inner-padding-top: 0px;
+  --inner-padding-end: 0.25em;
+  --inner-padding-bottom: 0px;
+  --inner-padding-start: 0.25em;
+}
+.rev-grid-queue-module ion-card ion-label {
+  font-size: 0.875em;
+  font-weight: 500;
+}
+.rev-grid-queue-module ion-card ion-icon.activity-indicator {
+  padding: 0 0.25em;
+}
+.rev-grid-queue-module ion-card.selected {
+  border-left: 10px solid var(--ion-color-success);
+}
+.rev-grid-queue-module ion-card.ended {
+  border-left: 10px solid var(--ion-color-danger);
+}
+.rev-grid-queue-module ion-card a {
+  margin: 2px 0 0 5px;
+  z-index: +1;
+}
+.rev-grid-queue-module ion-card .list-md, .rev-grid-queue-module ion-card .list-ios {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.rev-grid-queue-module ion-card-title {
+  font-size: 1em;
+}
+
+.rev-grid-media-module {
+  grid-template-rows: 55px 1fr;
+  height: calc(100vh - 57px);
+  	/*
+  	.grid-view {
+  		display: grid;
+  		grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  			//grid-template-rows: repeat(auto-fit, minmax(90px, 0.625fr));
+  		  //grid-auto-rows: minmax(90px, 120px);
+  		grid-template-rows: 1fr;
+  		grid-row-gap: 1em;
+  		grid-column-gap: 1em;
+  		justify-content: center;
+  
+  		margin: auto auto;
+  		list-style: none;
+  	}
+  	.grid-view >.rev-video-parent {
+  		padding: 0;
+  		background-color: var(--ion-color-medium);
+  		min-width: 100%;
+  		display: grid;
+  		place-items: center;
+  	}
+  	.rev-video-parent:before {
+  		content: "";
+  		display: block;
+  		height: 0;
+  		width: 0;
+  		padding-bottom: calc(9/16 * 100%);
+  	}
+  	*/
+}
+.rev-grid-media-module .rev-media {
+  width: 100%;
+  height: calc(100% - 0);
+  display: grid;
+  place-items: center;
+  padding: 1em;
+  overflow-y: auto;
+}
+.rev-grid-media-module .rev-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: minmax(1fr, 1fr);
+  grid-gap: 0.5em;
+  width: 100%;
+}
+.rev-grid-media-module .rev-video-parent {
+  background: rgba(0, 0, 0, 0.125);
+  display: flex;
+  justify-content: center;
+}
+.rev-grid-media-module .rev-video-parent:before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  padding-bottom: calc(9/16 * 100%);
+}
+.rev-grid-media-module .rev-video {
+  min-width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.rev-grid-media-module .rev-video img {
+  width: auto;
+  height: 100%;
+}
+
+.rev-grid-chat-module {
+  grid-template-rows: 55px calc(100vh - 196px) 80px;
+  height: calc(100vh - 56px);
+}
+.rev-grid-chat-module ion-header {
+  grid-row: 1 / 2;
+}
+
+.rev-message-window {
+  grid-row: 2 / 3;
+  height: 100%;
+  padding: 1rem;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.rev-message-input {
+  grid-row: 3 / 4;
+  height: 81px;
+  border-top: 1px solid var(--ion-color-medium);
+}
+.rev-message-input ion-button.btn-message-input {
+  z-index: 100;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  bottom: 8px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+.rev-message-input ion-icon {
+  color: var(--ion-color-contrast);
+}
+.rev-message-input .rev-message-textarea {
+  padding-right: 4em;
+  height: 30px;
+  max-height: 80px;
+}
+.rev-message-input .rev-message-textarea .textarea-wrapper {
+  height: 30px;
+}
+
+.rev-toolbar {
+  height: 57px;
+  border-top: 1px solid var(--ion-color-medium);
+  z-index: +1;
+}
+.rev-toolbar ion-toolbar {
+  height: 56px;
+  background-color: cadetblue;
+}
+.rev-toolbar ion-toolbar .toolbar-container {
+  height: 56px;
+}
+
+.messages {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  line-height: 1.6em;
+}
+
+.yours {
+  align-items: flex-start;
+}
+
+.yours .message {
+  margin-right: 25%;
+  background-color: var(--ion-color-light);
+  position: relative;
+}
+
+.yours .message.last:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: -7px;
+  height: 20px;
+  width: 20px;
+  background: var(--ion-color-light);
+  border-bottom-right-radius: 15px;
+}
+
+.yours .message.last:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: -10px;
+  width: 10px;
+  height: 20px;
+  background: white;
+  border-bottom-right-radius: 10px;
+}
+
+.mine {
+  align-items: flex-end;
+}
+
+.mine .message {
+  color: white;
+  margin-left: 25%;
+  background: var(--ion-color-primary);
+  background-attachment: fixed;
+  position: relative;
+}
+
+.mine .message.last:before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  right: -8px;
+  height: 20px;
+  width: 20px;
+  background: var(--ion-color-primary);
+  background-attachment: fixed;
+  border-bottom-left-radius: 15px;
+}
+
+.mine .message.last:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  right: -10px;
+  width: 10px;
+  height: 20px;
+  background: white;
+  border-bottom-left-radius: 10px;
+}

@@ -1,0 +1,209 @@
+@charset "UTF-8";
+/* Scss Document */
+
+// BRANDING COLORS
+// PRIMARY
+// Blue           RGB 2/34/52     HEX 1D324A
+
+// SUPPORTING COLORS
+// CTA Blue       RGB 0/94/134      HEX 1E5d84
+// Bright Blue    RGB 0/182/205     HEX 54b5cb
+// Tan            RGB 185/171/122   HEX B4AA7B
+// Stone (beige)  RGB 207/209/195   HEX CED0C2
+// 
+
+
+// Color system
+
+$white:         #fff !default;
+$black:         #000 !default;
+$transparent:   transparent;
+
+$primary:       #1D324A; // Navy Blue
+$secondary:     #1E5d84; // CTA Blue;
+$accent1:       #54b5cb; // Bright Blue
+$accent2:       #B4AA7B; // Tan
+$lt-gray:       #DADBDC; // Medium Gray 
+$dk-gray:       #5A5A5A; // Dark Gray
+
+$red:     #c30303;
+$orange:  #f2860f; // CTA Orange
+$yellow:  #f9e606; // CTA Gold
+$green:   #4fa270;
+
+$hover-primary:  darken($primary, 15%);
+$hover-secondary:  darken($secondary, 15%);
+$hover-accent1:  darken($accent1, 15%);
+$hover-accent2:  darken($accent2, 15%);
+$hover-outline-default:   darken($secondary, 15%);
+$hover-outline-secondary:   darken($secondary, 15%);
+$hover-outline-accent1:   darken($accent1, 15%);
+$hover-outline-accent2:   darken($accent2, 15%);
+
+// Control Max Logo Width in wide viewports
+@media (min-width: 768px) {
+  .logo-lg {
+    max-width: 600px; // Can be % or px
+  }
+}
+// Site header & nav background 
+.bg-dark {
+  background-color: $primary !important; // BLUE 
+}
+// Links
+a {
+    color: $secondary; // CTA Blue;
+}
+// Main Headings
+main h1, .main .h1 {
+  color: $secondary;
+}
+// Background image narrow viewport
+.bg {
+    background-image:url(../images/bg.jpg);
+    background-position: top center;
+    opacity: 1.0;
+    transform: rotateY(0deg);
+}
+// Background image wide viewport
+@media (min-width: 992px) {
+  .bg {
+    background-image:url(../images/bg.jpg);
+    background-position: top center;
+    opacity: 1.0;
+    transform: rotateY(0deg);
+  }
+}
+// Footer links
+.footer a {
+  color: #ffffff;
+  opacity: 0.65;
+}
+// Button: Primary call to action
+.btn-primary {
+    color: $white;
+    background-color: $secondary; // #1E5d84 CTA Blue
+    border-color: $secondary; // #1E5d84 CTA Blue 
+}
+.btn-primary:hover {
+    color: $white;
+    background-color: $primary; // #1D324A Navy Blue
+    border-color: $primary; // #1D324A Navy Blue
+}
+.btn-outline-primary {
+    background-color: $transparent;
+    color: $secondary; // #1E5d84 CTA Blue
+    border-color: $secondary; // #1E5d84 CTA Blue
+}
+.btn-outline-primary:hover {
+    background-color: $primary; // #1D324A Navy Blue
+    color: $white;
+    border-color: $primary; // #1D324A Navy Blue
+}
+// Begin Patient List (Lobby) styles
+.patientList {
+  .card {
+    border-left-color: $secondary; // #002677 Navy Blue 
+    border-color: $secondary;
+  }
+      
+  .card:hover {
+    background-color:$white;
+    border-color: $secondary; // #002677 CTA Blue 
+    border-left-color: $secondary; // #002677 CTA Blue 
+  }
+  .card.rev-orange {
+    border-left-color: $orange;
+  }
+  .card.rev-orange:hover {
+    border-color: $orange;
+    border-left-color: $orange;
+  }
+  .card.rev-gold {
+    border-left-color: $yellow;
+  }
+  .card.rev-gold:hover {
+    border-color: $yellow;
+    border-left-color: $yellow;
+  }
+  .card.rev-green {
+    border-left-color: $green;
+    border-top-color: $green;
+    border-right-color: $green;
+    border-bottom-color: $green;
+  .card-header {
+      color: $white;
+      background-color: $green;
+    }
+  }
+  .card.rev-green:hover {
+    border-color: $green;
+    border-left-color: $green;
+  }
+} // End .patientList
+
+// Page and container background colors
+.bg-trans-white {
+  background-color: rgba(255, 255, 255, 0.75); // Used on various forms and containers throughout the site.
+}
+.bg-light-trans {
+  background-color: rgba(74, 139, 200, 0.0); // 0.25 ... opacity=0.0
+}
+.bg-dark-trans {
+  background-color: rgba(74, 139, 200, 0.0); // 0.55 ... opacity=0.0
+}
+.pageContent {
+  background-color: rgba(255, 255, 255, 0.75); // Same as bg-trans-white but relegated to admin page content backgrounds
+}
+.bg-form {
+  padding: 15px;
+  background-color: rgba(74, 139, 200, 0.25) // Default is same as bg-light-trans
+}
+// The following styles pull scss variables in and are used to display sample color to the user via a color swatch next to each input.
+.brandColorPalette {
+  .primary {
+    color: $primary;
+  }
+  .secondary {
+    color: $secondary;
+  }
+  .accent1 {
+    color: $accent1;
+  }
+  .accent2 {
+    color: $accent2;
+  }
+  .dangerRed {
+    color: $red;
+  }
+  .alertOrange {
+    color: $orange;
+  }
+  .warningYellow {
+    color: $yellow;
+  }
+  .successGreen {
+    color: $green;
+  } 
+  .white {
+    color: $white;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2);
+  }
+  .black {
+    color: $black;
+  }
+  .hover-primary {
+    color: $hover-primary;
+  }
+  .hover-secondary {
+    color: $hover-secondary;
+  }
+  .hover-accent1 {
+    color: $hover-accent1;
+  }
+  .hover-accent2 {
+    color: $hover-accent2;
+  }
+
+}
+
