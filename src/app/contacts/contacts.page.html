@@ -3,23 +3,26 @@
     <ion-buttons slot="start">
       <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
-    <ion-title>Contacts</ion-title>
+    <ion-title>All Contacts</ion-title>
   </ion-toolbar>
 
 </ion-header>
 <ion-content [fullscreen]="true">
-	<ion-toolbar class="rev-padding-50">
+	<ion-toolbar class="rev-padding-50" style="z-index: 0;">
 		<ion-searchbar slot="start" placeholder="Search All Contacts"></ion-searchbar>
-		<ion-button slot="end">
-      <ion-icon  name="chatbox-ellipses"></ion-icon>
-    </ion-button>
-    <ion-button slot="end">
-      <ion-icon name="call"></ion-icon>
-    </ion-button>
+		<ion-buttons slot="end">
+			<ion-button>
+				<ion-icon slot="icon-only" name="chatbox-ellipses"></ion-icon>
+			</ion-button>
+			<ion-button>
+				<ion-icon slot="icon-only" name="call"></ion-icon>
+			</ion-button>
+		</ion-buttons>
   </ion-toolbar> 
 	<ion-grid>
 		<ion-row>
 			<ion-col size="12">
+				<!--
 				<ion-list class="rev-list-col">
 				<ion-item>
 					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
@@ -50,77 +53,311 @@
 					<ion-label>Karl K.</ion-label>
 				</ion-item>
 			</ion-list>
-			</ion-col>
-		</ion-row>
-		<!--
-		<ion-row>
-			<ion-col size="12">
-				<ion-list>
-				<ion-item nav-clear menu-close ng-click="toggleSubmenu()">
-					<ion-icon name="caret-down-circle"  class="ion-padding-end"></ion-icon>
-								<ion-label>Recent Sessions</ion-label></ion-item>
-							<ion-item nav-clear menu-close ng-show="submenu">
-									<ion-list>
-											<ion-item nav-clear menu-close>
-										<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Mike K.</ion-label>
-										</ion-item>
-											<ion-item nav-clear menu-close>
-										<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Charlie G.</ion-label>
-										</ion-item>
-											<ion-item nav-clear menu-close>
-										<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Hani Z.</ion-label></ion-item>
-									</ion-list>
-							</ion-item>
-							<ion-item nav-clear menu-close>
-								<ion-icon name="caret-forward-circle"  class="ion-padding-end"></ion-icon>
-								<ion-label>Sales &amp; Marketing</ion-label>
-				</ion-item>
-							<ion-item nav-clear menu-close>
-								<ion-icon name="caret-forward-circle"  class="ion-padding-end"></ion-icon>
-								<ion-label>Systems Engineers</ion-label>
-				</ion-item>
-							<ion-item nav-clear menu-close ng-show="submenu">
-								<ion-icon name="caret-down-circle"  class="ion-padding-end"></ion-icon>
-								<ion-label>Dev Team</ion-label>
-				</ion-item>
-				<ion-item>
-				<ion-list>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Mark P.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Mike K.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Dave K.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>John C.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>John R.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Hani Z.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Karl K.</ion-label>
-				</ion-item>
-				</ion-list>
-				</ion-item>
-			</ion-list>
-			</ion-col>
-		</ion-row>
 -->
+				<ion-list  class="">
+					<ion-item-divider color="light"><ion-label>A</ion-label></ion-item-divider>
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-luke.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Aaron Armisten</h2>
+							<h3>(952) 392-1831 ext. 2123</h3>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-han.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Ari Amadalopolous</h2>
+							<h3>(952) 392-1831 ext. 2120</h3>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-rey.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Astrid Amendola</h2>
+							<h3>(952) 392-1831 ext. 2122</h3>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-finn.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Austin Arapahoe</h2>
+							<h3>(952) 392-1831 ext. 2121</h3>
+						</ion-label>
+					</ion-item>
+				</ion-list>
+
+				<ion-list>
+					<ion-item-divider color="light"><ion-label>B</ion-label></ion-item-divider>
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-leia.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Barbara Benton</h2>
+							<h3>(952) 392-1831 ext. 2126</h3>
+						</ion-label>
+					</ion-item>
+
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-poe.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Bobby Billingsly</h2>
+							<h3>(952) 392-1831 ext. 2125</h3>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-ben.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Benny Burton</h2>
+							<h3>(952) 392-1831 ext. 2128</h3>
+						</ion-label>
+					</ion-item>
+
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-yoda.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Bilbo Baggins</h2>
+							<h3>(952) 392-1831 ext. 2129</h3>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item-divider color="light"><ion-label>C</ion-label></ion-item-divider>
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-luke.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Carl Calendula</h2>
+							<h3>(952) 392-1831 ext. 2132</h3>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-rey.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Cassie Calibri</h2>
+							<h3>(952) 392-1831 ext. 2135</h3>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-han.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Craig Cramden</h2>
+							<h3>(952) 392-1831 ext. 2133</h3>
+						</ion-label>
+					</ion-item>
+				</ion-list>
+
+				<ion-list>
+					<ion-item-divider color="light"><ion-label>D</ion-label></ion-item-divider>
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-finn.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Danny Doolittle</h2>
+							<h3>(952) 392-1831 ext. 2141</h3>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-leia.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Delilah Dansbury</h2>
+							<h3>(952) 392-1831 ext. 2143</h3>
+						</ion-label>
+					</ion-item>
+
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-poe.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Dinsdale Dent</h2>
+							<h3>(952) 392-1831 ext. 2144</h3>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-ben.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Dirk Dilschneider<</h2>
+							<h3>(952) 392-1831 ext. 2146</h3>
+						</ion-label>
+					</ion-item>
+
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-yoda.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Doug Dougherty</h2>
+							<h3>(952) 392-1831 ext. 2149</h3>
+						</ion-label>
+					</ion-item>
+				</ion-list>
+				</ion-col>
+			</ion-row>
+			<!--
+			<ion-row>
+				<ion-col size="12">
+					<ion-list>
+					<ion-item nav-clear menu-close ng-click="toggleSubmenu()">
+						<ion-icon name="caret-down-circle"  class="ion-padding-end"></ion-icon>
+									<ion-label>Recent Sessions</ion-label></ion-item>
+								<ion-item nav-clear menu-close ng-show="submenu">
+										<ion-list>
+												<ion-item nav-clear menu-close>
+											<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+						<ion-label>Mike K.</ion-label>
+											</ion-item>
+												<ion-item nav-clear menu-close>
+											<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+						<ion-label>Charlie G.</ion-label>
+											</ion-item>
+												<ion-item nav-clear menu-close>
+											<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+						<ion-label>Hani Z.</ion-label></ion-item>
+										</ion-list>
+								</ion-item>
+								<ion-item nav-clear menu-close>
+									<ion-icon name="caret-forward-circle"  class="ion-padding-end"></ion-icon>
+									<ion-label>Sales &amp; Marketing</ion-label>
+					</ion-item>
+								<ion-item nav-clear menu-close>
+									<ion-icon name="caret-forward-circle"  class="ion-padding-end"></ion-icon>
+									<ion-label>Systems Engineers</ion-label>
+					</ion-item>
+								<ion-item nav-clear menu-close ng-show="submenu">
+									<ion-icon name="caret-down-circle"  class="ion-padding-end"></ion-icon>
+									<ion-label>Dev Team</ion-label>
+					</ion-item>
+					<ion-item>
+					<ion-list>
+					<ion-item>
+						<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+						<ion-label>Mark P.</ion-label>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+						<ion-label>Mike K.</ion-label>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+						<ion-label>Dave K.</ion-label>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+						<ion-label>John C.</ion-label>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+						<ion-label>John R.</ion-label>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+						<ion-label>Hani Z.</ion-label>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
+						<ion-label>Karl K.</ion-label>
+					</ion-item>
+					</ion-list>
+					</ion-item>
+				</ion-list>
+				</ion-col>
+			</ion-row>
+	-->
 	</ion-grid>
 </ion-content>

@@ -44,6 +44,12 @@
 	background-color: greenyellow;
   height: 57px;
 }
+.rev-grid-communicator.no-media {
+		grid-template-columns: 0px 1.375fr 0.625fr;
+		.rev-media-container  {z-index: -1;}	
+		.rev-chat-container   {z-index: +1;}
+		.rev-queues-container {z-index: +1;}
+	}
 .rev-grid-communicator.focus-media {
 		grid-template-columns: 1fr 0px 0px;
 		.rev-media-container  {z-index: +2;}	

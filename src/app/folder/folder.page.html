@@ -8,10 +8,177 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div id="container"  class="rev-content-wrapper">
+	<ion-toolbar class="rev-padding-50" style="z-index: 0;">
+		<ion-searchbar slot="start" placeholder="Search"></ion-searchbar>
+  </ion-toolbar> 
+  <div id="container">
+		<!--h1><strong class="capitalize">{{ folder }}</strong></h1-->
+			<ion-list  class="">
+					<ion-item-divider color="light"><ion-label>Today</ion-label></ion-item-divider>
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-luke.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="arrow-undo-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="archive-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="trash-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2><b>Doug Fleming</b></h2>
+							<h3>11/13/20, 10:08 AM</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							 <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" />
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="arrow-undo-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="archive-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="trash-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2><b>Jerry Kozinski</b></h2>
+							<h3>11/13/20, 9:42 AM</h3>
+							<p>Consectetur adipiscing lorem ipsum dolor sit</p>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-rey.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="arrow-undo-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="archive-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="trash-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Frieda Halestrom</h2>
+							<h3>11/13/20, 9:12 AM</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-finn.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="arrow-undo-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="archive-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="trash-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Kwan Jenkins</h2>
+							<h3>11/13/20, 8:56 AM</h3>
+							<p>Lorem ipsum consectetur dolor sit amet adipiscing</p>
+						</ion-label>
+					</ion-item>
+				</ion-list>
+			<ion-list  class="">
+					<ion-item-divider color="light"><ion-label>Yesterday</ion-label></ion-item-divider>
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-luke.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="arrow-undo-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="archive-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="trash-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Newt Wingtip</h2>
+							<h3>11/12/20, 4:23 PM</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							 <img src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" />
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="arrow-undo-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="archive-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="trash-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Steve R. Mageddon</h2>
+							<h3>11/12/20, 3:39 PM</h3>
+							<p>Consectetur adipiscing lorem ipsum dolor sit</p>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-rey.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="arrow-undo-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="archive-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="trash-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Reva McIntire</h2>
+							<h3>11/12/20, 3:12 PM</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+						</ion-label>
+					</ion-item>
+					
+					<ion-item button (click)="buttonClick()">
+						<ion-avatar slot="start">
+							<img src="../../assets/avatar-finn.png">
+						</ion-avatar>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="arrow-undo-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-buttons slot="end">
+							<ion-button><ion-icon slot="icon-only" name="archive-sharp"></ion-icon></ion-button>
+							<ion-button><ion-icon slot="icon-only" name="trash-sharp"></ion-icon></ion-button>
+						</ion-buttons>
+						<ion-label>
+							<h2>Chet Wiggums</h2>
+							<h3>11/12/20, 12:56 PM</h3>
+							<p>Lorem ipsum consectetur dolor sit amet adipiscing</p>
+						</ion-label>
+					</ion-item>
+				</ion-list>
 		<span class="ion-text-center">
-		<h1><strong class="capitalize">{{ folder }}</strong></h1>
-    <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://revation.com/linklive-chat">LinkLive9</a></p>
+    	<p>Explore <a target="_blank" rel="noopener noreferrer" href="https://revation.com/linklive-chat">LinkLive9</a></p>
 		</span>
 	</div>
 

@@ -1,0 +1,50 @@
+.rev-grid-media-module {
+  grid-template-rows: 55px 1fr;
+  height: calc(100vh - 57px);
+}
+
+.rev-media {
+  width: 100%;
+  height: calc(100% - 0);
+  display: grid;
+  place-items: center;
+  padding: 1em;
+  overflow-y: auto;
+}
+
+.rev-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-rows: minmax(1fr, 1fr);
+  grid-gap: 0.5em;
+  width: 100%;
+}
+
+.rev-video-parent {
+  background: rgba(0, 0, 0, 0.125);
+  display: flex;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+.rev-video-parent:before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  padding-bottom: calc(9/16 * 100%);
+}
+
+.rev-video {
+  min-width: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.rev-video img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
