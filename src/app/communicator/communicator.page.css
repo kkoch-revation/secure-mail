@@ -8,7 +8,8 @@
 
 .rev-grid-communicator {
   display: grid;
-  grid-template: 1fr auto auto / 1fr auto auto;
+  grid-template-columns: 1fr 400px 300px;
+  grid-template-rows: 1fr 57px;
   padding: 0;
   margin: 0;
   height: 100vh;
@@ -17,13 +18,15 @@
 .rev-media-container {
   background-color: var(--ion-color-light);
   grid-column: 1 / 2;
+  grid-row: 1 / 2;
   border-left: 1px solid var(--ion-color-medium);
 }
 
 .rev-chat-container {
   grid-column: 2 / 3;
+  grid-row: 1 / 2;
   border-left: 1px solid var(--ion-color-medium);
-  max-width: 400px;
+  width: 100%;
 }
 
 /*
@@ -36,69 +39,17 @@
 .rev-queues-container {
   background-color: var(--ion-color-light);
   grid-column: 3 / 4;
+  grid-row: 1 / 2;
   border-left: 1px solid var(--ion-color-medium);
-  min-width: 400px;
-  max-width: 400px;
+  width: 100%;
 }
 
 .rev-controls-container {
   grid-column: 1 / 4;
+  grid-row: 2 / 3;
   border-left: 1px solid var(--ion-color-medium);
   background-color: greenyellow;
   height: 57px;
-}
-
-.rev-grid-queue-module {
-  grid-template-rows: 55px 1fr;
-  height: 100%;
-}
-.rev-grid-queue-module .session-detail {
-  display: block;
-  margin: 0.25em 0.625em 0.625em 0.625em;
-}
-.rev-grid-queue-module ion-card {
-  border: 1px solid var(--ion-color-medium);
-  border-left: 10px solid var(--ion-color-medium);
-  	/*
-  	ion-button {
-  		position: absolute;
-  		top: 0.5em;
-  		right: 0;
-  }*/
-}
-.rev-grid-queue-module ion-card ion-item {
-  --padding-top: 0px;
-  --padding-end: 0.25em;
-  --padding-bottom: 0px;
-  --padding-start: 0.25em;
-  --inner-padding-top: 0px;
-  --inner-padding-end: 0.25em;
-  --inner-padding-bottom: 0px;
-  --inner-padding-start: 0.25em;
-}
-.rev-grid-queue-module ion-card ion-label {
-  font-size: 0.875em;
-  font-weight: 500;
-}
-.rev-grid-queue-module ion-card ion-icon.activity-indicator {
-  padding: 0 0.25em;
-}
-.rev-grid-queue-module ion-card.selected {
-  border-left: 10px solid var(--ion-color-success);
-}
-.rev-grid-queue-module ion-card.ended {
-  border-left: 10px solid var(--ion-color-danger);
-}
-.rev-grid-queue-module ion-card a {
-  margin: 2px 0 0 5px;
-  z-index: +1;
-}
-.rev-grid-queue-module ion-card .list-md, .rev-grid-queue-module ion-card .list-ios {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.rev-grid-queue-module ion-card-title {
-  font-size: 1em;
 }
 
 .rev-grid-media-module {
@@ -153,6 +104,7 @@
   background: rgba(0, 0, 0, 0.125);
   display: flex;
   justify-content: center;
+  overflow-y: hidden;
 }
 .rev-grid-media-module .rev-video-parent:before {
   content: "";
@@ -165,16 +117,16 @@
   min-width: 100%;
   display: grid;
   place-items: center;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 .rev-grid-media-module .rev-video img {
-  width: auto;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .rev-grid-chat-module {
-  grid-template-rows: 55px calc(100vh - 196px) 80px;
-  height: calc(100vh - 56px);
+  grid-template-rows: 55px 1fr 80px;
+  height: calc(100vh - 57px);
 }
 .rev-grid-chat-module ion-header {
   grid-row: 1 / 2;
@@ -182,7 +134,7 @@
 
 .rev-message-window {
   grid-row: 2 / 3;
-  height: 100%;
+  display: flex;
   padding: 1rem;
   overflow: hidden;
   overflow-y: auto;
@@ -192,6 +144,10 @@
   grid-row: 3 / 4;
   height: 81px;
   border-top: 1px solid var(--ion-color-medium);
+}
+.rev-message-input ion-item {
+  --border-color: transparent;
+  --inner-border-width: 0 0 0 0;
 }
 .rev-message-input ion-button.btn-message-input {
   z-index: 100;
@@ -207,13 +163,62 @@
 .rev-message-input ion-icon {
   color: var(--ion-color-contrast);
 }
-.rev-message-input .rev-message-textarea {
+.rev-message-input ion-textarea.rev-message-textarea {
   padding-right: 4em;
-  height: 30px;
-  max-height: 80px;
+  max-height: 51px;
 }
-.rev-message-input .rev-message-textarea .textarea-wrapper {
-  height: 30px;
+
+.rev-grid-queue-module {
+  grid-template-rows: 55px 1fr;
+  height: calc(100vh - 57px);
+}
+.rev-grid-queue-module .session-detail {
+  display: block;
+  margin: 0.25em 0.625em 0.625em 0.625em;
+}
+.rev-grid-queue-module ion-card {
+  border: 1px solid var(--ion-color-medium);
+  border-left: 10px solid var(--ion-color-medium);
+  	/*
+  	ion-button {
+  		position: absolute;
+  		top: 0.5em;
+  		right: 0;
+  }*/
+}
+.rev-grid-queue-module ion-card ion-item {
+  --padding-top: 0px;
+  --padding-end: 0.25em;
+  --padding-bottom: 0px;
+  --padding-start: 0.25em;
+  --inner-padding-top: 0px;
+  --inner-padding-end: 0.25em;
+  --inner-padding-bottom: 0px;
+  --inner-padding-start: 0.25em;
+}
+.rev-grid-queue-module ion-card ion-label {
+  font-size: 0.875em;
+  font-weight: 500;
+}
+.rev-grid-queue-module ion-card ion-icon.activity-indicator {
+  padding: 0 0.25em;
+}
+.rev-grid-queue-module ion-card.selected {
+  border-left: 10px solid var(--ion-color-success);
+}
+.rev-grid-queue-module ion-card.ended {
+  border-left: 10px solid var(--ion-color-danger);
+}
+.rev-grid-queue-module ion-card a {
+  margin: 0 0 0 5px;
+  z-index: +1;
+}
+.rev-grid-queue-module ion-card .list-md, .rev-grid-queue-module ion-card .list-ios {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.rev-grid-queue-module ion-card-title {
+  font-size: 1em;
 }
 
 .rev-toolbar {
