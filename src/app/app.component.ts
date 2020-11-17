@@ -67,6 +67,18 @@ export class AppComponent implements OnInit {
         badge: ''
       },
       {
+        title: 'Calls',
+        url: '/folder/Favorites',
+        icon: 'call',
+        badge: ''
+      },
+      {
+        title: 'Chats',
+        url: '/folder/Favorites',
+        icon: 'chatbox-ellipses',
+        badge: ''
+      },
+      {
         title: 'Favorites',
         url: '/folder/Favorites',
         icon: 'heart',

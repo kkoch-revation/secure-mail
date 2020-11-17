@@ -1,11 +1,119 @@
 <ion-header>
   <ion-toolbar color="medium">
 		<ion-buttons slot="start">
-      <ion-menu-button color="light"></ion-menu-button>
+      <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>Appointments</ion-title>
+		<ion-buttons slot="end">
+			<ion-button ><ion-icon name="add" slot="icon-only"></ion-icon></ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-<ion-content class="ion-padding">
-	<h1>Main Content</h1>
+<ion-content>
+	<ion-list  class="">
+		<ion-item-divider color="light"><ion-label>Today</ion-label></ion-item-divider>
+		<ion-item button (click)="buttonClick()">
+			<ion-chip outline slot="start">
+          <ion-label>2:00 PM</ion-label>
+       </ion-chip>
+			<ion-avatar slot="start">
+				<img src="../../assets/avatar-luke.png">
+			</ion-avatar>
+			<ion-label>
+				<h2>Ned Hermiston</h2>
+				<h3>(952) 656-6656</h3>
+				<p>Personal Loan: Mortgage pre-approval</p>
+			</ion-label>
+		</ion-item>
+
+		<ion-item button (click)="buttonClick()">
+			<ion-chip outline slot="start">
+          <ion-label>3:00 PM</ion-label>
+       </ion-chip>
+			<ion-avatar slot="start">
+				<img src="../../assets/avatar-han.png">
+			</ion-avatar>
+			<ion-label>
+				<h2>Boris Klempt</h2>
+				<h3>(952) 321-5364</h3>
+				<p>Business Banking: Business Loan</p>
+			</ion-label>
+		</ion-item>
+		<ion-item-divider color="light"><ion-label>Tomorrow 11/14/2020</ion-label></ion-item-divider>
+		<ion-item button (click)="buttonClick()">
+			<ion-chip outline slot="start">
+          <ion-label>9:00 AM</ion-label>
+       </ion-chip>
+			<ion-avatar slot="start">
+				<img src="../../assets/avatar-leia.png">
+			</ion-avatar>
+			<ion-label>
+				<h2>Nancy Duesseldorf</h2>
+				<h3>(952) 226-0071</h3>
+				<p>Personal Checking: Checking-Plus account</p>
+			</ion-label>
+		</ion-item>
+
+		<ion-item button (click)="buttonClick()">
+			<ion-chip outline slot="start">
+          <ion-label>10:00 AM</ion-label>
+       </ion-chip>
+			<ion-avatar slot="start">
+				<img src="../../assets/avatar-ben.png">
+			</ion-avatar>
+			<ion-label>
+				<h2>Steve McMillan</h2>
+				<h3>(952) 656-6656</h3>
+				<p>Business Banking: Business Loan</p>
+			</ion-label>
+		</ion-item>
+		
+		<ion-item button (click)="buttonClick()">
+			<ion-chip outline slot="start">
+          <ion-label>1:00 PM</ion-label>
+       </ion-chip>
+			<ion-avatar slot="start">
+				<img src="../../assets/avatar-poe.png">
+			</ion-avatar>
+			<ion-label>
+				<h2>Anthony Yamaguchi</h2>
+				<h3>(952) 656-6656</h3>
+				<p>Business Banking: Business Loan</p>
+			</ion-label>
+		</ion-item>
+		
+		<ion-item-divider color="light"><ion-label>Monday 11/17/2020</ion-label></ion-item-divider>
+		
+		<ion-item button (click)="buttonClick()">
+			<ion-chip outline slot="start">
+          <ion-label>2:30 PM</ion-label>
+       </ion-chip>
+			<ion-avatar slot="start">
+				<img src="../../assets/avatar-rey.png">
+			</ion-avatar>
+			<ion-label>
+				<h2>Mary Halverson</h2>
+				<h3>(952) 543-2345</h3>
+				<p>Personal Banking: College savings fund</p>
+			</ion-label>
+		</ion-item>
+		
+		<ion-item-divider color="light"><ion-label>Tuesday 11/18/2020</ion-label></ion-item-divider>
+		
+		<ion-item button (click)="buttonClick()">
+			<ion-chip outline slot="start">
+          <ion-label>10:00 AM</ion-label>
+       </ion-chip>
+			<ion-avatar slot="start">
+				<img src="../../assets/avatar-yoda.png">
+			</ion-avatar>
+			<ion-label>
+				<h2>Ferris McYoda</h2>
+				<h3>(952) 543-2345</h3>
+				<p>Personal Banking: Retirement account</p>
+			</ion-label>
+		</ion-item>
+		
+		
+	</ion-list>
 </ion-content>
