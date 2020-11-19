@@ -114,6 +114,4 @@ export class CommunicatorPage implements OnInit {
   ngOnInit() {
   }
 
-
-
 }

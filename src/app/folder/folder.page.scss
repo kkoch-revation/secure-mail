@@ -28,3 +28,6 @@
 #container a {
   text-decoration: none;
 }*/
+ion-note.rev-timestamp::slotted {
+    margin: auto 0; padding: 0; font-size: 0.875em;
+}

@@ -30,7 +30,7 @@
 					  <div class="rev-menu-mail ">
 							
 							<ion-header>
-								<ion-toolbar color="medium">
+								<ion-toolbar color="light">
 									<ion-title>Secure Mail</ion-title>
 								</ion-toolbar>
 							</ion-header>
@@ -50,7 +50,7 @@
 						
 						<div class="rev-menu-communicator">
 						  <ion-header>
-								<ion-toolbar color="medium">
+								<ion-toolbar color="light">
 									<ion-title>Communicator</ion-title>
 								</ion-toolbar>
 							</ion-header>
@@ -59,13 +59,13 @@
 								<ion-list-header>LinkLive 9</ion-list-header>
 							  <ion-note style="margin-bottom: 0.25em">kkoch@revation.com</ion-note>
 								<ion-searchbar showCancelButton="focus"></ion-searchbar>
-								<ion-menu-toggle auto-hide="false" *ngFor="let p of communicatorFolders; let i = index">
+								<!--ion-menu-toggle auto-hide="false" *ngFor="let p of communicatorFolders; let i = index">
 									<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
 										<ion-icon size="large" slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
 										<ion-label>{{ p.title }}</ion-label>
 										<ion-badge color="{{ p.color }}">{{ p.badge }}</ion-badge>
 									</ion-item>
-								</ion-menu-toggle>
+								</ion-menu-toggle-->
 
 								<ion-item-divider color="light"><ion-label>Recent Sessions</ion-label></ion-item-divider>
 								<ion-item button (click)="buttonClick()">
@@ -163,7 +163,7 @@
 						</div>
 						<div class="rev-menu-contacts ">
 						<ion-header>
-								<ion-toolbar color="medium">
+								<ion-toolbar color="light">
 									<ion-title>Contacts</ion-title>
 								</ion-toolbar>
 							</ion-header>

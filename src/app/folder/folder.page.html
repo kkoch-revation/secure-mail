@@ -1,9 +1,14 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="medium">
+  <ion-toolbar color="light">
     <ion-buttons slot="start">
       <ion-menu-button color="light"></ion-menu-button>
     </ion-buttons>
     <ion-title>{{ folder }}</ion-title>
+		<ion-buttons slot="end">
+			<ion-button>
+				
+			</ion-button>
+		</ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -15,24 +20,39 @@
 		<!--h1><strong class="capitalize">{{ folder }}</strong></h1-->
 			<ion-list  class="">
 					<ion-item-divider color="light"><ion-label>Today</ion-label></ion-item-divider>
-					<ion-item button (click)="buttonClick()">
-						<ion-label>
-							<h2><ion-icon name="mail" color="primary" style="position: relative; top: 0.175em; margin-right: 0.5em;"></ion-icon><b>Doug Fleming</b></h2>
-							<p>11/13/20, 10:08 AM | Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-						</ion-label>
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-luke.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-md-down">
-							<ion-button><ion-icon slot="icon-only" name="arrow-undo-sharp"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-buttons slot="end" class="ion-hide-md-down">
-							<ion-button><ion-icon slot="icon-only" name="archive-sharp"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="trash-sharp"></ion-icon></ion-button>
-						</ion-buttons>
-					</ion-item>
+					<ion-item-sliding>
+						<ion-item button (click)="buttonClick()">
+							<ion-avatar slot="start">
+								<img src="../../assets/avatar-luke.png">
+							</ion-avatar>
+							<ion-label style="display: relative;">
+								
+								<h2><ion-icon name="mail" color="primary" style="position: relative; top: 0.175em; margin-right: 0.5em;"></ion-icon><b>Doug Fleming</b></h2>
+								
+								<h3>Message subject lorem ipsum</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing sit amet, consectetur adipiscing</p>
+								
+								<!--span style="font-size: 0.875em; color: var(--ion-color-medium); position: absolute; top: 1.125em; right: 1em; margin-left: 0.5em;">11/13/20, 10:08 AM</span-->
+							</ion-label>
+							
+							<ion-buttons slot="end" class="ion-hide-md-down">
+								<ion-button><ion-icon slot="icon-only" name="arrow-undo-sharp"></ion-icon></ion-button>
+								<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses-sharp"></ion-icon></ion-button>
+								<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+							</ion-buttons>
+							<ion-buttons slot="end" class="ion-hide-md-down">
+								<ion-button><ion-icon slot="icon-only" name="archive-sharp"></ion-icon></ion-button>
+								<ion-button><ion-icon slot="icon-only" name="trash-sharp"></ion-icon></ion-button>
+							</ion-buttons>
+							<ion-note class="rev-timestamp" slot="end">
+								11/13/20 10:08 AM
+							</ion-note>
+
+						</ion-item>
+						<ion-item-options side="end">
+							<ion-item-option color="danger" (click)="delete(item)">Delete</ion-item-option>
+						</ion-item-options>
+					</ion-item-sliding>
 					
 					<ion-item button (click)="buttonClick()">
 						<ion-label>

@@ -97,7 +97,7 @@
   .rev-media-container {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    border-left: 1px solid var(--ion-color-light-shade);
 
     //height: calc(100vh - 135px);
     display: grid;
@@ -107,15 +107,15 @@
   .rev-chat-container {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
-    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    border-left: 1px solid var(--ion-color-light-shade);
     display: grid;
-    grid-template-rows: 55px 1fr 80px 55px;
+    grid-template-rows: 55px 1fr 80px 49px;
     overflow-x: hidden;
   }
   .rev-sessions-container {
     grid-column: 4 / 5;
     grid-row: 1 / 2;
-    border-left: 1px solid rgba(0, 0, 0, 0.25);
+    border-left: 1px solid var(--ion-color-light-shade);
     display: grid;
     grid-template-rows: 55px 1fr;
     overflow-x: hidden;
@@ -123,7 +123,7 @@
   .rev-controls-container {
     grid-column: 1 / 5;
     grid-row: 2 / 3;
-    background-color: #cccccc;
+    background-color: var(--ion-color-light);
     height: 55px;
     overflow-x: hidden;
   }
@@ -134,11 +134,10 @@
     row-gap: 10px;
     grid-column: 1 / 5;
     grid-row: 3 / 4;
-    background-color: #cccccc;
-    //height: 60px;
-    background-color: #555;
-    padding: 10px;
+    background-color: var(--ion-color-light);
+    padding: 10px 50px;
     overflow-y: hidden;
+		border-top: 1px solid var(--ion-color-light-shade);
   }
 }
 @media (min-width: 1200px) {
@@ -152,15 +151,16 @@
   grid-template-rows: 15px 1fr;
   height: 60px;
   min-height: 60px;
-  background-color: #fff;
   .rev-label {
     grid-column: 1 / 3;
     grid-row: 1 / 2;
+		display: grid;
+		place-items: center;
     background-color: rgba(0, 0, 0, 0.125);
-    height: 1.3em;
+    height: 1.5em;
     font-size: 0.7em;
-    line-height: 1.3em;
-    text-align: center;
+    line-height: 1.5em;
+    
     text-transform: uppercase;
     font-weight: 500;
     overflow: hidden;
@@ -172,32 +172,42 @@
     place-items: center;
     padding: 5px;
     font-size: 2em;
+		color: #ffffff;
   }
 }
+.rev-tile.success {
+		background-color: var(--ion-color-success);
+	}
+	.rev-tile.warning {
+		background-color: var(--ion-color-warning);
+	}
+	.rev-tile.danger {
+		background-color: var(--ion-color-danger);
+	}
 
 .rev-grid-communicator.rev-queues {
-  grid-template-columns: 1fr 0px 0px 0px;
+  grid-template-columns: 1fr 0px 0px 0px; // show Queues only
 }
 .rev-grid-communicator.rev-media {
-  grid-template-columns: 0px 1fr 0px 0px;
+  grid-template-columns: 0px 1fr 0px 0px; // show Media only
 }
 .rev-grid-communicator.rev-chat {
-  grid-template-columns: 0px 0px 1fr 0px;
+  grid-template-columns: 0px 0px 1fr 0px; // show Chat only
 }
 .rev-grid-communicator.rev-sessions {
-  grid-template-columns: 0px 0px 0px 1fr;
+  grid-template-columns: 0px 0px 0px 1fr; // show Sessions only
 }
 .rev-grid-communicator.rev-chatSessions {
-  grid-template-columns: 0px 0px 1fr 0.5fr;
+  grid-template-columns: 0px 0px 1fr 0.5fr; // show Chat & Sessions
 }
 .rev-grid-communicator.rev-chatMedia {
-  grid-template-columns: 0px 3fr 1fr 0px;
+  grid-template-columns: 0px 3fr 1fr 0px; // show Chat & Media
 }
 .rev-grid-communicator.rev-noMedia {
-  grid-template-columns: 0.5fr 0px 1fr 0.5fr;
+  grid-template-columns: 0.5fr 0px 1fr 0.5fr; // show All No Media
 }
 .rev-grid-communicator.rev-noMetrics {
-  grid-template-rows: 1fr 55px 0px;
+  grid-template-rows: 1fr 55px 0px; // toggle metrics on and off
   .rev-metrics-container {
     height: 0;
     display: none;
@@ -205,41 +215,6 @@
   }
 }
 
-// Filler styles for updated GRID happenings
-
-/*
-
-.rev-queues-container > div,
-.rev-media-container > div,
-.rev-chat-container > div,
-.rev-sessions-container > div {
-  background-color: #666;
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
-  display: grid;
-  place-items: center;
-  color: #ccc;
-  h1 {
-    font-weight: 300;
-  }
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.5em 0.75em;
-}
-
-*/
-
-// MODULES //
-
-// MEDIA MODULE //
-
-/*
-.rev-grid-media-module {
-	grid-template-rows: 55px 1fr;
-	height: calc(100vh - 114px);
-}
-*/	
 	.rev-video-grid-container {
 		width: 100%;
 		height: calc(100% - 0);
@@ -309,6 +284,7 @@
 	grid-row: 2 / 3;
 	padding: 1em;
 	overflow-y: auto;
+	background-color: var(--ion-background-color);
 }
 .rev-chat {
 
@@ -317,7 +293,7 @@
 .rev-message-input {
 	grid-row: 3 / 4;
 	height: 81px;
-	border-top: 1px solid var(--ion-color-medium);
+	border-top: 1px solid var(--ion-color-light-shade);
 	
 	ion-item {
 		--border-color: transparent;
@@ -345,18 +321,12 @@
 	}
 }
 	.rev-message-toolbar {
-	height: 42px;
-	border-top: 1px solid var(--ion-color-medium);
+	height: 48px;
+	border-top: 1px solid var(--ion-color-light-shade);
+		//background-color: var(--ion-color-light);
 	z-index: 0;
 		display: flex;
 		align-items: center;
-	/*ion-toolbar {
-		height: 42px;
-		background-color: cadetblue;
-	}
-	ion-toolbar .toolbar-container {
-		  height: 42px;
-	  }*/
 }
 
 
@@ -371,8 +341,8 @@
 		margin: 0.25em 0.625em 0.625em 0.625em;
 	}
 	ion-card {
-		border: 1px solid var(--ion-color-medium);
-		border-left: 10px solid var(--ion-color-medium);
+		border: 1px solid var(--ion-color-light-shade);
+		border-left: 10px solid var(--ion-color-light-shade);
 		/*
 		ion-button {
 			position: absolute;
@@ -412,10 +382,12 @@
 // COMMUNICATOR TOOLBAR
 .rev-toolbar {
 	height: 57px;
-	border-top: 1px solid var(--ion-color-medium);
+	border-top: 1px solid var(--ion-color-light-shade);
+	background-color: var(--ion-color-light);
 	z-index: +1;
 	ion-toolbar {
 		height: 56px;
+		//background-color: var(--ion-color-light);
 	}
 	ion-toolbar .toolbar-container {
 		  height: 56px;
@@ -467,7 +439,7 @@
   left: -10px;
   width: 10px;
   height: 20px;
-  background: white;
+  background: var(--ion-background-color);
   border-bottom-right-radius: 10px;
 }
 
@@ -476,7 +448,7 @@
 }
 
 .mine .message {
-  color: white;
+  color: var(--ion-color-primary-contrast);
   margin-left: 25%;
   //background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
 	background: var(--ion-color-primary);
@@ -506,8 +478,27 @@
   right: -10px;
   width: 10px;
   height: 20px;
-  background: white;
+  background: var(--ion-background-color);
   border-bottom-left-radius: 10px;
+}
+@media (prefers-color-scheme: light) {
+	.mine .message.last:after, .yours .message.last:after {
+		background: #ffffff;
+	}
+}
+
+// Queue Collapsible list groups
+.rev-queues-container {
+	h2 {
+		font-size: 1.125em;
+		font-weight: 500;
+	}
+	ion-item.rev-item {
+			--inner-padding-end: 0.25em; // maximize space
+		ion-note {
+			font-size: 0.875em;
+		}
+	}
 }
 
 // METRICS 

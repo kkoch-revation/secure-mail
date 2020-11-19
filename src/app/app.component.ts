@@ -64,37 +64,31 @@ export class AppComponent implements OnInit {
         title: 'Outbox',
         url: '/folder/Outbox',
         icon: 'paper-plane',
-        badge: ''
       },
       {
         title: 'Calls',
         url: '/folder/Favorites',
-        icon: 'call',
-        badge: ''
+        icon: 'call'
       },
       {
         title: 'Chats',
         url: '/folder/Favorites',
-        icon: 'chatbox-ellipses',
-        badge: ''
+        icon: 'chatbox-ellipses'
       },
       {
         title: 'Favorites',
         url: '/folder/Favorites',
-        icon: 'heart',
-        badge: ''
+        icon: 'heart'
       },
       {
         title: 'Archived',
         url: '/folder/Archived',
-        icon: 'archive',
-        badge: ''
+        icon: 'archive'
       },
       {
         title: 'Trash',
         url: '/folder/Trash',
-        icon: 'trash',
-        badge: ''
+        icon: 'trash'
       },
       {
         title: 'Spam',
