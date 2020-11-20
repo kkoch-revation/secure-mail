@@ -9,7 +9,78 @@ export class CommunicatorPage implements OnInit {
 
   constructor() { }
 
+  defaultLayout() {
+    var element = document.getElementById("rev-flex-grid");
+    element.classList.add("layout-0");
+    element.classList.remove(
+      "showAll",
+      "layout-1",
+      "layout-2",
+      "layout-3",
+      "layout-4"
+    );
+  }
   showAll() {
+    var element = document.getElementById("rev-flex-grid");
+    element.classList.add("showAll");
+    element.classList.remove(
+      "layout-0",
+      "layout-1",
+      "layout-2",
+      "layout-3",
+      "layout-4"
+    );
+  }
+  layout1() {
+    var element = document.getElementById("rev-flex-grid");
+    element.classList.add("layout-1");
+    element.classList.remove(
+      "layout-0",
+      "showAll",
+      "layout-2",
+      "layout-3",
+      "layout-4"
+    );
+  }
+  layout2() {
+    var element = document.getElementById("rev-flex-grid");
+    element.classList.add("layout-2");
+    element.classList.remove(
+      "layout-0",
+      "showAll",
+      "layout-1",
+      "layout-3",
+      "layout-4"
+    );
+  }
+  layout3() {
+    var element = document.getElementById("rev-flex-grid");
+    element.classList.add("layout-3");
+    element.classList.remove(
+      "layout-0",
+      "showAll",
+      "layout-1",
+      "layout-2",
+      "layout-4"
+    );
+  }
+  layout4() {
+    var element = document.getElementById("rev-flex-grid");
+    element.classList.add("layout-4");
+    element.classList.remove(
+      "layout-0",
+      "showAll",
+      "layout-1",
+      "layout-2",
+      "layout-3"
+    );
+  }
+  toggleMetrics() {
+    var element = document.getElementById("communicator");
+    element.classList.toggle("metrics");
+  }
+  
+  /*showAll() {
     var element = document.getElementById("communicator");
     element.classList.remove(
       "rev-queues",
@@ -111,6 +182,7 @@ export class CommunicatorPage implements OnInit {
     element.classList.toggle("rev-noMetrics");
     element.classList.remove();
   }
+  */
   ngOnInit() {
   }
 
