@@ -67,12 +67,12 @@ export class AppComponent implements OnInit {
       },
       {
         title: 'Calls',
-        url: '/folder/Favorites',
+        url: '/folder/Calls',
         icon: 'call'
       },
       {
         title: 'Chats',
-        url: '/folder/Favorites',
+        url: '/folder/Chats',
         icon: 'chatbox-ellipses'
       },
       {

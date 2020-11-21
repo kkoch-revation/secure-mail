@@ -4,80 +4,76 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-communicator',
   templateUrl: './communicator.page.html',
   styleUrls: ['./communicator.page.scss'],
+  styleUrls: ['./communicator.page.desktop.scss'],
 })
 export class CommunicatorPage implements OnInit {
 
   constructor() { }
 
-  defaultLayout() {
+  revDefault() {
     var element = document.getElementById("rev-flex-grid");
-    element.classList.add("layout-0");
+    element.classList.add("rev-default");
     element.classList.remove(
-      "showAll",
-      "layout-1",
-      "layout-2",
-      "layout-3",
-      "layout-4"
+      "rev-showAll",
+      "rev-focusQueues",
+      "rev-focusMedia",
+      "rev-focusMessages",
+      "rev-focusSessions"
     );
   }
   showAll() {
     var element = document.getElementById("rev-flex-grid");
-    element.classList.add("showAll");
+    element.classList.toggle("rev-showAll");
     element.classList.remove(
-      "layout-0",
-      "layout-1",
-      "layout-2",
-      "layout-3",
-      "layout-4"
+      "rev-focusQueues",
+      "rev-focusMedia",
+      "rev-focusMessages",
+      "rev-focusSessions"
     );
   }
-  layout1() {
+  focusQueues() {
     var element = document.getElementById("rev-flex-grid");
-    element.classList.add("layout-1");
+    element.classList.toggle("rev-focusQueues");
     element.classList.remove(
-      "layout-0",
-      "showAll",
-      "layout-2",
-      "layout-3",
-      "layout-4"
+      "rev-showAll",
+      "rev-focusMedia",
+      "rev-focusMessages",
+      "rev-focusSessions"
     );
   }
-  layout2() {
+  focusMedia() {
     var element = document.getElementById("rev-flex-grid");
-    element.classList.add("layout-2");
+    element.classList.toggle("rev-focusMedia");
     element.classList.remove(
-      "layout-0",
-      "showAll",
-      "layout-1",
-      "layout-3",
-      "layout-4"
+      "rev-showAll",
+      "rev-focusQueues",
+      "rev-focusMessages",
+      "rev-focusSessions"
     );
   }
-  layout3() {
+  focusMessages() {
     var element = document.getElementById("rev-flex-grid");
-    element.classList.add("layout-3");
+    element.classList.toggle("rev-focusMessages");
     element.classList.remove(
-      "layout-0",
-      "showAll",
-      "layout-1",
-      "layout-2",
-      "layout-4"
+      "rev-showAll",
+      "rev-focusQueues",
+      "rev-focusMedia",
+      "rev-focusSessions"
     );
   }
-  layout4() {
+  focusSessions() {
     var element = document.getElementById("rev-flex-grid");
-    element.classList.add("layout-4");
+    element.classList.toggle("rev-focusSessions");
     element.classList.remove(
-      "layout-0",
-      "showAll",
-      "layout-1",
-      "layout-2",
-      "layout-3"
+      "rev-showAll",
+      "rev-focusQueues",
+      "rev-focusMedia",
+      "rev-focusMessages"
     );
   }
   toggleMetrics() {
     var element = document.getElementById("communicator");
-    element.classList.toggle("metrics");
+    element.classList.toggle("rev-metrics");
   }
   
   /*showAll() {
