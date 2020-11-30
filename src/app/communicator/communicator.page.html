@@ -15,7 +15,7 @@
 											<ion-icon slot="icon-only" name="menu"></ion-icon>
 										</ion-button>
 									</ion-menu-toggle>
-									<ion-button (click)="focusQueues()" class="ion-hide-xl-down"><ion-icon name="file-tray-stacked-sharp" slot="icon-only"></ion-icon></ion-button>
+									<ion-button (click)="focusQueues()" class="ion-hide-xl-down"><ion-icon name="file-tray-stacked" slot="icon-only"></ion-icon></ion-button>
 								</ion-buttons>
 								<ion-title>Queues</ion-title>
 							</ion-toolbar>
@@ -34,30 +34,19 @@
 									<ion-item  class="rev-queue-heading" button="true" detail="false">
 										<ion-badge slot="start" color="medium">0</ion-badge>
 										<ion-label><b>Messages</b></ion-label>
+										<ion-icon slot="end" name="chevron-forward"></ion-icon>
 									</ion-item>
-									<!--ion-item-sliding lines="full">
-										<ion-item>
-											<ion-icon slot="start" size="small" name="ellipse-outline" color="medium"></ion-icon>
-											<ion-label>
-												No unopened messages
-											</ion-label>
-										</ion-item>
-										<ion-item-options>
-											<ion-item-option>
-												Favorite
-											</ion-item-option>
-										</ion-item-options>
-									</ion-item-sliding-->
 								</ion-item-group>
 								<ion-item-group>
 									<ion-item button="true" lines="none" detail="false" >
 										<ion-badge slot="start" color="danger">2</ion-badge>
 										<ion-label><b>Customers</b></ion-label>
-										<ion-icon slot="end" name="caret"></ion-icon>
+										<ion-icon slot="end" name="chevron-down"></ion-icon>
 									</ion-item>
 									<ion-item-sliding>
+										<app-collapse>Fred!</app-collapse>
 										<ion-item class="rev-item">
-											<ion-icon slot="start" size="small" name="chatbox-ellipses-sharp"></ion-icon>
+											<ion-icon slot="start" size="small" name="chatbox-ellipses"></ion-icon>
 											<ion-label>
 												Delores Franks
 											</ion-label>
@@ -66,7 +55,7 @@
 											</ion-note>
 											<ion-buttons slot="end" class="ion-hide-sm-down">
 												<ion-button size="" slot="end">
-													<ion-icon size="large" slot="icon-only" name="download-sharp" color="primary"></ion-icon>
+													<ion-icon size="large" slot="icon-only" name="download" color="primary"></ion-icon>
 												</ion-button>
 											</ion-buttons>
 										</ion-item>
@@ -78,7 +67,7 @@
 									</ion-item-sliding>
 									<ion-item-sliding>
 										<ion-item class="rev-item" lines="full"><!--Last list item lines=full -->
-											<ion-icon slot="start" size="small" name="call-sharp"></ion-icon>
+											<ion-icon slot="start" size="small" name="call"></ion-icon>
 											<ion-label>
 												19525025673
 											</ion-label>
@@ -87,7 +76,7 @@
 											</ion-note>
 											<ion-buttons slot="end" class="ion-hide-sm-down">
 												<ion-button size="" slot="end">
-													<ion-icon size="large" slot="icon-only" name="download-sharp" color="primary"></ion-icon>
+													<ion-icon size="large" slot="icon-only" name="download" color="primary"></ion-icon>
 												</ion-button>
 											</ion-buttons>
 										</ion-item>
@@ -111,10 +100,11 @@
 									<ion-item  class="rev-queue-heading" button="true" detail="false">
 										<ion-badge slot="start" color="danger">1</ion-badge>
 										<ion-label><b>Messages</b></ion-label>
+										<ion-icon slot="end" name="chevron-down"></ion-icon>
 									</ion-item>
 									<ion-item-sliding>
 										<ion-item class="rev-item">
-											<ion-icon slot="start" size="small" name="mail-sharp"></ion-icon>
+											<ion-icon slot="start" size="small" name="mail"></ion-icon>
 											<ion-label>
 												Marjorie Stevens
 											</ion-label>
@@ -123,7 +113,7 @@
 											</ion-note>
 											<ion-buttons slot="end" class="ion-hide-sm-down">
 												<ion-button size="" slot="end">
-													<ion-icon size="large" slot="icon-only" name="download-sharp" color="primary"></ion-icon>
+													<ion-icon size="large" slot="icon-only" name="download" color="primary"></ion-icon>
 												</ion-button>
 											</ion-buttons>
 										</ion-item>
@@ -138,10 +128,11 @@
 									<ion-item button="true" detail="false" >
 										<ion-badge slot="start" color="danger">2</ion-badge>
 										<ion-label><b>Customers</b></ion-label>
+										<ion-icon slot="end" name="chevron-down"></ion-icon>
 									</ion-item>
 									<ion-item-sliding>
 										<ion-item class="rev-item">
-											<ion-icon slot="start" size="small" name="chatbox-ellipses-sharp"></ion-icon>
+											<ion-icon slot="start" size="small" name="chatbox-ellipses"></ion-icon>
 											<ion-label>
 												Ned Turpin
 											</ion-label>
@@ -150,7 +141,7 @@
 											</ion-note>
 											<ion-buttons slot="end" class="ion-hide-sm-down">
 												<ion-button size="" slot="end">
-													<ion-icon size="large" slot="icon-only" name="download-sharp" color="primary"></ion-icon>
+													<ion-icon size="large" slot="icon-only" name="download" color="primary"></ion-icon>
 												</ion-button>
 											</ion-buttons>
 										</ion-item>
@@ -162,7 +153,7 @@
 									</ion-item-sliding>
 									<ion-item-sliding>
 										<ion-item class="rev-item" lines="full"><!--Last list item lines=full -->
-											<ion-icon slot="start" size="small" name="call-sharp"></ion-icon>
+											<ion-icon slot="start" size="small" name="call"></ion-icon>
 											<ion-label>
 												19523210987
 											</ion-label>
@@ -171,7 +162,7 @@
 											</ion-note>
 											<ion-buttons slot="end" class="ion-hide-sm-down">
 												<ion-button size="" slot="end">
-													<ion-icon size="large" slot="icon-only" name="download-sharp" color="primary"></ion-icon>
+													<ion-icon size="large" slot="icon-only" name="download" color="primary"></ion-icon>
 												</ion-button>
 											</ion-buttons>
 										</ion-item>
@@ -195,6 +186,7 @@
 									<ion-item  class="rev-queue-heading" button="true" lines="none" detail="false">
 										<ion-badge slot="start" color="medium">0</ion-badge>
 										<ion-label><b>Messages</b></ion-label>
+										<ion-icon slot="end" name="chevron-down"></ion-icon>
 									</ion-item>
 									<ion-item-sliding lines="full">
 										<ion-item>
@@ -214,10 +206,11 @@
 									<ion-item button="true" detail="false" >
 										<ion-badge slot="start" color="danger">2</ion-badge>
 										<ion-label><b>Customers</b></ion-label>
+										<ion-icon slot="end" name="chevron-down"></ion-icon>
 									</ion-item>
 									<ion-item-sliding>
 										<ion-item class="rev-item">
-											<ion-icon slot="start" size="small" name="chatbox-ellipses-sharp"></ion-icon>
+											<ion-icon slot="start" size="small" name="chatbox-ellipses"></ion-icon>
 											<ion-label>
 												Brent Callahan
 											</ion-label>
@@ -226,7 +219,7 @@
 											</ion-note>
 											<ion-buttons slot="end" class="ion-hide-sm-down">
 												<ion-button size="" slot="end">
-													<ion-icon size="large" slot="icon-only" name="download-sharp" color="primary"></ion-icon>
+													<ion-icon size="large" slot="icon-only" name="download" color="primary"></ion-icon>
 												</ion-button>
 											</ion-buttons>
 										</ion-item>
@@ -238,7 +231,7 @@
 									</ion-item-sliding>
 									<ion-item-sliding>
 										<ion-item class="rev-item" lines="full"><!--Last list item lines=full -->
-											<ion-icon slot="start" size="small" name="call-sharp"></ion-icon>
+											<ion-icon slot="start" size="small" name="call"></ion-icon>
 											<ion-label>
 												19523210987
 											</ion-label>
@@ -247,7 +240,7 @@
 											</ion-note>
 											<ion-buttons slot="end" class="ion-hide-sm-down">
 												<ion-button size="" slot="end">
-													<ion-icon size="large" slot="icon-only" name="download-sharp" color="primary"></ion-icon>
+													<ion-icon size="large" slot="icon-only" name="download" color="primary"></ion-icon>
 												</ion-button>
 											</ion-buttons>
 										</ion-item>
@@ -273,7 +266,7 @@
 											<ion-icon slot="icon-only" name="menu"></ion-icon>
 										</ion-button>
 									</ion-menu-toggle>
-									<ion-button (click)="focusMedia()" class="ion-hide-xl-down"><ion-icon name="videocam-sharp" slot="icon-only"></ion-icon></ion-button>
+									<ion-button (click)="focusMedia()" class="ion-hide-xl-down"><ion-icon name="videocam" slot="icon-only"></ion-icon></ion-button>
 								</ion-buttons>
 								<ion-title>Video &amp; Sharing</ion-title>
 							</ion-toolbar>
@@ -289,7 +282,7 @@
 									<div class="rev-video-parent"><div class="rev-video"><img src="../../assets/video-05.jpg" alt=""/></div></div>
 									<div class="rev-video-parent"><div class="rev-video"><img src="../../assets/video-06.jpg" alt=""/></div></div>
 									<div class="rev-video-parent"><div class="rev-video"><img src="../../assets/video-07.jpg" alt=""/></div></div>
-								</div>
+								</div-->
 								<div class="rev-media-grid">
 									<div class="rev-video-parent"><div class="rev-video"><ion-icon size="large" name="person" color="light"></ion-icon></div></div>
 									<div class="rev-video-parent"><div class="rev-video"><ion-icon size="large" name="person" color="light"></ion-icon></div></div>
@@ -299,7 +292,7 @@
 									<div class="rev-video-parent"><div class="rev-video"><ion-icon size="large" name="person" color="light"></ion-icon></div></div>
 									<div class="rev-video-parent"><div class="rev-video"><ion-icon size="large" name="person" color="light"></ion-icon></div></div>
 								</div>
-							</div-->
+							
 						</ion-content>
 					</div>
 				</div>
@@ -313,7 +306,7 @@
 												<ion-icon slot="icon-only" name="menu"></ion-icon>
 											</ion-button>
 										</ion-menu-toggle>
-										<ion-button (click)="focusMessages()" class="ion-hide-xl-down"><ion-icon name="chatbox-ellipses-sharp" slot="icon-only"></ion-icon></ion-button>
+										<ion-button (click)="focusMessages()" class="ion-hide-xl-down"><ion-icon name="chatbox-ellipses" slot="icon-only"></ion-icon></ion-button>
 									</ion-buttons>
 									<ion-title>Messages</ion-title>			
 								</ion-toolbar>
@@ -407,7 +400,7 @@
 									</ion-buttons>
 									<ion-buttons slot="end">
 										<ion-button>
-											<ion-icon slot="icon-only" name="keypad-outline" size="small" color="medium"></ion-icon>
+											<ion-icon slot="icon-only" name="keypad" size="small" color="medium"></ion-icon>
 										</ion-button>
 									</ion-buttons>
 									</ion-toolbar>
@@ -425,7 +418,7 @@
 											<ion-icon slot="icon-only" name="menu"></ion-icon>
 										</ion-button>
 									</ion-menu-toggle>
-									<ion-button (click)="focusSessions()" class="ion-hide-xl-down"><ion-icon name="people-circle-sharp" slot="icon-only"></ion-icon></ion-button>
+									<ion-button (click)="focusSessions()" class="ion-hide-xl-down"><ion-icon name="people-circle" slot="icon-only"></ion-icon></ion-button>
 								</ion-buttons>
 								<ion-title>Sessions</ion-title>
 							</ion-toolbar>
@@ -437,10 +430,10 @@
 									<ion-item>
 										<a href="./communicator/communicator"  slot="end"><ion-icon size="small" name="close-circle" class="ion-no-padding"></ion-icon></a>
 										<ion-label class="ion-no-padding">Richard Berghoffensteiner</ion-label>
-										<ion-icon class="activity-indicator" size="small" name="call-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="videocam-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="desktop-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses-sharp" color="success"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="call"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="videocam"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="desktop"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses" color="success"></ion-icon>
 									</ion-item>
 									<span class="session-detail">04:45</span>
 								</ion-list>
@@ -450,10 +443,10 @@
 									<ion-item>
 										<a href="./communicator/communicator"  slot="end"><ion-icon size="small" name="close-circle" class="ion-no-padding"></ion-icon></a>
 										<ion-label class="ion-no-padding">Jaime Epeneza</ion-label>
-										<ion-icon class="activity-indicator" size="small" name="call-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="videocam-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="desktop-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses-sharp"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="call"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="videocam"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="desktop"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses"></ion-icon>
 									</ion-item>
 									<span class="session-detail">32:59</span>
 								</ion-list>
@@ -463,40 +456,40 @@
 									<ion-item>
 										<a href="./communicator/communicator"  slot="end"><ion-icon size="small" name="close-circle" class="ion-no-padding"></ion-icon></a>
 										<ion-label class="ion-no-padding">Charlene Bibbs</ion-label>
-										<ion-icon class="activity-indicator" size="small" name="call-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="videocam-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="desktop-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses-sharp"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="call"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="videocam"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="desktop"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses"></ion-icon>
 									</ion-item>
 									<ion-item>
 										<a href="./communicator/communicator"  slot="end"><ion-icon size="small" name="close-circle" class="ion-no-padding"></ion-icon></a>
 										<ion-label class="ion-no-padding">Doreen Carlton</ion-label>
-										<ion-icon class="activity-indicator" size="small" name="call-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="videocam-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="desktop-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses-sharp"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="call"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="videocam"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="desktop"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses"></ion-icon>
 									</ion-item>
 									<ion-item>
 										<a href="./communicator/communicator"  slot="end"><ion-icon size="small" name="close-circle" class="ion-no-padding"></ion-icon></a>
 										<ion-label class="ion-no-padding">Evelyn Richardson</ion-label>
-										<ion-icon class="activity-indicator" size="small" name="call-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="videocam-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="desktop-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses-sharp"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="call"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="videocam"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="desktop"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses"></ion-icon>
 									</ion-item>
 									<span class="session-detail">12:02</span>
 								</ion-list>
 							</ion-card>
-							<ion-item-divider color="light"><ion-label>Incomplete Sessions</ion-label></ion-item-divider>
+
 							<ion-card button="true" class="session ended">
 								<ion-list>
 									<ion-item>
 										<a href="#"  slot="end"><ion-icon size="small" name="close-circle" class="ion-no-padding"></ion-icon></a>
 										<ion-label class="ion-no-padding">(123) 654-8674</ion-label>
-										<ion-icon class="activity-indicator" size="small" name="call-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="videocam-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="desktop-sharp"></ion-icon>
-										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses-sharp"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="call"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="videocam"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="desktop"></ion-icon>
+										<ion-icon class="activity-indicator" size="small" name="chatbox-ellipses"></ion-icon>
 									</ion-item>
 									<span class="session-detail">05:43</span>
 								</ion-list>
@@ -509,10 +502,10 @@
 										</ion-avatar>
 										<!--ion-buttons slot="end">
 											<ion-button><ion-icon slot="icon-only" name="recording"></ion-icon></ion-button>
-											<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+											<ion-button><ion-icon slot="icon-only" name="call"></ion-icon></ion-button>
 										</ion-buttons-->
 										<ion-label>
-											<h2>Aaron Armisten</h2>
+											<h2>Luke Skywalker</h2>
 											<h3>(952) 392-1831 ext. 2123</h3>
 										</ion-label>
 									</ion-item>
@@ -522,10 +515,10 @@
 									</ion-avatar>
 									<!--ion-buttons slot="end">
 										<ion-button><ion-icon slot="icon-only" name="recording"></ion-icon></ion-button>
-										<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+										<ion-button><ion-icon slot="icon-only" name="call"></ion-icon></ion-button>
 									</ion-buttons-->
 									<ion-label>
-										<h2>Patricia Dobbs</h2>
+										<h2>Leia Organa</h2>
 										<h3>(952) 392-1831 ext. 2118</h3>
 									</ion-label>
 								</ion-item>
@@ -535,10 +528,10 @@
 									</ion-avatar>
 									<!--ion-buttons slot="end">
 										<ion-button><ion-icon slot="icon-only" name="recording"></ion-icon></ion-button>
-										<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+										<ion-button><ion-icon slot="icon-only" name="call"></ion-icon></ion-button>
 									</ion-buttons-->
 									<ion-label>
-										<h2>Bobby Nordquist</h2>
+										<h2>Poe Dameron</h2>
 										<h3>(952) 392-1831 ext. 3939</h3>
 									</ion-label>
 								</ion-item>
@@ -548,10 +541,10 @@
 									</ion-avatar>
 									<!--ion-buttons slot="end">
 										<ion-button><ion-icon slot="icon-only" name="recording"></ion-icon></ion-button>
-										<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
+										<ion-button><ion-icon slot="icon-only" name="call"></ion-icon></ion-button>
 									</ion-buttons-->
 									<ion-label>
-										<h2>Ben Watanabe</h2>
+										<h2>Ben Kenobi</h2>
 										<h3>(952) 392-1831 ext. 2123</h3>
 									</ion-label>
 								</ion-item>
@@ -567,15 +560,15 @@
 					<ion-toolbar color="light">
 						<ion-buttons slot="start">
 							<ion-button (click)="toggleMetrics()" class="ion-hide-xl-down">
-								<ion-icon slot="icon-only" name="bar-chart-sharp"></ion-icon>
+								<ion-icon slot="icon-only" name="bar-chart"></ion-icon>
 							</ion-button>
 						</ion-buttons>
 						<!-- Buttons for mobile -->
 							<ion-buttons slot="start" class="ion-hide-xl-up">
-								<ion-button (click)="focusQueues()"><ion-icon name="file-tray-stacked-sharp" slot="icon-only"></ion-icon></ion-button>	
-								<ion-button (click)="focusMedia()"><ion-icon name="videocam-sharp" slot="icon-only"></ion-icon></ion-button>
-									<ion-button (click)="focusMessages()"><ion-icon name="chatbox-ellipses-sharp" slot="icon-only"></ion-icon></ion-button>
-									<ion-button (click)="focusSessions()"><ion-icon name="person-circle-sharp" slot="icon-only"></ion-icon></ion-button>
+								<ion-button (click)="focusQueues()"><ion-icon name="file-tray-stacked" slot="icon-only"></ion-icon></ion-button>	
+								<ion-button (click)="focusMedia()"><ion-icon name="videocam" slot="icon-only"></ion-icon></ion-button>
+									<ion-button (click)="focusMessages()"><ion-icon name="chatbox-ellipses" slot="icon-only"></ion-icon></ion-button>
+									<ion-button (click)="focusSessions()"><ion-icon name="person-circle" slot="icon-only"></ion-icon></ion-button>
 								</ion-buttons>
 							<!-- End buttons for mobile -->
 						<div class="ion-hide-xl-down" style="display: flex; justify-content: center; ">
@@ -583,10 +576,10 @@
 								<ion-button (click)="revDefault()" class="ion-hide-xl-down">
 									<ion-icon slot="icon-only" src="../../assets/icon/layout_def.svg"></ion-icon>
 								</ion-button>
-								<ion-button (click)="focusMedia()" class="ion-hide-xl-down">
+								<ion-button (click)="showMediaMessages()" class="ion-hide-xl-down">
 									<ion-icon slot="icon-only" src="../../assets/icon/layout_vc.svg"></ion-icon>
 								</ion-button>
-								<ion-button (click)="focusSessions()" class="ion-hide-xl-down">
+								<ion-button (click)="showMessagesSessions()" class="ion-hide-xl-down">
 									<ion-icon slot="icon-only" src="../../assets/icon/layout_cs.svg"></ion-icon>
 								</ion-button>
 								<ion-button (click)="showAll()" class="ion-hide-xl-down">

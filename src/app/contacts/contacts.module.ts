@@ -8,11 +8,14 @@ import { ContactsPageRoutingModule } from './contacts-routing.module';
 
 import { ContactsPage } from './contacts.page';
 
+import { ComponentsModule } from '../components/components.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     ContactsPageRoutingModule
   ],
   declarations: [ContactsPage]

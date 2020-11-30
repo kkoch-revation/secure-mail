@@ -10,7 +10,8 @@ ion-menu.md ion-content {
 }
 
 ion-menu.md ion-list {
-  padding: 20px 0;
+  //padding: 20px 0;
+	padding: 0 0;
 }
 
 ion-menu.md ion-note {
@@ -44,8 +45,8 @@ ion-menu.md ion-list#labels-list ion-list-header {
 }
 */
 ion-menu.md ion-item, ion-menu.md ion-item-divider {
-  --padding-start: 10px;
-  --padding-end: 10px;
+ // --padding-start: 10px;
+ // --padding-end: 10px;
   border-radius: 0;
 }
 
@@ -70,7 +71,8 @@ ion-menu.ios ion-content {
 }
 
 ion-menu.ios ion-list {
-  padding: 20px 0 0 0;
+  //padding: 20px 0 0 0;
+	padding: 0 0;
 }
 
 ion-menu.ios ion-note {
@@ -120,12 +122,6 @@ ion-item.selected {
 
 // APPS: CUSTOM MENU
 
-/*
-.split-pane-ios.split-pane-visible>.split-pane-side,
-.split-pane-md.split-pane-visible>.split-pane-side{
-  max-width: 20%;
-  min-width: 20%;
-}*/
 @media screen and (min-width: 992px) {
 	ion-menu{
 	max-width:315px !important;
@@ -157,7 +153,6 @@ ion-item.selected {
 	align-content:stretch;
 	width: 64px;
 	height: 100vh;
-	//background-color: var(--ion-color-dark);
 	border-right: 3px solid var(--ion-color-light);
 }
 
@@ -178,28 +173,17 @@ ion-item.selected {
 }
 
 ion-menu ion-list.rev-apps {
-	//display: grid;
-  //grid-template-rows: 64px 64px 64px 64px 64px 64px;
-	
 	padding: 0 0 0 0;
 	width: 64px;
   height: 100vh;
-	//--background: var(--ion-color-dark);
-	
 
-	
 	ion-item {
 		--padding-start: 0;
 		--padding-end:0;
 		--min-height: 56px;
-		//--background: var(--ion-color-dark);
-		//--color-hover: var(--ion-color-dark);
-
 	}
 	ion-item.selected {
-		//--background: var(--ion-color-primary);
 		--background: rgba(var(--ion-color-primary-rgb), .25);
-		//--background: var(--ion-color-dark-tint);
 	}
 	ion-icon {
 		position:absolute;
@@ -207,7 +191,7 @@ ion-menu ion-list.rev-apps {
 		right: 16px;
 		bottom: 13px;
 		left: 16px;
-		color:  var(--ion-color-dark-contrast); // variable no worky right
+		color:  var(--ion-color-dark-contrast);
 		color: rgba(255,255,255,0.85);
 	}
 	ion-item.selected ion-icon {
@@ -254,6 +238,19 @@ ion-menu.rev-main-menu ion-content, ion-menu.md.rev-main-menu ion-content, ion-m
 }
 .rev-menu-fab {
 	left: 34px;
+}
+
+ion-label.rev-h1 {
+	margin-top: 16px;
+}
+
+// Speed Dials List
+.rev-speedDials {
+	ion-item-divider {
+		ion-label {
+			text-transform: uppercase;
+		}
+	}
 }
 
 // REV Content Wrapper 

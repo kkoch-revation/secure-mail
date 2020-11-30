@@ -86,7 +86,7 @@
 @media (min-width: 1200px) {
 
 }
-// Configure the internal grids and child containers for these individual columns
+// Configure the internal vertical grids and child containers for these individual columns
 .rev-queues-container {
   height: 100%;
   display: grid;
@@ -118,7 +118,7 @@
 .rev-message-window {
 	grid-row: 2 / 3;
 	overflow-y: auto;
-	background-color: var(--ion-background-color);
+	//background-color: var(--ion-background-color);
 	.rev-chat {
 		padding: 0 1em;
 	}

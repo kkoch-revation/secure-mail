@@ -176,7 +176,6 @@
 .rev-message-window {
   grid-row: 2 / 3;
   overflow-y: auto;
-  background-color: var(--ion-background-color);
 }
 .rev-message-window .rev-chat {
   padding: 0 1em;

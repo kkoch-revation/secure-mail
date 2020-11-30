@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { CommunicatorPageRoutingModule } from './communicator-routing.module';
 
 import { CommunicatorPage } from './communicator.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     CommunicatorPageRoutingModule
   ],
   declarations: [CommunicatorPage]

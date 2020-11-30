@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-communicator',
   templateUrl: './communicator.page.html',
-  styleUrls: ['./communicator.page.scss'],
-  styleUrls: ['./communicator.page.desktop.scss'],
+  styleUrls: ['./communicator.page.scss', './communicator.desktop.scss']
 })
 export class CommunicatorPage implements OnInit {
 
@@ -15,6 +14,32 @@ export class CommunicatorPage implements OnInit {
     element.classList.add("rev-default");
     element.classList.remove(
       "rev-showAll",
+      "rev-mediaMessages",
+      "rev-messagesSessions",
+      "rev-focusQueues",
+      "rev-focusMedia",
+      "rev-focusMessages",
+      "rev-focusSessions"
+    );
+  }
+  showMediaMessages() {
+    var element = document.getElementById("rev-flex-grid");
+    element.classList.toggle("rev-mediaMessages");
+    element.classList.remove(
+      "rev-showAll",
+      "rev-messagesSessions",
+      "rev-focusQueues",
+      "rev-focusMedia",
+      "rev-focusMessages",
+      "rev-focusSessions"
+    );
+  }
+  showMessagesSessions() {
+    var element = document.getElementById("rev-flex-grid");
+    element.classList.toggle("rev-messagesSessions");
+    element.classList.remove(
+      "rev-showAll",
+      "rev-mediaMessages",
       "rev-focusQueues",
       "rev-focusMedia",
       "rev-focusMessages",
@@ -25,6 +50,8 @@ export class CommunicatorPage implements OnInit {
     var element = document.getElementById("rev-flex-grid");
     element.classList.toggle("rev-showAll");
     element.classList.remove(
+      "rev-mediaMessages",
+      "rev-messagesSessions",
       "rev-focusQueues",
       "rev-focusMedia",
       "rev-focusMessages",
@@ -36,6 +63,8 @@ export class CommunicatorPage implements OnInit {
     element.classList.toggle("rev-focusQueues");
     element.classList.remove(
       "rev-showAll",
+      "rev-mediaMessages",
+      "rev-messagesSessions",
       "rev-focusMedia",
       "rev-focusMessages",
       "rev-focusSessions"
@@ -46,6 +75,8 @@ export class CommunicatorPage implements OnInit {
     element.classList.toggle("rev-focusMedia");
     element.classList.remove(
       "rev-showAll",
+      "rev-mediaMessages",
+      "rev-messagesSessions",
       "rev-focusQueues",
       "rev-focusMessages",
       "rev-focusSessions"
@@ -56,6 +87,8 @@ export class CommunicatorPage implements OnInit {
     element.classList.toggle("rev-focusMessages");
     element.classList.remove(
       "rev-showAll",
+      "rev-mediaMessages",
+      "rev-messagesSessions",
       "rev-focusQueues",
       "rev-focusMedia",
       "rev-focusSessions"
@@ -66,6 +99,8 @@ export class CommunicatorPage implements OnInit {
     element.classList.toggle("rev-focusSessions");
     element.classList.remove(
       "rev-showAll",
+      "rev-mediaMessages",
+      "rev-messagesSessions",
       "rev-focusQueues",
       "rev-focusMedia",
       "rev-focusMessages"

@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<!--ion-header [translucent]="true">
   <ion-toolbar color="light">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
@@ -10,9 +10,23 @@
 			</ion-button>
 		</ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-header-->
 
-<ion-content [fullscreen]="true">
+
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ folder }}</ion-title>
+		<ion-buttons slot="end">
+			<ion-button color="primary">
+				<ion-icon slot="icon-only" name="pencil"></ion-icon>
+			</ion-button>
+		</ion-buttons>
+  </ion-toolbar>
+
+
+<ion-content>
 	<ion-toolbar class="rev-padding-50" style="z-index: 0;">
 		<ion-searchbar slot="start" placeholder="Search"></ion-searchbar>
   </ion-toolbar> 

@@ -8,8 +8,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'settings/:id',
-    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+    path: 'dashboard/:id',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
     path: 'communicator/:id',
@@ -20,10 +20,6 @@ const routes: Routes = [
     loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
   },
   {
-    path: 'dashboard/:id',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
-  },
-  {
     path: 'appointments/:id',
     loadChildren: () => import('./appointments/appointments.module').then( m => m.AppointmentsPageModule)
   },
@@ -32,9 +28,17 @@ const routes: Routes = [
     loadChildren: () => import('./contacts/contacts.module').then( m => m.ContactsPageModule)
   },
   {
+    path: 'settings/:id',
+    loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
+  },
+  {
+    path: 'account/:id',
+    loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
+  },
+  {
     path: 'modal',
     loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
-  }
+  },
 ];
 
 @NgModule({

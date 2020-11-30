@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
   public userMenu = [
     {
       title: 'Account Settings',
-      url: '/settings/Settings',
+      url: '/account/Account',
       icon: 'person-circle'
     },
     {
@@ -50,6 +50,71 @@ export class AppComponent implements OnInit {
       url: '/settings/Settings',
       icon: 'cog'
     }
+  ];
+
+  public speedDialsInternal = [
+    {
+      name: 'Front Desk',
+      number: '(952) 392-1831',
+      ext: '5000'
+    },
+    {
+      name: 'Vicki Helms',
+      number: '(952) 392-1831',
+      ext: '5353'
+    },
+    {
+      name: 'Sarah Dansby',
+      number: '(952) 392-1831',
+      ext: '5329'
+    },
+  ];
+
+  public speedDialsExternal = [
+    {
+      name: 'Central Processing',
+      number: '(952) 392-1831',
+      ext: '2223'
+    },
+    {
+      name: 'Interpreter Services - Spanish',
+      number: '(952) 392-1831',
+      ext: '4445'
+    },
+    {
+      name: 'Interpreter Services - French',
+      number: '(952) 392-1831',
+      ext: '2222'
+    },
+    {
+      name: 'Interpreter Services - Japanese',
+      number: '(952) 392-1831',
+      ext: '4449'
+    },
+    {
+      name: 'Escalation Queue',
+      number: '(952) 392-1831',
+      ext: '2222'
+    },
+    
+  ];
+  public speedDialsPersonal = [
+    {
+      name: 'Carol',
+      number: '(952) 392-1831',
+      ext: '6200'
+    },
+    {
+      name: 'Steve',
+      number: '(952) 392-1831',
+      ext: '6201'
+    },
+    {
+      name: 'Jasmine',
+      number: '(952) 392-1831',
+      ext: '6232'
+    },
+    
   ];
 
     public mailPages = [
@@ -98,29 +163,6 @@ export class AppComponent implements OnInit {
         color: 'warning'
       }
     ];
-    public communicatorFolders = [
-      {
-        title: 'Sales ACD',
-        url: '/communicator/Communicator',
-        icon: 'file-tray-full',
-        badge: '7',
-        color: 'danger'
-      },
-      {
-        title: 'Service ACD',
-        url: '/communicator/Communicator',
-        icon: 'file-tray-full',
-        badge: '',
-        color: ''
-      },
-      {
-        title: 'Support ACD',
-        url: '/communicator/Communicator',
-        icon: 'file-tray-full',
-        badge: '2',
-        color: 'danger'
-      }
-     ];
     public contactFolders = [
       {
         title: 'All Contacts',
