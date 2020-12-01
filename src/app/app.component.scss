@@ -163,9 +163,10 @@ ion-item.selected {
 	overflow: hidden;
 	overflow-y:auto;
 	ion-icon {
-		margin-left:0.5rem;
-		margin-right: 0.75rem;
+		//margin-left:0rem;
+		margin-right: 0.625rem;
 	}
+	
 	/* Temp mockup styles */
 	.rev-menu-mail, .rev-menu-communicator, .rev-menu-contacts {
 		height: 100vh;
