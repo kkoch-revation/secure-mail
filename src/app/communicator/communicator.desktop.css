@@ -145,7 +145,6 @@
   .rev-column-grid.rev-focusQueues .rev-column:nth-child(4n + 1) {
     flex: 1 100%;
   }
-  .rev-column-grid.rev-focusQueues .rev-column:nth-child(4n + 2),
   .rev-column-grid.rev-focusQueues .rev-column:nth-child(4n + 3) {
     min-width: 57px;
   }
@@ -164,6 +163,10 @@
   .rev-column-grid.rev-focusQueues .rev-column:nth-child(4n + 4) ion-content {
     opacity: 0;
     height: 0px;
+  }
+  .rev-column-grid.rev-focusQueues .rev-column:nth-child(4n + 2) {
+    min-width: 66px;
+    border-left: 10px solid var(--ion-color-light-shade);
   }
 
   .rev-column-grid.rev-focusMedia .rev-column:nth-child(4n + 1),
@@ -242,6 +245,9 @@
   .rev-column-grid.rev-focusSessions .rev-column:nth-child(4n + 4) {
     flex: 1;
     border-left: 1px solid var(--ion-color-light-shade);
+  }
+  .rev-column-grid.rev-focusSessions .rev-column:nth-child(4n + 4) {
+    border-left: 10px solid var(--ion-color-light-shade);
   }
 
   .rev-grid-communicator.rev-metrics {

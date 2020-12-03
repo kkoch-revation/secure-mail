@@ -158,6 +158,9 @@
 .rev-queues-container ion-item.rev-item ion-note {
   font-size: 0.875em;
 }
+.rev-queues-container ion-item.rev-item.rev-queue {
+  border-top: 10px solid var(--ion-color-light-shade);
+}
 
 .rev-media-container {
   height: 100%;
@@ -277,48 +280,6 @@
   display: grid;
   grid-template-rows: 55px 1fr;
   overflow-x: hidden;
-}
-.rev-sessions-container .session-detail {
-  display: block;
-  margin: 0.25em 0.625em 0.625em 0.625em;
-}
-.rev-sessions-container ion-card {
-  border: 1px solid var(--ion-color-medium);
-  border-left: 10px solid var(--ion-color-medium);
-}
-.rev-sessions-container ion-card ion-item {
-  --padding-top: 0px;
-  --padding-end: 0.25em;
-  --padding-bottom: 0px;
-  --padding-start: 0.25em;
-  --inner-padding-top: 0px;
-  --inner-padding-end: 0.25em;
-  --inner-padding-bottom: 0px;
-  --inner-padding-start: 0.25em;
-}
-.rev-sessions-container ion-card ion-label {
-  font-size: 0.875em;
-  font-weight: 500;
-}
-.rev-sessions-container ion-card ion-icon.activity-indicator {
-  padding: 0 0.25em;
-}
-.rev-sessions-container ion-card.selected {
-  border-left: 10px solid var(--ion-color-success);
-}
-.rev-sessions-container ion-card.ended {
-  border-left: 10px solid var(--ion-color-danger);
-}
-.rev-sessions-container ion-card a {
-  margin: 0 0 0 5px;
-  z-index: +1;
-}
-.rev-sessions-container ion-card .list-md, .rev-sessions-container ion-card .list-ios {
-  padding-top: 0;
-  padding-bottom: 0;
-}
-.rev-sessions-container ion-card-title {
-  font-size: 1em;
 }
 
 .rev-toolbar {

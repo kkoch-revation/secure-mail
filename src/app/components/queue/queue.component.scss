@@ -1,0 +1,13 @@
+h2 {
+  font-size: 1.125em;
+  font-weight: 500;
+}
+ion-item.rev-item {
+  --inner-padding-end: 0.25em;
+}
+ion-item.rev-item ion-note {
+  font-size: 0.875em;
+}
+ion-item.rev-item.rev-queue {
+  border-top: 10px solid var(--ion-color-light-shade);
+}

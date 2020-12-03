@@ -117,7 +117,7 @@ export class AppComponent implements OnInit {
     
   ];
 
-    public mailPages = [
+  public mailPages = [
       {
         title: 'Inbox',
         url: '/folder/Inbox',
@@ -162,8 +162,8 @@ export class AppComponent implements OnInit {
         badge: '87',
         color: 'warning'
       }
-    ];
-    public contactFolders = [
+  ];
+  public contactFolders = [
       {
         title: 'All Contacts',
         url: '/contacts/Contacts',
@@ -204,8 +204,8 @@ export class AppComponent implements OnInit {
         url: '/folder/Support & Systems Engineering',
         icon: 'folder'
       }
-    ]; 
-    public revStatus = [
+  ]; 
+  public revStatus = [
       {
         title: 'Online',
         url: '',
@@ -266,7 +266,7 @@ export class AppComponent implements OnInit {
         icon: 'ellipse',
         color: 'danger'
       }
-     ];   
+  ];   
 	
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
