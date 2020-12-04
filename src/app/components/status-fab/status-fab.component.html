@@ -1,0 +1,21 @@
+<ion-fab class="rev-menu-fab" vertical="bottom" horizontal="start" slot="fixed">
+	<ion-fab-button color="success">
+		<ion-icon name="person-sharp" size="large"></ion-icon>
+	</ion-fab-button>
+	<ion-fab-list side="top">
+		<ion-card>
+			<ion-card-header color="primary">
+				<ion-card-subtitle>Karl - kkoch@revation.com</ion-card-subtitle>
+				<ion-card-title>Status</ion-card-title>
+			</ion-card-header>
+			<ion-list id="fab-app-list">
+				<ion-menu-toggle auto-hide="false" *ngFor="let p of revStatus; let i = index">
+					<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+						<ion-icon color="{{ p.color }}" slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+						<ion-label>{{ p.title }}</ion-label>
+					</ion-item>
+				</ion-menu-toggle>        
+			</ion-list>
+		</ion-card>
+	</ion-fab-list>
+</ion-fab>

@@ -1,6 +1,6 @@
 
 <ion-header lines="none">
-	<ion-toolbar >
+	<ion-toolbar  color="primary">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
@@ -13,7 +13,6 @@
 
 
 <ion-content>
-	<app-collapse></app-collapse>
 	<ion-toolbar>
 		<ion-searchbar slot="start" placeholder="Search All Contacts"></ion-searchbar>
 		<ion-buttons slot="end">
@@ -26,40 +25,8 @@
 		</ion-buttons>
   </ion-toolbar> 
 
-				<!--
-				<ion-list class="rev-list-col">
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Mark P.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Mike K.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Dave K.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>John C.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>John R.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Hani Z.</ion-label>
-				</ion-item>
-				<ion-item>
-					<ion-icon name="person-circle"  class="ion-padding-end"></ion-icon>
-					<ion-label>Karl K.</ion-label>
-				</ion-item>
-			</ion-list>
--->
-				<ion-list  class="">
-					<ion-item-divider color="light"><ion-label>A</ion-label></ion-item-divider>
+				<ion-list>
+					<ion-item-divider sticky="true" color="light"><ion-label>A</ion-label></ion-item-divider>				
 					<ion-item button (click)="buttonClick()">
 						<ion-avatar slot="start">
 							<img src="../../assets/avatar-luke.png">
@@ -69,7 +36,7 @@
 							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
 						</ion-buttons>
 						<ion-label>
-							<h2>Aaron Armisten</h2>
+							<h2>Aaron Aragon</h2>
 							<h3>(952) 392-1831 ext. 2123</h3>
 						</ion-label>
 					</ion-item>
@@ -83,7 +50,7 @@
 							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
 						</ion-buttons>
 						<ion-label>
-							<h2>Ari Amadalopolous</h2>
+							<h2>Ari Armando</h2>
 							<h3>(952) 392-1831 ext. 2120</h3>
 						</ion-label>
 					</ion-item>
@@ -118,7 +85,7 @@
 				</ion-list>
 
 				<ion-list>
-					<ion-item-divider color="light"><ion-label>B</ion-label></ion-item-divider>
+					<ion-item-divider sticky="true" color="light"><ion-label>B</ion-label></ion-item-divider>
 					<ion-item button (click)="buttonClick()">
 						<ion-avatar slot="start">
 							<img src="../../assets/avatar-leia.png">
@@ -128,7 +95,7 @@
 							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
 						</ion-buttons>
 						<ion-label>
-							<h2>Barbara Benton</h2>
+							<h2>Barbara Benson</h2>
 							<h3>(952) 392-1831 ext. 2126</h3>
 						</ion-label>
 					</ion-item>
@@ -170,12 +137,14 @@
 							<ion-button><ion-icon slot="icon-only" name="call-sharp"></ion-icon></ion-button>
 						</ion-buttons>
 						<ion-label>
-							<h2>Bilbo Baggins</h2>
+							<h2>Burton Brewster</h2>
 							<h3>(952) 392-1831 ext. 2129</h3>
 						</ion-label>
 					</ion-item>
+				</ion-list>
+				<ion-list>
 					
-					<ion-item-divider color="light"><ion-label>C</ion-label></ion-item-divider>
+					<ion-item-divider sticky="true" color="light"><ion-label>C</ion-label></ion-item-divider>
 					<ion-item button (click)="buttonClick()">
 						<ion-avatar slot="start">
 							<img src="../../assets/avatar-luke.png">
@@ -220,7 +189,7 @@
 				</ion-list>
 
 				<ion-list>
-					<ion-item-divider color="light"><ion-label>D</ion-label></ion-item-divider>
+					<ion-item-divider sticky="true" color="light"><ion-label>D</ion-label></ion-item-divider>
 					<ion-item button (click)="buttonClick()">
 						<ion-avatar slot="start">
 							<img src="../../assets/avatar-finn.png">

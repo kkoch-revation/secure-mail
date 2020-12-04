@@ -1,6 +1,7 @@
 ion-card {
-		border: 1px solid var(--ion-color-medium);
-		border-left: 10px solid var(--ion-color-medium);
+		//border: 1px solid var(--ion-color-medium);
+		//border-left: 10px solid var(--ion-color-medium);
+		border-right: 10px solid var(--ion-color-light-shade);
 		ion-item {
 			--padding-top: 0px;
 			--padding-end: 0.25em;
@@ -15,10 +16,10 @@ ion-card {
 		ion-icon.activity-indicator {padding: 0 0.25em;}
 	}
 	ion-card.selected {
-		border-left: 10px solid var(--ion-color-success);
+		border-right: 10px solid var(--ion-color-success);
 	}
 	ion-card.ended {
-		border-left: 10px solid var(--ion-color-danger);
+		border-right: 10px solid var(--ion-color-danger);
 	}
 	ion-card a {margin: 0 0 0 5px; z-index: +1;}
 	ion-card .list-md, ion-card .list-ios {

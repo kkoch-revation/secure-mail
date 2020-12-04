@@ -265,6 +265,18 @@ export class AppComponent implements OnInit {
         url: '',
         icon: 'ellipse',
         color: 'danger'
+      },
+      {
+        title: 'Appear Offline',
+        url: '',
+        icon: 'ellipse',
+        color: 'medium'
+      },
+      {
+        title: 'Sign Out',
+        url: '',
+        icon: 'log-out',
+        color: 'medium'
       }
   ];   
 	

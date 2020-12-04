@@ -1,6 +1,42 @@
 
 <div class="ion-page" id="dash">
-
+	
+	<!-- EXPERIMENTAL HEADER -->
+<ion-header lines="none" class="rev-comm-header" style="max-height: 56px; overflow: hidden; padding-top: 0;">
+	<ion-toolbar color="primary" style="max-height: 56px;">
+		<ion-buttons slot="start">
+			<ion-menu-toggle>
+				<ion-button>
+					<ion-icon slot="icon-only" name="menu"></ion-icon>
+				</ion-button>
+			</ion-menu-toggle>
+		</ion-buttons>
+		<ion-grid style="padding: 0;">
+			<ion-row>
+				<ion-col size-xs="8" size-xl="4" offset-xl="3">
+					<div>
+						<ion-searchbar slot="start" placeholder="Search Contacts"></ion-searchbar>
+					</div>
+				</ion-col>
+				<ion-col size-xs="4" size-xl="2">
+					<ion-buttons slot="">
+						<ion-button>
+							<ion-icon slot="icon-only" name="chatbox-ellipses"></ion-icon>
+						</ion-button>
+						<ion-button>
+							<ion-icon slot="icon-only" name="call"></ion-icon>
+						</ion-button>
+						<ion-button>
+							<ion-icon slot="icon-only" name="videocam"></ion-icon>
+						</ion-button>
+					</ion-buttons>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</ion-toolbar>
+</ion-header>
+	
+	
 		<div id="communicator" class="rev-grid-communicator rev-metrics">
 			<div id="rev-flex-grid" class="rev-column-grid rev-default">
 				<div class="rev-column queues">
@@ -8,14 +44,19 @@
 						<ion-header>
 							<ion-toolbar color="light">
 								<ion-buttons slot="start">
-									<ion-menu-toggle>
+									<!--ion-menu-toggle>
 										<ion-button>
 											<ion-icon slot="icon-only" name="menu"></ion-icon>
 										</ion-button>
-									</ion-menu-toggle>
+									</ion-menu-toggle-->
 									<ion-button (click)="focusQueues()" class="ion-hide-xl-down"><ion-icon name="file-tray-stacked" slot="icon-only"></ion-icon></ion-button>
 								</ion-buttons>
 								<ion-title>Queues</ion-title>
+								<ion-buttons slot="end">
+									<ion-button>
+										<ion-icon slot="icon-only" name="add"></ion-icon>
+									</ion-button>
+								</ion-buttons>
 							</ion-toolbar>
 						</ion-header>
 						<ion-content>
@@ -165,17 +206,17 @@
 						<ion-header>
 							<ion-toolbar color="light">
 								<ion-buttons slot="start">
-									<ion-menu-toggle>
+									<!--ion-menu-toggle>
 										<ion-button>
 											<ion-icon slot="icon-only" name="menu"></ion-icon>
 										</ion-button>
-									</ion-menu-toggle>
+									</ion-menu-toggle-->
 									<ion-button (click)="focusMedia()" class="ion-hide-xl-down"><ion-icon name="videocam" slot="icon-only"></ion-icon></ion-button>
 								</ion-buttons>
 								<ion-title>Video &amp; Sharing</ion-title>
 							</ion-toolbar>
 						</ion-header>
-						<ion-content>
+						<ion-content color="dark">
 							<!-- Photo examples used to show positioning and retention of aspect ratio -->
 							<!-- Icon examples used to show positioning and retention of aspect ratio -->
 							<!--div class="rev-media-grid">
@@ -205,11 +246,11 @@
 							<ion-header>
 								<ion-toolbar color="light">
 									<ion-buttons slot="start">
-										<ion-menu-toggle>
+										<!--ion-menu-toggle>
 											<ion-button>
 												<ion-icon slot="icon-only" name="menu"></ion-icon>
 											</ion-button>
-										</ion-menu-toggle>
+										</ion-menu-toggle-->
 										<ion-button (click)="focusMessages()" class="ion-hide-xl-down"><ion-icon name="chatbox-ellipses" slot="icon-only"></ion-icon></ion-button>
 									</ion-buttons>
 									<ion-title>Messages</ion-title>			
@@ -284,27 +325,27 @@
 									<ion-toolbar>
 									<ion-buttons slot="start">
 										<ion-button fill="clear">
-											<ion-icon slot="icon-only" name="happy-outline" size="small" color="medium"></ion-icon>
+											<ion-icon slot="icon-only" name="happy-outline" size="small"></ion-icon>
 										</ion-button>
 										<ion-button>
-											<ion-icon slot="icon-only" name="document-attach-outline" size="small" color="medium"></ion-icon>
+											<ion-icon slot="icon-only" name="document-attach-outline" size="small"></ion-icon>
 										</ion-button>
 										<ion-button>
-											<ion-icon slot="icon-only" name="call-outline" size="small" color="medium"></ion-icon>
+											<ion-icon slot="icon-only" name="call-outline" size="small"></ion-icon>
 										</ion-button>
 										<ion-button>
-											<ion-icon slot="icon-only" name="videocam-outline" size="small" color="medium"></ion-icon>
+											<ion-icon slot="icon-only" name="videocam-outline" size="small"></ion-icon>
 										</ion-button>
 										<ion-button>
-											<ion-icon slot="icon-only" name="desktop-outline" size="small" color="medium"></ion-icon>
+											<ion-icon slot="icon-only" name="desktop-outline" size="small"></ion-icon>
 										</ion-button>
 										<ion-button>
-											<ion-icon slot="icon-only" name="text-outline" size="small" color="medium"></ion-icon>
+											<ion-icon slot="icon-only" name="text-outline" size="small"></ion-icon>
 										</ion-button>
 									</ion-buttons>
 									<ion-buttons slot="end">
 										<ion-button>
-											<ion-icon slot="icon-only" name="keypad" size="small" color="medium"></ion-icon>
+											<ion-icon slot="icon-only" name="keypad" size="small"></ion-icon>
 										</ion-button>
 									</ion-buttons>
 									</ion-toolbar>
@@ -317,11 +358,11 @@
 						<ion-header>
 							<ion-toolbar color="light">
 								<ion-buttons slot="start">
-									<ion-menu-toggle>
+									<!--ion-menu-toggle>
 										<ion-button>
 											<ion-icon slot="icon-only" name="menu"></ion-icon>
 										</ion-button>
-									</ion-menu-toggle>
+									</ion-menu-toggle-->
 									<ion-button (click)="focusSessions()" class="ion-hide-xl-down"><ion-icon name="people-circle" slot="icon-only"></ion-icon></ion-button>
 								</ion-buttons>
 								<ion-title>Sessions</ion-title>
@@ -376,38 +417,7 @@
 				</div>
 			</div>
 			<div class="rev-metrics-collapse">
-				<div class="rev-metrics-container">
-					<div class="rev-tile success">
-						<div class="rev-label">Avg. Inbound Sessions</div>
-						<div class="rev-metric">23</div>
-						<div class="rev-metric rev-avg">236</div>
-					</div>
-					<div class="rev-tile success">
-						<div class="rev-label">Avg. Outbound Sessions</div>
-						<div class="rev-metric">4</div>
-						<div class="rev-metric rev-avg">76</div>
-					</div>
-					<div class="rev-tile warning">
-						<div class="rev-label">Avg. Handle Time</div>
-						<div class="rev-metric">5:34</div>
-						<div class="rev-metric rev-avg">27:03</div>
-					</div>
-					<div class="rev-tile success">
-						<div class="rev-label">Service Level (≤ 30s)</div>
-						<div class="rev-metric">100<span class="rev-unit">%</span></div>
-						<div class="rev-metric rev-avg">100<span class="rev-unit">%</span></div>
-					</div>
-					<div class="rev-tile success">
-						<div class="rev-label">Avg. Speed of Answer</div>
-						<div class="rev-metric">8<span class="rev-unit">s</span></div>
-						<div class="rev-metric rev-avg">6<span class="rev-unit">s</span></div>
-					</div>
-					<div class="rev-tile success">
-						<div class="rev-label">Rona</div>
-						<div class="rev-metric">18</div>
-						<div class="rev-metric rev-avg">22</div>
-					</div>
-				</div>
+				<app-agent-metrics></app-agent-metrics>
 			</div>
 		</div>
 

@@ -1,18 +1,17 @@
 <ion-header lines="none">
-<ion-toolbar>
-	<ion-buttons slot="start">
-		<ion-menu-button></ion-menu-button>
-	</ion-buttons>
-	<ion-title>Appointments</ion-title>
-	<ion-buttons slot="end">
-		<ion-button color="primary"><ion-icon name="add" slot="icon-only"></ion-icon></ion-button>
-	</ion-buttons>
-</ion-toolbar>
+	<ion-toolbar color="primary">
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>Appointments</ion-title>
+		<ion-buttons slot="end">
+			<ion-button><ion-icon name="add" slot="icon-only"></ion-icon></ion-button>
+		</ion-buttons>
+	</ion-toolbar>
 </ion-header>
-
 <ion-content>
 	<ion-list  class="">
-		<ion-item-divider color="light"><ion-label>Today</ion-label></ion-item-divider>
+		<ion-item-divider sticky="true" color="light"><ion-label>Today</ion-label></ion-item-divider>
 		<ion-item button (click)="buttonClick()">
 			<ion-chip outline slot="start">
           <ion-label>2:00 PM</ion-label>
@@ -21,7 +20,7 @@
 				<img src="../../assets/avatar-luke.png">
 			</ion-avatar>
 			<ion-label>
-				<h2>Ned Hermiston</h2>
+				<h2>Luke Skywalker</h2>
 				<h3>(952) 656-6656</h3>
 				<p>Personal Loan: Mortgage pre-approval</p>
 			</ion-label>
@@ -35,12 +34,12 @@
 				<img src="../../assets/avatar-han.png">
 			</ion-avatar>
 			<ion-label>
-				<h2>Boris Klempt</h2>
+				<h2>Han Solo</h2>
 				<h3>(952) 321-5364</h3>
 				<p>Business Banking: Business Loan</p>
 			</ion-label>
 		</ion-item>
-		<ion-item-divider color="light"><ion-label>Tomorrow 11/14/2020</ion-label></ion-item-divider>
+		<ion-item-divider sticky="true" color="light"><ion-label>Tomorrow 11/14/2020</ion-label></ion-item-divider>
 		<ion-item button (click)="buttonClick()">
 			<ion-chip outline slot="start">
           <ion-label>9:00 AM</ion-label>
@@ -49,7 +48,7 @@
 				<img src="../../assets/avatar-leia.png">
 			</ion-avatar>
 			<ion-label>
-				<h2>Nancy Duesseldorf</h2>
+				<h2>Leia Organa</h2>
 				<h3>(952) 226-0071</h3>
 				<p>Personal Checking: Checking-Plus account</p>
 			</ion-label>
@@ -63,7 +62,7 @@
 				<img src="../../assets/avatar-ben.png">
 			</ion-avatar>
 			<ion-label>
-				<h2>Steve McMillan</h2>
+				<h2>Ben Kenobi</h2>
 				<h3>(952) 656-6656</h3>
 				<p>Business Banking: Business Loan</p>
 			</ion-label>
@@ -77,13 +76,13 @@
 				<img src="../../assets/avatar-poe.png">
 			</ion-avatar>
 			<ion-label>
-				<h2>Anthony Yamaguchi</h2>
+				<h2>Poe Dameron</h2>
 				<h3>(952) 656-6656</h3>
 				<p>Business Banking: Business Loan</p>
 			</ion-label>
 		</ion-item>
 		
-		<ion-item-divider color="light"><ion-label>Monday 11/17/2020</ion-label></ion-item-divider>
+		<ion-item-divider sticky="true" color="light"><ion-label>Monday 11/17/2020</ion-label></ion-item-divider>
 		
 		<ion-item button (click)="buttonClick()">
 			<ion-chip outline slot="start">
@@ -93,7 +92,7 @@
 				<img src="../../assets/avatar-rey.png">
 			</ion-avatar>
 			<ion-label>
-				<h2>Mary Halverson</h2>
+				<h2>Rey Skywalker</h2>
 				<h3>(952) 543-2345</h3>
 				<p>Personal Banking: College savings fund</p>
 			</ion-label>
@@ -109,7 +108,7 @@
 				<img src="../../assets/avatar-yoda.png">
 			</ion-avatar>
 			<ion-label>
-				<h2>Ferris McYoda</h2>
+				<h2>Yoda</h2>
 				<h3>(952) 543-2345</h3>
 				<p>Personal Banking: Retirement account</p>
 			</ion-label>

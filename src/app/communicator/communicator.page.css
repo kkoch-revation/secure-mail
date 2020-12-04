@@ -1,10 +1,25 @@
+ion-header.rev-comm-header {
+  height: 56px;
+  max-height: 56px;
+  overflow: hidden;
+  padding-top: 0;
+}
+ion-header.rev-comm-header ion-toolbar {
+  height: 56px;
+  max-height: 56px;
+}
+
+ion-header.rev-comm-header::after {
+  background-image: none;
+}
+
 .rev-grid-communicator {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 57px 0px;
   padding: 0;
   margin: 0;
-  height: 100vh;
+  height: calc(100vh - 56px);
 }
 .rev-grid-communicator .rev-controls-container {
   grid-column: 1 / 2;
@@ -26,7 +41,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  height: calc(100vh - 57px);
+  height: calc(100vh - 122px);
   transition: all 0.3s ease-out;
 }
 .rev-column-grid .rev-column {
@@ -195,6 +210,7 @@
 
 .rev-media-grid {
   display: grid;
+  padding: 10px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-rows: minmax(1fr, 1fr);
   grid-gap: 0.5em;
@@ -202,7 +218,7 @@
 }
 
 .rev-video-parent {
-  background: rgba(0, 0, 0, 0.125);
+  background: rgba(255, 255, 255, 0.125);
   display: flex;
   justify-content: center;
   overflow-y: hidden;

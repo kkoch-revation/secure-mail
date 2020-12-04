@@ -143,7 +143,7 @@ ion-item.selected {
 }
 .rev-app-menu {
   grid-template-columns: minmax(64px, 64px) 1fr;
-	height: 100vh;
+	height: calc(100vh - 56px); // 100vh - ion-header height
   padding: 0;
   margin: 0;
 }
@@ -152,14 +152,14 @@ ion-item.selected {
 	flex-direction: column;
 	align-content:stretch;
 	width: 64px;
-	height: 100vh;
-	border-right: 3px solid var(--ion-color-light);
+	height: calc(100vh - 56px);
+	//border-right: 3px solid var(--ion-color-light);
 }
 
 
 
 .rev-menu {
-	height: 100%;
+	height: calc(100vh - 136px); // 100vh - ion-header (56px) - account component (80px)
 	overflow: hidden;
 	overflow-y:auto;
 	ion-icon {
@@ -168,9 +168,11 @@ ion-item.selected {
 	}
 	
 	/* Temp mockup styles */
+	
 	.rev-menu-mail, .rev-menu-communicator, .rev-menu-contacts {
 		height: 100vh;
 	}
+	
 }
 
 ion-menu ion-list.rev-apps {
@@ -215,7 +217,7 @@ ion-menu ion-list.rev-apps {
 @media (prefers-color-scheme: light) {
 	.rev-apps {
 		background-color: var(--ion-color-dark);
-		border-right: 3px solid var(--ion-color-light-shade);
+		//border-right: 3px solid var(--ion-color-light-shade);
 	}
 	ion-menu ion-list.rev-apps {
 		--background: var(--ion-color-dark);
@@ -229,7 +231,7 @@ ion-menu ion-list.rev-apps {
 ion-menu ion-list.rev-apps.rev-userSettings {
 	display: grid;
 	height: 100%;
-	grid-template-rows:  1fr 57px 157px;
+	grid-template-rows:  1fr 57px 135px;
 }
 ion-menu.rev-main-menu ion-content, ion-menu.md.rev-main-menu ion-content, ion-menu.ios.rev-main-menu ion-content {
 	--padding-start:0;
@@ -237,13 +239,48 @@ ion-menu.rev-main-menu ion-content, ion-menu.md.rev-main-menu ion-content, ion-m
 	--padding-top: 0;
 	--padding-bottom: 0;
 }
+
+
+
+// Status-Fab: position button and resize font and icon
 .rev-menu-fab {
-	left: 34px;
+	left: 16px;
+	bottom: 6px;
+	border: 4px solid #fff; border-radius: 10rem;
+	ion-item {
+		font-size: 1em;
+		ion-icon {
+			margin-right: 12px;
+		}
+	}
+}
+.rev-account-container {
+	position: absolute; 
+	bottom: 0; 
+	width: 100%; 
+	height: 80px;
+	padding: 0;
+	display: grid;
+	grid-template-columns: 64px 1fr;
+	background-color: var(--ion-color-light-shade);
+	border-top: 0px solid var(--ion-color-light-shade);
+	z-index: +1;
+	.rev-spacer {
+		background-color: var(--ion-color-dark);
+	}
+	.rev-user {
+		display: grid;
+		place-items: center start;
+		padding-left: 10px;
+	}
+	ion-label {
+		h2, h3 {
+			font-weight: 500;
+		}
+	}
 }
 
-ion-label.rev-h1 {
-	margin-top: 16px;
-}
+
 
 // Speed Dials List
 .rev-speedDials {
@@ -263,4 +300,39 @@ ion-label.rev-h1 {
   resize: both;
   overflow: auto;
   }
-
+// REV logo bug
+ion-label.rev-h1 {
+	margin-top: 16px;
+	h1 {
+		padding-left: 16px;
+		font-weight: 500;
+	}
+}
+ion-label.rev-h1.rev-logo {
+	margin-top: 16px;
+	h1 {
+		padding-left: 68px;
+	}
+}
+.rev-h1.rev-logo svg {
+  height: 1.5em;
+  width: 1.5em;
+  margin-right: 0.25em;
+  position: absolute;
+	top: 9px;
+  left: 15px;
+	border: 3px solid #fff;
+	border-radius: 10em;
+}
+.rev-h1.rev-logo img {
+  height: 1.625em;
+  width: 1.625em;
+  margin-right: 0.25em;
+  position: absolute;
+	top: 9px;
+  left: 13px;
+	border: 0px solid #fff;
+	border-radius: 10em;
+	-webkit-box-shadow: 0px 8px 25px -5px #FFFE5A; 
+	box-shadow: 0px 8px 25px -5px #FFFE5A;
+}
