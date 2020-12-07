@@ -1,18 +1,17 @@
 <ion-app>
   <ion-split-pane contentId="page">
     <ion-menu contentId="page" type="overlay" class="rev-main-menu">
-			<!-- EXPERIMENT -->
 			<ion-header lines="none">
-				<ion-toolbar color="primary">
+				<ion-toolbar color="secondary">
 					<ion-label class="rev-h1 rev-logo">
 						<!--h1 ><svg><use xlink:href="#R"></use></svg>Communicator</h1-->
 						<h1 ><img src="../assets/R.png" width="40" alt="Revation"/>Communicator</h1>
 					</ion-label>
 				</ion-toolbar>
 			</ion-header>
-			<!-- END EXPERIMENT -->
       <ion-content>
 				<div class="rev-grid rev-app-menu">
+					<!-- left side application menu with dark background -->
 					<div class="rev-apps">
 						<ion-list id="app-list" class="rev-apps">
 							<ion-menu-toggle auto-hide="false" *ngFor="let p of apps; let i = index">
@@ -26,15 +25,80 @@
 						<ion-list id="user-menu" class="rev-apps rev-userSettings">
 							<div class="grid-spacer"></div>	
 							<ion-menu-toggle auto-hide="false" *ngFor="let p of userMenu; let i = index">
-									<ion-item class="app-link" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
-										<ion-icon size="large"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+								<ion-item class="app-link" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+									<ion-icon size="large"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+									<ion-label>{{ p.title }}</ion-label>
+									<ion-badge color="danger">{{ p.badge }}</ion-badge>
+								</ion-item>
+							</ion-menu-toggle>
+						</ion-list>
+					</div>
+					<!-- Right side menu dynamically served based on what page you are accessing -->
+					<div class="rev-menu">
+						
+						<div class="rev-menu-dashboard">
+							<ion-toolbar>
+								<ion-label class="rev-h1"><h1>Dashboard</h1></ion-label>
+							</ion-toolbar>
+							<ion-list id="dash-list" class=""  lines="full">
+								<ion-menu-toggle auto-hide="false" *ngFor="let p of dashPages; let i = index">
+									<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+										<ion-icon slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
 										<ion-label>{{ p.title }}</ion-label>
-										<ion-badge color="danger">{{ p.badge }}</ion-badge>
+										<ion-badge color="{{ p.color }}">{{ p.badge }}</ion-badge>
 									</ion-item>
 								</ion-menu-toggle>
 							</ion-list>
-					</div>
-					<div class="rev-menu">
+						</div>
+						
+						<div class="rev-menu-communicator">
+
+							<ion-toolbar>
+								<ion-label class="rev-h1"><h1>Speed Dials</h1></ion-label>
+								<ion-buttons slot="end"><ion-button><ion-icon slot="icon-only" size="large" name="add"></ion-icon></ion-button></ion-buttons>
+							</ion-toolbar>
+							<ion-list id="communicatorFolders" class=""  lines="full">	
+								<ion-item-group class="rev-speedDials">
+									<ion-item-divider sticky="true" color="light">
+										<ion-label>Internal</ion-label>
+										<ion-icon class="mr-12" slot="end" name="chevron-down" size="small"></ion-icon>
+									</ion-item-divider>
+									<ion-menu-toggle auto-hide="false" *ngFor="let p of speedDialsInternal">
+										<ion-item  button (click)="buttonClick()">
+											<ion-label><h2>{{ p.name }}</h2><h3>{{ p.number }} ext. {{ p.ext }}</h3></ion-label>
+										</ion-item>
+									</ion-menu-toggle>
+								</ion-item-group>
+								<ion-item-group class="rev-speedDials">
+									<ion-item-divider sticky="true" color="light">
+										<ion-label>External</ion-label>
+										<ion-icon class="mr-12" slot="end" name="chevron-down" size="small"></ion-icon>
+									</ion-item-divider>
+									<ion-menu-toggle auto-hide="false" *ngFor="let p of speedDialsExternal">
+										<ion-item  button (click)="buttonClick()">
+											<ion-label><h2>{{ p.name }}</h2><h3>{{ p.number }} ext. {{ p.ext }}</h3></ion-label>
+										</ion-item>
+									</ion-menu-toggle>
+								</ion-item-group>
+								<ion-item-group class="rev-speedDials">
+									<ion-item-divider sticky="true" color="light">
+										<ion-label>Personal</ion-label>
+										<ion-icon class="mr-12" slot="end" name="chevron-down" size="small"></ion-icon>
+									</ion-item-divider>
+									<ion-menu-toggle auto-hide="false" *ngFor="let p of speedDialsPersonal">
+										<ion-item-sliding>
+											<ion-item  button (click)="buttonClick()">
+												<ion-label><h2>{{ p.name }}</h2><h3>{{ p.number }} ext. {{ p.ext }}</h3></ion-label>
+											</ion-item>
+											<ion-item-options side="end">
+												<ion-item-option color="primary" (click)="edit(item)"><ion-icon name="create" slot="icon-only" size="large"></ion-icon></ion-item-option>
+												<ion-item-option color="danger" (click)="delete(item)"><ion-icon name="trash" slot="icon-only" size="large"></ion-icon></ion-item-option>
+											</ion-item-options>
+										</ion-item-sliding>
+									</ion-menu-toggle>
+								</ion-item-group>
+							</ion-list>				
+						</div>
 						
 					  <div class="rev-menu-mail">
 							<ion-toolbar>
@@ -51,64 +115,27 @@
 							</ion-list>
 						</div>
 						
-						<div class="rev-menu-communicator">
+						<div class="rev-menu-appointments">
 							<ion-toolbar>
-								<ion-label class="rev-h1"><h1>Speed Dials</h1></ion-label>
-								<ion-buttons slot="end"><ion-button><ion-icon slot="icon-only" name="plus"></ion-icon></ion-button></ion-buttons>
+								<ion-label class="rev-h1"><h1>Appointments</h1></ion-label>
 							</ion-toolbar>
-
-							<ion-list id="communicatorFolders" class=""  lines="full">	
-								<ion-searchbar showCancelButton="focus"></ion-searchbar>
-								<ion-item-group class="rev-speedDials">
-									<ion-item-divider sticky="true" color="light">
-										<ion-label>Internal</ion-label>
-										<ion-icon slot="end" name="chevron-down" size="small"></ion-icon>
-									</ion-item-divider>
-									<ion-menu-toggle auto-hide="false" *ngFor="let p of speedDialsInternal">
-										<ion-item  button (click)="buttonClick()">
-											<ion-label><h2>{{ p.name }}</h2><h3>{{ p.number }} ext. {{ p.ext }}</h3></ion-label>
-										</ion-item>
-									</ion-menu-toggle>
-								</ion-item-group>
-								
-								<ion-item-group class="rev-speedDials">
-									<ion-item-divider sticky="true" color="light">
-										<ion-label>External</ion-label>
-										<ion-icon slot="end" name="chevron-down" size="small"></ion-icon>
-									</ion-item-divider>
-									<ion-menu-toggle auto-hide="false" *ngFor="let p of speedDialsExternal">
-										<ion-item  button (click)="buttonClick()">
-											<ion-label><h2>{{ p.name }}</h2><h3>{{ p.number }} ext. {{ p.ext }}</h3></ion-label>
-										</ion-item>
-									</ion-menu-toggle>
-								</ion-item-group>
-
-								<ion-item-group class="rev-speedDials">
-									<ion-item-divider sticky="true" color="light">
-										<ion-label>Personal</ion-label>
-										<ion-icon slot="end" name="chevron-down" size="small"></ion-icon>
-									</ion-item-divider>
-									
-									<ion-menu-toggle auto-hide="false" *ngFor="let p of speedDialsPersonal">
-										<ion-item-sliding>
-											<ion-item  button (click)="buttonClick()">
-												<ion-label><h2>{{ p.name }}</h2><h3>{{ p.number }} ext. {{ p.ext }}</h3></ion-label>
-											</ion-item>
-											<ion-item-options side="end">
-												<ion-item-option color="primary" (click)="edit(item)"><ion-icon name="create" slot="icon-only" size="large"></ion-icon></ion-item-option>
-												<ion-item-option color="danger" (click)="delete(item)"><ion-icon name="trash" slot="icon-only" size="large"></ion-icon></ion-item-option>
-											</ion-item-options>
-										</ion-item-sliding>
-										
-									</ion-menu-toggle>
-								</ion-item-group>
-							</ion-list>				
+							<ion-list id="appointment-list" class=""  lines="full">
+								<ion-menu-toggle auto-hide="false" *ngFor="let p of appointmentPages; let i = index">
+									<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+										<ion-icon slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+										<ion-label>{{ p.title }}</ion-label>
+										<ion-badge color="{{ p.color }}">{{ p.badge }}</ion-badge>
+									</ion-item>
+								</ion-menu-toggle>
+							</ion-list>
 						</div>
 						
+						
 						<div class="rev-menu-contacts">
-							<ion-item lines="none">
-								<ion-label class="rev-h1"><h1><b>Contacts</b></h1></ion-label>
-							</ion-item>
+							<ion-toolbar>
+								<ion-label class="rev-h1"><h1>Contacts</h1></ion-label>
+								<ion-buttons slot="end"><ion-button><ion-icon slot="icon-only" size="large" name="add"></ion-icon></ion-button></ion-buttons>
+							</ion-toolbar>
 							<!--ion-searchbar showCancelButton="focus"></ion-searchbar-->
 							<ion-list id="contactFolders" class=""  lines="full">
 								<!--ion-list-header>LinkLive 9</ion-list-header>

@@ -162,14 +162,14 @@ ion-item.selected {
 	height: calc(100vh - 136px); // 100vh - ion-header (56px) - account component (80px)
 	overflow: hidden;
 	overflow-y:auto;
-	ion-icon {
+	ion-icon.mr-12 {
 		//margin-left:0rem;
 		margin-right: 0.625rem;
 	}
 	
 	/* Temp mockup styles */
 	
-	.rev-menu-mail, .rev-menu-communicator, .rev-menu-contacts {
+	.rev-menu-dashboard, .rev-menu-mail, .rev-menu-communicator, .rev-menu-appointments, .rev-menu-contacts {
 		height: 100vh;
 	}
 	
@@ -215,6 +215,19 @@ ion-menu ion-list.rev-apps {
 }
 
 @media (prefers-color-scheme: light) {
+	.rev-apps {
+		background-color: var(--ion-color-dark);
+		//border-right: 3px solid var(--ion-color-light-shade);
+	}
+	ion-menu ion-list.rev-apps {
+		--background: var(--ion-color-dark);
+	}
+	ion-menu ion-list.rev-apps ion-item {
+		--background: var(--ion-color-dark);
+		--color-hover: var(--ion-color-dark);
+	}
+}
+@media (prefers-color-scheme: dark) {
 	.rev-apps {
 		background-color: var(--ion-color-dark);
 		//border-right: 3px solid var(--ion-color-light-shade);
@@ -331,8 +344,8 @@ ion-label.rev-h1.rev-logo {
   position: absolute;
 	top: 9px;
   left: 13px;
-	border: 0px solid #fff;
 	border-radius: 10em;
-	-webkit-box-shadow: 0px 8px 25px -5px #FFFE5A; 
-	box-shadow: 0px 8px 25px -5px #FFFE5A;
+	//border: 2px solid rgba(255,255,255,0.75);
+	//-webkit-box-shadow: 0px 0px 12px 0px rgba(255,254,90,0.7); 
+	//box-shadow: 0px 0px 12px 0px rgba(255,254,90,0.7);
 }

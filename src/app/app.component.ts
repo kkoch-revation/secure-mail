@@ -14,12 +14,12 @@ export class AppComponent implements OnInit {
   public apps = [
     {
       title: 'Dashboard',
-      url: '/dashboard/dashboard',
+      url: '/dashboard/Dashboard',
       icon: 'apps'
     },
     {
       title: 'Communicator Console',
-      url: '/communicator/communicator',
+      url: '/communicator/Communicator',
       icon: 'chatbox-ellipses'
     },
     {
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Appointments',
-      url: '/appointments/appointments',
+      url: '/appointments/Appointments',
       icon: 'calendar'
     },
     {
@@ -52,6 +52,31 @@ export class AppComponent implements OnInit {
     }
   ];
 
+  public dashPages = [
+    {
+      title: 'My Agent Dashboard',
+      url: '/dashboard/Dashboard',
+      icon: 'home',
+      badge: '1',
+      color: 'danger'
+    },
+    {
+      title: 'All Hunt Groups',
+      url: '/dashboard/All Hunt Groups',
+      icon: 'file-tray-full',
+    },
+    {
+      title: 'Hunt Group One',
+      url: '/dashboard/Hunt Group One',
+      icon: 'file-tray-full',
+    },
+    {
+      title: 'Hunt Group Two',
+      url: '/dashboard/Hunt Group Two',
+      icon: 'file-tray-full',
+    },
+  ];
+
   public speedDialsInternal = [
     {
       name: 'Front Desk',
@@ -69,7 +94,6 @@ export class AppComponent implements OnInit {
       ext: '5329'
     },
   ];
-
   public speedDialsExternal = [
     {
       name: 'Central Processing',
@@ -163,6 +187,18 @@ export class AppComponent implements OnInit {
         color: 'warning'
       }
   ];
+  public appointmentPages = [
+    {
+      title: 'My Appointments',
+      url: '/appointments/My Appointments',
+      icon: 'home',
+    },
+    {
+      title: 'All Appointments',
+      url: '/appointments/All Appointments',
+      icon: 'file-tray-full',
+    },
+  ];
   public contactFolders = [
       {
         title: 'All Contacts',
@@ -171,37 +207,37 @@ export class AppComponent implements OnInit {
       },
       {
         title: 'Hunt Groups',
-        url: '/folder/Hunt Groups',
+        url: '/contacts/Hunt Groups',
         icon: 'folder'
       },
       {
         title: 'Recent Sessions',
-        url: '/folder/Recent Sessions',
+        url: '/contacts/Recent Sessions',
         icon: 'folder'
       },
       {
         title: 'Sales & Marketing',
-        url: '/folder/Sales & Marketing',
+        url: '/contacts/Sales & Marketing',
         icon: 'folder'
       },
       {
         title: 'System Engineers',
-        url: '/folder/System Engineers',
+        url: '/contacts/System Engineers',
         icon: 'folder'
       },
       {
         title: 'Core Development',
-        url: '/folder/Core Development',
+        url: '/contacts/Core Development',
         icon: 'folder'
       },
       {
         title: 'Operations',
-        url: '/folder/Operations',
+        url: '/contacts/Operations',
         icon: 'folder'
       },
       {
         title: 'Support & Systems Engineering',
-        url: '/folder/Support & Systems Engineering',
+        url: '/contacts/Support & Systems Engineering',
         icon: 'folder'
       }
   ]; 
@@ -280,7 +316,6 @@ export class AppComponent implements OnInit {
       }
   ];   
 	
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
 
   constructor(
     private platform: Platform,
@@ -302,5 +337,16 @@ export class AppComponent implements OnInit {
     if (path !== undefined) {
       this.selectedIndex = this.mailPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+    /*
+    const path = window.location.pathname.split('folder/')[1];
+    if (path !== undefined) {
+      this.selectedIndex = this.mailPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+    }
+    /*
+    const path = window.location.pathname.split('contacts/')[1];
+    if (path !== undefined) {
+      this.selectedIndex = this.contactFolders.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+    }
+    */
   }
 }
