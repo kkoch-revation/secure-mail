@@ -19,6 +19,10 @@ ion-card ion-icon.activity-indicator {
   padding: 0 0.25em;
 }
 
+ion-card.serving {
+  border-right: 10px solid var(--ion-color-warning);
+}
+
 ion-card.selected {
   border-right: 10px solid var(--ion-color-success);
 }
