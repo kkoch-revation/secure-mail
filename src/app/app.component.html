@@ -2,10 +2,13 @@
   <ion-split-pane contentId="page">
     <ion-menu contentId="page" type="overlay" class="rev-main-menu">
 			<ion-header lines="none">
-				<ion-toolbar color="secondary">
+				<ion-toolbar color="primary" style="position: relative;">
 					<ion-label class="rev-h1 rev-logo">
 						<!--h1 ><svg><use xlink:href="#R"></use></svg>Communicator</h1-->
-						<h1 ><img src="../assets/R.png" width="40" alt="Revation"/>Communicator</h1>
+						<div class="logo-bug" style="position: absolute; top: 0; left: 0; width: 64px; height: 60px; background-color: var(--ion-color-dark);">
+						<img src="../assets/R.png"  alt="Revation"/>
+						</div>
+						<h1 >Communicator</h1>
 					</ion-label>
 				</ion-toolbar>
 			</ion-header>
@@ -35,22 +38,6 @@
 					</div>
 					<!-- Right side menu dynamically served based on what page you are accessing -->
 					<div class="rev-menu">
-						
-						<div class="rev-menu-dashboard">
-							<ion-toolbar>
-								<ion-label class="rev-h1"><h1>Dashboard</h1></ion-label>
-							</ion-toolbar>
-							<ion-list id="dash-list" class=""  lines="full">
-								<ion-menu-toggle auto-hide="false" *ngFor="let p of dashPages; let i = index">
-									<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
-										<ion-icon slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-										<ion-label>{{ p.title }}</ion-label>
-										<ion-badge color="{{ p.color }}">{{ p.badge }}</ion-badge>
-									</ion-item>
-								</ion-menu-toggle>
-							</ion-list>
-						</div>
-						
 						<div class="rev-menu-communicator">
 
 							<ion-toolbar>
@@ -148,6 +135,22 @@
 								</ion-menu-toggle>
 							</ion-list>
 						</div>
+						
+						<div class="rev-menu-dashboard">
+							<ion-toolbar>
+								<ion-label class="rev-h1"><h1>Dashboard</h1></ion-label>
+							</ion-toolbar>
+							<ion-list id="dash-list" class=""  lines="full">
+								<ion-menu-toggle auto-hide="false" *ngFor="let p of dashPages; let i = index">
+									<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+										<ion-icon slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
+										<ion-label>{{ p.title }}</ion-label>
+										<ion-badge color="{{ p.color }}">{{ p.badge }}</ion-badge>
+									</ion-item>
+								</ion-menu-toggle>
+							</ion-list>
+						</div>
+						
 					</div>
 				</div>
 				<div class="rev-account-container">

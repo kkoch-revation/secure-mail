@@ -1,32 +1,93 @@
-<div class="rev-metrics-container">
-	<div class="rev-tile success">
-		<div class="rev-label">Avg. Inbound Sessions</div>
-		<div class="rev-metric">23</div>
-		<div class="rev-metric rev-avg">236</div>
-	</div>
-	<div class="rev-tile success">
-		<div class="rev-label">Avg. Outbound Sessions</div>
-		<div class="rev-metric">4</div>
-		<div class="rev-metric rev-avg">76</div>
-	</div>
-	<div class="rev-tile warning">
-		<div class="rev-label">Avg. Handle Time</div>
-		<div class="rev-metric">5:34</div>
-		<div class="rev-metric rev-avg">27:03</div>
-	</div>
-	<div class="rev-tile success">
-		<div class="rev-label">Service Level (≤ 30s)</div>
-		<div class="rev-metric">100<span class="rev-unit">%</span></div>
-		<div class="rev-metric rev-avg">100<span class="rev-unit">%</span></div>
-	</div>
-	<div class="rev-tile success">
-		<div class="rev-label">Avg. Speed of Answer</div>
-		<div class="rev-metric">8<span class="rev-unit">s</span></div>
-		<div class="rev-metric rev-avg">6<span class="rev-unit">s</span></div>
-	</div>
-	<div class="rev-tile success">
-		<div class="rev-label">Rona</div>
-		<div class="rev-metric">18</div>
-		<div class="rev-metric rev-avg">22</div>
-	</div>
-</div>
+<ion-content>
+	<ion-slides pager="true" [options]="slideOpts">
+		<ion-slide>
+			<div class="rev-metrics-container">
+				<div class="rev-tile rev-tile-split success">
+					<div class="rev-label">Online</div>
+					<div class="rev-metric">0:23</div>
+					<div class="rev-metric rev-avg">1:28</div>
+				</div>
+				<div class="rev-tile rev-tile-split success">
+					<div class="rev-label">Busy</div>
+					<div class="rev-metric">2:03</div>
+					<div class="rev-metric rev-avg">1:43</div>
+				</div>
+				<div class="rev-tile rev-tile-split warning">
+					<div class="rev-label">Be Right Back</div>
+					<div class="rev-metric">15:52</div>
+					<div class="rev-metric rev-avg">13:56</div>
+				</div>
+				<div class="rev-tile rev-tile-split success">
+					<div class="rev-label">Out to Lunch</div>
+					<div class="rev-metric"><span class="rev-unit">N/A</span></div>
+					<div class="rev-metric rev-avg">28:22</div>
+				</div>
+				<div class="rev-tile rev-tile-split success">
+					<div class="rev-label">Away</div>
+					<div class="rev-metric"><span class="rev-unit">N/A</span></div>
+					<div class="rev-metric rev-avg">18:52</div>
+				</div>
+				<div class="rev-tile rev-tile-split success">
+					<div class="rev-label">On The Phone</div>
+					<div class="rev-metric">1:49</div>
+					<div class="rev-metric rev-avg">2:22</div>
+				</div>
+			</div>
+		</ion-slide>
+		<ion-slide>
+			<div class="rev-metrics-container">
+				<div class="rev-tile rev-tile-split success">
+					<div class="rev-label">Avg. Inbound Sessions</div>
+					<div class="rev-metric">23</div>
+					<div class="rev-metric rev-avg">236</div>
+				</div>
+				<div class="rev-tile rev-tile-split success">
+					<div class="rev-label">Avg. Outbound Sessions</div>
+					<div class="rev-metric">4</div>
+					<div class="rev-metric rev-avg">76</div>
+				</div>
+				<div class="rev-tile rev-tile-split warning">
+					<div class="rev-label">Avg. Handle Time</div>
+					<div class="rev-metric">5:34</div>
+					<div class="rev-metric rev-avg">27:03</div>
+				</div>
+				<div class="rev-tile success">
+					<div class="rev-label">Service Level (≤ 30s)</div>
+					<div class="rev-metric">100<span class="rev-unit">%</span></div>
+				</div>
+				<div class="rev-tile rev-tile-split success">
+					<div class="rev-label">Avg. Speed of Answer</div>
+					<div class="rev-metric">8<span class="rev-unit">s</span></div>
+					<div class="rev-metric rev-avg">6<span class="rev-unit">s</span></div>
+				</div>
+			</div>
+		</ion-slide>
+		<ion-slide>
+			<div class="rev-metrics-container">
+				<div class="rev-tile rev-tile-split success">
+					<div class="rev-label">Rona</div>
+					<div class="rev-metric">18</div>
+					<div class="rev-metric rev-avg">22</div>
+				</div>
+				<div class="rev-tile rev-tile-split success">
+					<div class="rev-label">Roaa</div>
+					<div class="rev-metric">0</div>
+					<div class="rev-metric rev-avg">0.0</div>
+				</div>
+				<div class="rev-tile success">
+					<div class="rev-label">Total Team Abandons</div>
+					<div class="rev-metric">2/99 <span class="rev-unit">(2%)</span></div>
+				</div>
+				<div class="rev-tile success">
+					<div class="rev-label">Queued Sessions</div>
+					<div class="rev-metric">18</div>
+				</div>
+				<div class="rev-tile rev-tile-split success">
+					<div class="rev-label">Inbound Sessions/hr</div>
+					<div class="rev-metric">3</div>
+					<div class="rev-metric rev-avg">2.4</div>
+				</div>
+			</div>
+		</ion-slide>
+	</ion-slides>
+</ion-content>

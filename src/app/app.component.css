@@ -1,21 +1,21 @@
 /*
 Error: $color: "var(--ion-color-primary-rgb)" is not a color for `rgba'
-        on line 54 of /Users/karlkoch/dev/secure-mail/src/app/app.component.scss
+        on line 55 of /Users/karlkoch/dev/secure-mail/src/app/app.component.scss
 
-49:  // --padding-end: 10px;
-50:   border-radius: 0;
-51: }
-52: 
-53: ion-menu.md ion-item.selected {
-54:   --background: rgba(var(--ion-color-primary-rgb), 0.10);
-55: }
-56: 
-57: ion-menu.md ion-item.selected ion-icon {
-58:   color: var(--ion-color-primary);
-59: }
+50:  // --padding-end: 10px;
+51:   border-radius: 0;
+52: }
+53: 
+54: ion-menu.md ion-item.selected {
+55:   --background: rgba(var(--ion-color-primary-rgb), 0.10);
+56: }
+57: 
+58: ion-menu.md ion-item.selected ion-icon {
+59:   color: var(--ion-color-primary);
+60: }
 
 Backtrace:
-/Users/karlkoch/dev/secure-mail/src/app/app.component.scss:54
+/Users/karlkoch/dev/secure-mail/src/app/app.component.scss:55
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.4.25/lib/sass/script/tree/funcall.rb:310:in `reformat_argument_error'
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.4.25/lib/sass/script/tree/funcall.rb:149:in `rescue in _perform'
 /Applications/Adobe Dreamweaver 2021/Adobe Dreamweaver 2021.app/Contents/Resources/gems/rubygems/gems/sass-3.4.25/lib/sass/script/tree/funcall.rb:122:in `_perform'
@@ -70,4 +70,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: $color: \"var(--ion-color-primary-rgb)\" is not a color for `rgba'\A         on line 54 of /Users/karlkoch/dev/secure-mail/src/app/app.component.scss\A \A 49:  // --padding-end: 10px;\A 50:   border-radius: 0;\A 51: }\A 52: \A 53: ion-menu.md ion-item.selected {\A 54:   --background: rgba(var(--ion-color-primary-rgb), 0.10);\A 55: }\A 56: \A 57: ion-menu.md ion-item.selected ion-icon {\A 58:   color: var(--ion-color-primary);\A 59: }"; }
+  content: "Error: $color: \"var(--ion-color-primary-rgb)\" is not a color for `rgba'\A         on line 55 of /Users/karlkoch/dev/secure-mail/src/app/app.component.scss\A \A 50:  // --padding-end: 10px;\A 51:   border-radius: 0;\A 52: }\A 53: \A 54: ion-menu.md ion-item.selected {\A 55:   --background: rgba(var(--ion-color-primary-rgb), 0.10);\A 56: }\A 57: \A 58: ion-menu.md ion-item.selected ion-icon {\A 59:   color: var(--ion-color-primary);\A 60: }"; }

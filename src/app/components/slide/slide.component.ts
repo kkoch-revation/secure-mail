@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-agent-metrics',
-  templateUrl: './agent-metrics.component.html',
-  styleUrls: ['./agent-metrics.component.scss'],
+  selector: 'app-slide',
+  templateUrl: './slide.component.html',
+  styleUrls: ['./slide.component.scss'],
 })
-export class AgentMetricsComponent implements OnInit {
+export class SlideComponent implements OnInit {
 
-  // Optional parameters to pass to the swiper instance.
-  // See http://idangero.us/swiper/api/ for valid options.
   slideOpts = {
     initialSlide: 1,
     speed: 1000,

@@ -16,264 +16,84 @@
 		<ion-searchbar slot="start" placeholder="Search All Contacts"></ion-searchbar>
   </ion-toolbar> 
 
-	<app-contact-card>	</app-contact-card>
-
-		
-		<ion-list id="contacts-list" class=""  lines="full">
-								<ion-menu-toggle auto-hide="false" *ngFor="let p of contactPages; let i = index">
-									<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
-										<ion-avatar slot="start">
-											<img src="../../assets/avatar-luke.png">
-										</ion-avatar>
-										<ion-label>
-											<h2>{{ p.firstName }} {{ p.lastName }}</h2>
-											<h3>{{ p.phone }}</h3>
-										</ion-label>
-										<ion-buttons slot="end" class="ion-hide-lg-down">
-											<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-											<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-										</ion-buttons>
-									</ion-item>
-								</ion-menu-toggle>
-							</ion-list>
-		
-
-
-	<ion-list>
-					<ion-item-divider sticky="true" color="light"><ion-label>A</ion-label></ion-item-divider>				
-					<ion-item button (click)="contact()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-luke.png">
-						</ion-avatar>
-						
-						<ion-label>
-							<h2>Aaron Aragon</h2>
-							<h3>(952) 392-1831 ext. 2123</h3>
-						</ion-label>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-					</ion-item>
-					
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-han.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Ari Armando</h2>
-							<h3>(952) 392-1831 ext. 2120</h3>
-						</ion-label>
-					</ion-item>
-					
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-rey.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Astrid Amendola</h2>
-							<h3>(952) 392-1831 ext. 2122</h3>
-						</ion-label>
-					</ion-item>
-					
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-finn.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Austin Arapahoe</h2>
-							<h3>(952) 392-1831 ext. 2121</h3>
-						</ion-label>
-					</ion-item>
-				</ion-list>
-
-				<ion-list>
-					<ion-item-divider sticky="true" color="light"><ion-label>B</ion-label></ion-item-divider>
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-leia.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Barbara Benson</h2>
-							<h3>(952) 392-1831 ext. 2126</h3>
-						</ion-label>
-					</ion-item>
-
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-poe.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Bobby Billingsly</h2>
-							<h3>(952) 392-1831 ext. 2125</h3>
-						</ion-label>
-					</ion-item>
-					
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-ben.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Benny Burton</h2>
-							<h3>(952) 392-1831 ext. 2128</h3>
-						</ion-label>
-					</ion-item>
-
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-yoda.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Burton Brewster</h2>
-							<h3>(952) 392-1831 ext. 2129</h3>
-						</ion-label>
-					</ion-item>
-				</ion-list>
-				<ion-list>
-					
-					<ion-item-divider sticky="true" color="light"><ion-label>C</ion-label></ion-item-divider>
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-luke.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Carl Calendula</h2>
-							<h3>(952) 392-1831 ext. 2132</h3>
-						</ion-label>
-					</ion-item>
-					
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-rey.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Cassie Calibri</h2>
-							<h3>(952) 392-1831 ext. 2135</h3>
-						</ion-label>
-					</ion-item>
-					
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-han.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Craig Cramden</h2>
-							<h3>(952) 392-1831 ext. 2133</h3>
-						</ion-label>
-					</ion-item>
-				</ion-list>
-
-				<ion-list>
-					<ion-item-divider sticky="true" color="light"><ion-label>D</ion-label></ion-item-divider>
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-finn.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Danny Doolittle</h2>
-							<h3>(952) 392-1831 ext. 2141</h3>
-						</ion-label>
-					</ion-item>
-					
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-leia.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Delilah Dansbury</h2>
-							<h3>(952) 392-1831 ext. 2143</h3>
-						</ion-label>
-					</ion-item>
-
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-poe.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Dinsdale Dent</h2>
-							<h3>(952) 392-1831 ext. 2144</h3>
-						</ion-label>
-					</ion-item>
-					
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-ben.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Dirk Dilschneider</h2>
-							<h3>(952) 392-1831 ext. 2146</h3>
-						</ion-label>
-					</ion-item>
-
-					<ion-item button (click)="buttonClick()">
-						<ion-avatar slot="start">
-							<img src="../../assets/avatar-yoda.png">
-						</ion-avatar>
-						<ion-buttons slot="end" class="ion-hide-lg-down">
-							<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
-							<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
-						</ion-buttons>
-						<ion-label>
-							<h2>Doug Dougherty</h2>
-							<h3>(952) 392-1831 ext. 2149</h3>
-						</ion-label>
-					</ion-item>
-				</ion-list>
-
+	<ion-list id="contacts-list-A" class=""  lines="full">
+		<ion-item-divider sticky="true" color="light"><ion-label>A</ion-label></ion-item-divider>	
+		<ion-menu-toggle auto-hide="false" *ngFor="let p of contactPagesA; let i = index">
+			<ion-item  button (click)="contact()" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+				<ion-label>
+					<h2>{{ p.firstName }} {{ p.lastName }}</h2>
+					<h3>{{ p.phone }} ext. {{ p.ext }}</h3>
+				</ion-label>
+				<ion-avatar slot="start">
+					<img src="../../assets/{{ p.avatar }}">
+				</ion-avatar>
+				<ion-buttons slot="end" class="ion-hide-lg-down">
+					<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="videocam" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="mail" color="primary"></ion-icon></ion-button>
+				</ion-buttons>
+			</ion-item>
+		</ion-menu-toggle>
+	</ion-list>
+	<ion-list id="contacts-list-B" class=""  lines="full">
+		<ion-item-divider sticky="true" color="light"><ion-label>B</ion-label></ion-item-divider>	
+		<ion-menu-toggle auto-hide="false" *ngFor="let p of contactPagesB; let i = index">
+			<ion-item  button (click)="contact()" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+				<ion-label>
+					<h2>{{ p.firstName }} {{ p.lastName }}</h2>
+					<h3>{{ p.phone }} ext. {{ p.ext }}</h3>
+				</ion-label>
+				<ion-avatar slot="start">
+					<img src="../../assets/{{ p.avatar }}">
+				</ion-avatar>
+				<ion-buttons slot="end" class="ion-hide-lg-down">
+					<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="videocam" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="mail" color="primary"></ion-icon></ion-button>
+				</ion-buttons>
+			</ion-item>
+		</ion-menu-toggle>
+	</ion-list>
+	<ion-list id="contacts-list-C" class=""  lines="full">
+		<ion-item-divider sticky="true" color="light"><ion-label>C</ion-label></ion-item-divider>	
+		<ion-menu-toggle auto-hide="false" *ngFor="let p of contactPagesC; let i = index">
+			<ion-item  button (click)="contact()" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+				<ion-label>
+					<h2>{{ p.firstName }} {{ p.lastName }}</h2>
+					<h3>{{ p.phone }} ext. {{ p.ext }}</h3>
+				</ion-label>
+				<ion-avatar slot="start">
+					<img src="../../assets/{{ p.avatar }}">
+				</ion-avatar>
+				<ion-buttons slot="end" class="ion-hide-lg-down">
+					<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="videocam" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="mail" color="primary"></ion-icon></ion-button>
+				</ion-buttons>
+			</ion-item>
+		</ion-menu-toggle>
+	</ion-list>
+	<ion-list id="contacts-list-D" class=""  lines="full">
+		<ion-item-divider sticky="true" color="light"><ion-label>D</ion-label></ion-item-divider>	
+		<ion-menu-toggle auto-hide="false" *ngFor="let p of contactPagesD; let i = index">
+			<ion-item  button (click)="contact()" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
+				<ion-label>
+					<h2>{{ p.firstName }} {{ p.lastName }}</h2>
+					<h3>{{ p.phone }} ext. {{ p.ext }}</h3>
+				</ion-label>
+				<ion-avatar slot="start">
+					<img src="../../assets/{{ p.avatar }}">
+				</ion-avatar>
+				<ion-buttons slot="end" class="ion-hide-lg-down">
+					<ion-button><ion-icon slot="icon-only" name="chatbox-ellipses" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="call" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="videocam" color="primary"></ion-icon></ion-button>
+					<ion-button><ion-icon slot="icon-only" name="mail" color="primary"></ion-icon></ion-button>
+				</ion-buttons>
+			</ion-item>
+		</ion-menu-toggle>
+	</ion-list>
 </ion-content>

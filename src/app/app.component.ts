@@ -13,11 +13,6 @@ export class AppComponent implements OnInit {
   public selectedIndex = 0;
   public apps = [
     {
-      title: 'Dashboard',
-      url: '/dashboard/Dashboard',
-      icon: 'apps'
-    },
-    {
       title: 'Communicator Console',
       url: '/communicator/Communicator',
       icon: 'chatbox-ellipses'
@@ -37,6 +32,11 @@ export class AppComponent implements OnInit {
       title: 'Contacts',
       url: '/contacts/Contacts',
       icon: 'people'
+    },
+    {
+      title: 'Dashboard',
+      url: '/dashboard/Dashboard',
+      icon: 'apps'
     }
   ];
   public userMenu = [

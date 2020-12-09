@@ -1,3 +1,4 @@
+
 ion-menu ion-content {
   --background: var(--ion-item-background, var(--ion-background-color, #fff));
 }
@@ -324,7 +325,7 @@ ion-label.rev-h1 {
 ion-label.rev-h1.rev-logo {
 	margin-top: 16px;
 	h1 {
-		padding-left: 68px;
+		padding-left: 80px;
 	}
 }
 .rev-h1.rev-logo svg {
@@ -338,12 +339,12 @@ ion-label.rev-h1.rev-logo {
 	border-radius: 10em;
 }
 .rev-h1.rev-logo img {
-  height: 1.625em;
-  width: 1.625em;
+  height: 40px;
+  width: 40px;
   margin-right: 0.25em;
   position: absolute;
 	top: 9px;
-  left: 13px;
+  left: 12px;
 	border-radius: 10em;
 	//border: 2px solid rgba(255,255,255,0.75);
 	//-webkit-box-shadow: 0px 0px 12px 0px rgba(255,254,90,0.7); 
