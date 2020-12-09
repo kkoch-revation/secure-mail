@@ -2,7 +2,6 @@ ion-header.rev-comm-header {
   height: 56px;
   max-height: 56px;
   overflow: hidden;
-  padding-top: 0;
 }
 ion-header.rev-comm-header ion-toolbar {
   height: 56px;
@@ -187,76 +186,44 @@ ion-header.rev-comm-header::after {
 .rev-chat-container {
   height: 100%;
   display: grid;
-  grid-template-rows: 55px 1fr 80px 57px;
+  grid-template-rows: 55px auto 1fr 80px 57px;
   overflow-x: hidden;
+  transition: all 0.4s ease-out;
+}
+
+.rev-disposition {
+  border-bottom: 5px solid var(--ion-color-light-shade);
+  grid-row: 2 / 3;
+  overflow-y: auto;
+  height: 0px;
+  padding: 0;
+  transition: all 0.4s ease-out;
 }
 
 .rev-message-window {
-  grid-row: 2 / 3;
+  grid-row: 3 / 4;
   overflow-y: auto;
 }
 .rev-message-window .rev-chat {
   padding: 0 1em;
 }
 
-.rev-media-grid-container {
-  width: 100%;
-  height: calc(100% - 0);
-  display: grid;
-  place-items: center;
+.rev-chat-container.rev-toggle-disposition {
+  grid-template-rows: 55px auto 1fr 80px 57px;
+  transition: all 0.4s ease-out;
+}
+.rev-chat-container.rev-toggle-disposition .rev-disposition {
+  height: 400px;
   padding: 1em;
-  overflow-y: auto;
+  transition: all 0.4s ease-out;
 }
 
-.rev-media-grid {
-  display: grid;
-  padding: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-template-rows: minmax(1fr, 1fr);
-  grid-gap: 0.5em;
-  width: 100%;
-}
-
-.rev-video-parent {
-  background: rgba(255, 255, 255, 0.125);
-  display: flex;
-  justify-content: center;
-  overflow-y: hidden;
-}
-
-.rev-video-parent:before {
-  content: "";
-  display: block;
-  height: 0;
-  width: 0;
-  padding-bottom: calc(9/16 * 100%);
-}
-
-.rev-video {
-  min-width: 100%;
-  display: grid;
-  place-items: center;
-  position: relative;
-  overflow-y: hidden;
-}
-
-.rev-video img {
-  position: absolute;
-  width: 100%;
-  height: auto;
-}
-
-@media (min-width: 1200px) {
-  .rev-grid-communicator.focus-media .rev-grid-media-module .rev-video-grid {
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  }
-}
 .relative {
   position: relative;
 }
 
 .rev-message-input {
-  grid-row: 3 / 4;
+  grid-row: 4 / 5;
   height: 81px;
   border-top: 1px solid var(--ion-color-light-shade);
 }
@@ -417,18 +384,55 @@ ion-header.rev-comm-header::after {
   font-weight: 400;
 }
 
-/*
-.rev-queues-container > div,
-.rev-media-container > div,
-.rev-chat-container > div,
-.rev-sessions-container > div {
-  background-color: #666;
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
+.rev-media-grid-container {
+  width: 100%;
+  height: calc(100% - 0);
   display: grid;
   place-items: center;
-  color: #ccc;
-  h1 {
-    font-weight: 300;
+  padding: 1em;
+  overflow-y: auto;
+}
+
+.rev-media-grid {
+  display: grid;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: minmax(1fr, 1fr);
+  grid-gap: 0.5em;
+  width: 100%;
+}
+
+.rev-video-parent {
+  background: rgba(255, 255, 255, 0.125);
+  display: flex;
+  justify-content: center;
+  overflow-y: hidden;
+}
+
+.rev-video-parent:before {
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  padding-bottom: calc(9/16 * 100%);
+}
+
+.rev-video {
+  min-width: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.rev-video img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 1200px) {
+  .rev-grid-communicator.focus-media .rev-grid-media-module .rev-video-grid {
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
   }
 }
-*/

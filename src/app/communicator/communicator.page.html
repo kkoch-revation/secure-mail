@@ -3,7 +3,7 @@
 	
 	<!-- EXPERIMENTAL HEADER -->
 <ion-header lines="none" class="rev-comm-header">
-	<ion-toolbar color="primary" style="max-height: 56px;">
+	<ion-toolbar color="primary">
 		<ion-buttons slot="start">
 			<ion-menu-toggle>
 				<ion-button>
@@ -221,7 +221,7 @@
 					</div>
 				</div>
 				<div class="rev-column chat">
-					<div class="rev-chat-container">
+					<div id="rev-chat-container" class="rev-chat-container">
 							<ion-header>
 								<ion-toolbar color="light">
 									<ion-buttons slot="start">
@@ -232,11 +232,57 @@
 										</ion-menu-toggle-->
 										<ion-button (click)="focusMessages()" class="ion-hide-xl-down"><ion-icon name="chatbox-ellipses" slot="icon-only"></ion-icon></ion-button>
 									</ion-buttons>
-									<ion-title>Ben Kenobi</ion-title>			
+									<ion-title>Ben Kenobi</ion-title>
+									<ion-buttons slot="end">
+										<ion-button (click)="toggleDisposition()"><ion-icon name="create" slot="icon-only" color="danger"></ion-icon></ion-button>
+									</ion-buttons>
 								</ion-toolbar>
 							</ion-header>
+							<div id="rev-disposition" class="rev-disposition">
+								<form  #form="ngForm" (ngSubmit)="submitForm(form)">
+									<ion-item>
+										<ion-label>Reason for Contact</ion-label>
+										<ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+											<ion-select-option value="Online Banking">Online Banking</ion-select-option>
+											<ion-select-option value="New Account">New Account</ion-select-option>
+											<ion-select-option value="Debit/Credit Card">Debit/Credit Card</ion-select-option>
+											<ion-select-option value="Lending">Lending</ion-select-option>
+										</ion-select>
+									</ion-item>
+									<ion-item>
+										<ion-label>Level of Resolution</ion-label>
+										<ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+											<ion-select-option value="complete satisfaction">Complete Satisfaction</ion-select-option>
+											<ion-select-option value="somewhat satisfied">Somewhat Satisfied</ion-select-option>
+											<ion-select-option value="not satisfied">Not Satisfied</ion-select-option>
+										</ion-select>
+									</ion-item>
+									<ion-item>
+										<ion-label>Preferred Color</ion-label>
+										<ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
+											<ion-select-option value="blue">Blue</ion-select-option>
+											<ion-select-option value="green">Green</ion-select-option>
+											<ion-select-option value="red">Red</ion-select-option>
+											<ion-select-option value="orange">Orange</ion-select-option>
+											<ion-select-option value="brown">Brown</ion-select-option>
+											<ion-select-option value="black">Black</ion-select-option>
+										</ion-select>
+									</ion-item>
+									<ion-item>
+										<ion-label position="floating">Comments</ion-label>
+										<ion-input type="text" required="false"></ion-input>
+									</ion-item>
+									<section>
+											<ion-button  expand="block" type="submit" color="primary" fill="solid" class="ion-margin-vertical" >
+													Submit
+											</ion-button>
+									</section>
+								</form>
+							</div>
+							<ion-content>
 							<div class="rev-message-window">
-								<ion-content>
+								
+
 									<div class="rev-chat">
 										<div class="mine messages">
 											<div class="message">
@@ -296,8 +342,9 @@
 											</div>
 										</div>	
 									</div>
-								</ion-content>
+
 							</div>
+							</ion-content>
 							<div class="rev-message-input">
 								<ion-content>
 								<div class="relative">
@@ -342,6 +389,7 @@
 									</ion-toolbar>
 								</ion-content>
 							</div>
+						
 					</div>
 				</div>
 				<div class="rev-column sessions">

@@ -110,6 +110,10 @@ export class CommunicatorPage implements OnInit {
     var element = document.getElementById("communicator");
     element.classList.toggle("rev-metrics");
   }
+  toggleDisposition() {
+    var element = document.getElementById("rev-chat-container");
+    element.classList.toggle("rev-toggle-disposition");
+  }
 
   ngOnInit() {
   }
