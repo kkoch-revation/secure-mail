@@ -1,0 +1,88 @@
+<ion-card>
+<div  style="display: flex; justify-content: center; margin-top: 2em;">
+<ion-avatar><img src="../../assets/avatar-luke.png"></ion-avatar>
+</div>
+  <ion-card-header class="ion-justify-content-center ion-text-center" style="display: flex; justify-content: center;">
+    <ion-card-title>Luke Skywalker</ion-card-title>
+  </ion-card-header>
+		<div class="" style="display: flex; justify-content: center; flex-wrap: wrap; ">
+			<style>
+				ion-button.stacked {
+					border-color: var(--ion-color-light-shade);
+				}
+				ion-button.stacked div {
+					display: flex;
+					flex-flow: column nowrap;
+					align-items: center;
+					font-size: 2em;
+					padding: 0.5em;
+				}
+				ion-button.stacked div ion-icon {
+					font-size: 0.75em;
+				}
+				ion-button.stacked div .label {
+					font-size: 0.25em;
+				}
+			</style>
+			<ion-button class="stacked" size="large" fill="outline">
+				<div>
+					<ion-icon name="chatbox-ellipses"></ion-icon>
+					<span class="label">Chat</span>
+				</div>
+			</ion-button>
+			<ion-button class="stacked" size="large" fill="outline">
+				<div>
+					<ion-icon name="call"></ion-icon>
+					<span class="label">Voice</span>
+				</div>
+			</ion-button>
+			<ion-button class="stacked" size="large" fill="outline">
+				<div>
+					<ion-icon name="videocam"></ion-icon>
+					<span class="label">Video</span>
+				</div>
+			</ion-button>
+			<ion-button class="stacked" size="large" fill="outline">
+				<div>
+					<ion-icon name="mail"></ion-icon>
+					<span class="label">Mail</span>
+				</div>
+			</ion-button>
+		</div>
+
+
+
+
+  <ion-card-content>
+		<ion-grid>
+			<ion-row>
+				<ion-col size="6" size-md>
+					<form >
+						<ion-item>
+							<ion-label position="floating">First Name</ion-label>
+							<ion-input type="text" required="true" value="Luke"></ion-input>
+						</ion-item>
+						<ion-item>
+							<ion-label position="floating">Last Name</ion-label>
+							<ion-input type="text" required="true" value="Skywalker"></ion-input>
+						</ion-item>
+						<ion-item>
+							<ion-label position="floating">Email</ion-label>
+							<ion-input type="email" required="true" value="lskywalker@revation.com"></ion-input>
+						</ion-item>
+						<ion-item>
+							<ion-label position="floating">Phone</ion-label>
+							<ion-input type="password" required="true" value="(123) 456 7890"></ion-input>
+						</ion-item>
+
+						<ion-button TYPE="submit" color="primary" class="ion-margin-vertical" >
+							<ion-icon slot="start" name="save"></ion-icon>
+							Save Settings
+						</ion-button>
+					</form>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	
+  </ion-card-content>
+</ion-card>

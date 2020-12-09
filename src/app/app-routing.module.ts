@@ -36,8 +36,12 @@ const routes: Routes = [
     loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
   },
   {
-    path: 'modal',
+    path: 'modal/:id',
     loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
+  },
+  {
+    path: 'contact/:id',
+    loadChildren: () => import('./contact/contact.module').then( m => m.ContactPageModule)
   },
 ];
 

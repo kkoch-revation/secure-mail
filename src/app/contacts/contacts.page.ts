@@ -9,6 +9,16 @@ import { ActivatedRoute } from '@angular/router';
 export class ContactsPage implements OnInit {
   public contacts: string;
 
+  public contactPages = [ 
+  {
+    firstName: 'Luke',
+    lastName: 'Skywalker',
+    url: '/contact/Contact',
+    phone: '(123) 456-7890',
+    
+  },
+];
+
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
