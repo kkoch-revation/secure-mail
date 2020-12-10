@@ -72,7 +72,7 @@
 		.rev-column:nth-child(4n + 3) {
 			flex: 0.375;
 			border-left: 1px solid var(--ion-color-light-shade);
-			ion-content, .rev-message-window {
+			ion-content, .rev-disposition, .rev-message-window {
 				opacity: 1;
 			}
 		}
@@ -103,7 +103,7 @@
 		.rev-column:nth-child(4n + 3) {
 			flex: 1;
 			border-left: 1px solid var(--ion-color-light-shade);
-			ion-content, .rev-message-window {
+			ion-content, .rev-disposition, .rev-message-window {
 				//background-color: var(--ion-color-dark);
 				opacity: 1;
 			}
@@ -145,7 +145,7 @@
 			flex: 0.02;
 			background-color: var(--ion-color-light);
 			border-left: 1px solid var(--ion-color-light-shade);
-			ion-content, .rev-message-window {
+			ion-content, .rev-disposition, .rev-message-window {
 				opacity: 0;
 				height: 0px;
 			}
@@ -161,7 +161,7 @@
 			min-width: 57px;
 			background-color: var(--ion-color-light);
 			border-left: 1px solid var(--ion-color-light-shade);
-			ion-content, .rev-message-window {
+			ion-content, .rev-disposition, .rev-message-window {
 				opacity: 0;
 				height: 0px;
 			}
@@ -217,7 +217,7 @@
 			min-width: 57px;
 			background-color: var(--ion-color-light);
 			border-left: 1px solid var(--ion-color-light-shade);
-			ion-content, .rev-message-window {
+			ion-content, .rev-disposition, .rev-message-window {
 				opacity: 0;
 				height: 0px;
 			}
