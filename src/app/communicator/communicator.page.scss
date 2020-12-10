@@ -138,6 +138,7 @@ ion-header.rev-comm-header::after {
 	//background-color: var(--ion-color-light);
 	height: 0px;
 	padding: 0;
+	opacity: 0;
 	transition: all 0.4s ease-out;
 }
 .rev-message-window {
@@ -151,8 +152,10 @@ ion-header.rev-comm-header::after {
   grid-template-rows: 55px auto 1fr 80px 57px;
 	transition: all 0.4s ease-out;
 	.rev-disposition {
-		height: 400px;
+		height: 320px;
 		padding: 1em;
+		opacity: 1;
+		background-color: var(--ion-color-light);
 		transition: all 0.4s ease-out;
 	}
 }

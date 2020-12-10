@@ -197,6 +197,7 @@ ion-header.rev-comm-header::after {
   overflow-y: auto;
   height: 0px;
   padding: 0;
+  opacity: 0;
   transition: all 0.4s ease-out;
 }
 
@@ -213,8 +214,10 @@ ion-header.rev-comm-header::after {
   transition: all 0.4s ease-out;
 }
 .rev-chat-container.rev-toggle-disposition .rev-disposition {
-  height: 400px;
+  height: 320px;
   padding: 1em;
+  opacity: 1;
+  background-color: var(--ion-color-light);
   transition: all 0.4s ease-out;
 }
 
