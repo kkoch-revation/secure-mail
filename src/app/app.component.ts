@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PopoverController } from '@ionic/angular';  
+import { PopoverContactsComponent } from './components/popover-contacts/popover-contacts.component';
+import { PopoverSessionComponent } from './components/popover-session/popover-session.component';
+
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -10,6 +14,93 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
+
+  constructor(
+    private platform: Platform,
+    private splashScreen: SplashScreen,
+    private statusBar: StatusBar,
+    public popoverController: PopoverController
+  ) {
+    this.initializeApp();
+  }
+
+  initializeApp() {
+    this.platform.ready().then(() => {
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
+    });
+  }
+
+  ngOnInit() {
+    const path = window.location.pathname.split('folder/')[1];
+    if (path !== undefined) {
+      this.selectedIndex = this.mailPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+    }
+  }
+
+  async presentPopoverContacts(ev: any) {
+    const popover = await this.popoverController.create({
+      component: PopoverContactsComponent,
+      cssClass: 'rev-popover-contacts',
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
+  }
+  async presentPopoverSession(ev: any) {
+    const popover = await this.popoverController.create({
+      component: PopoverSessionComponent,
+      cssClass: 'rev-popover-session',
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
+  }
+  dismissPopover() {
+    this.popoverController.dismiss();
+  }
+
+  showContacts() {
+    var element = document.getElementById("contacts");
+    element.classList.add("rev-show");
+    var element = document.getElementById("contacts");
+    element.classList.remove("rev-hide");
+    var element = document.getElementById("speedDials");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("speedDials");
+    element.classList.add("rev-hide");
+    var element = document.getElementById("recentSessions");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("recentSessions");
+    element.classList.add("rev-hide");
+  }
+  showSpeedDials() {
+    var element = document.getElementById("speedDials");
+    element.classList.add("rev-show");
+    var element = document.getElementById("speedDials");
+    element.classList.remove("rev-hide");
+    var element = document.getElementById("contacts");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("contacts");
+    element.classList.add("rev-hide");
+    var element = document.getElementById("recentSessions");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("recentSessions");
+    element.classList.add("rev-hide");
+  }
+  showRecentSessions() {
+    var element = document.getElementById("recentSessions");
+    element.classList.add("rev-show");
+    var element = document.getElementById("contacts");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("contacts");
+    element.classList.add("rev-hide");
+    var element = document.getElementById("speedDials");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("speedDials");
+    element.classList.add("rev-hide");
+  }
+
   public selectedIndex = 0;
   public apps = [
     {
@@ -29,11 +120,6 @@ export class AppComponent implements OnInit {
       icon: 'calendar'
     },
     {
-      title: 'Contacts',
-      url: '/contacts/Contacts',
-      icon: 'people'
-    },
-    {
       title: 'Dashboard',
       url: '/dashboard/Dashboard',
       icon: 'apps'
@@ -50,6 +136,141 @@ export class AppComponent implements OnInit {
       url: '/settings/Settings',
       icon: 'cog'
     }
+  ];
+
+  public contactPagesA = [ 
+    {
+      firstName: 'Aaron',
+      lastName: 'Aanistadt',
+      status: 'online',
+      phone: '(123) 456-7890',
+      ext: '2122',
+      avatar: 'avatar-luke.png',
+      url: '/contact/Contact',
+    },
+    {
+      firstName: 'Andrew',
+      lastName: 'Amundson',
+      status: 'online',
+      phone: '(123) 321-5454',
+      ext: '2129',
+      avatar: 'avatar-han.png',
+      url: '/contact/Contact',
+    },
+    {
+      firstName: 'Ariel',
+      lastName: 'Atkins',
+      status: 'online',
+      phone: '(123) 321-9922',
+      ext: '2127',
+      avatar: 'avatar-leia.png',
+      url: '/contact/Contact',
+    },
+    {
+      firstName: 'Armond',
+      lastName: 'Arnold',
+      status: 'busy - conference external',
+      phone: '(123) 456-4321',
+      ext: '2125',
+      avatar: 'avatar-poe.png',
+      url: '/contact/Contact',
+    },
+  ];
+  public contactPagesB = [ 
+    {
+      firstName: 'Barbara',
+      lastName: 'Benson',
+      status: 'online',
+      phone: '(123) 456-7890',
+      ext: '2122',
+      avatar: 'avatar-rey.png',
+      url: '/contact/Contact',
+    },
+    {
+      firstName: 'Bobby',
+      lastName: 'Billingsly',
+      status: 'on the phone',
+      phone: '(123) 321-5454',
+      ext: '2129',
+      avatar: 'avatar-finn.png',
+      url: '/contact/Contact',
+    },
+    {
+      firstName: 'Benny',
+      lastName: 'Bowlesby',
+      status: 'busy - conference internal',
+      phone: '(123) 321-9922',
+      ext: '2127',
+      avatar: 'avatar-ben.png',
+      url: '/contact/Contact',
+    },
+    {
+      firstName: 'Burton',
+      lastName: 'Brewster',
+      status: 'away',
+      phone: '(123) 456-4321',
+      ext: '2125',
+      avatar: 'avatar-poe.png',
+      url: '/contact/Contact',
+    },
+  ];
+  public contactPagesC = [ 
+    {
+      firstName: 'Calvin',
+      lastName: 'Camden',
+      status: 'out to lunch',
+      phone: '(123) 321-5454',
+      ext: '2129',
+      avatar: 'avatar-han.png',
+      url: '/contact/Contact',
+    },
+    {
+      firstName: 'Carlton',
+      lastName: 'Cadenza',
+      status: 'offline',
+      phone: '(123) 456-7890',
+      ext: '2122',
+      avatar: 'avatar-luke.png',
+      url: '/contact/Contact',
+    },
+    {
+      firstName: 'Carrie',
+      lastName: 'Creston',
+      status: 'online',
+      phone: '(123) 321-9922',
+      ext: '2127',
+      avatar: 'avatar-leia.png',
+      url: '/contact/Contact',
+    },
+  ];
+  public contactPagesD = [ 
+    {
+      firstName: 'Darcy',
+      lastName: 'DeLahoya',
+      status: 'out to lunch',
+      phone: '(123) 321-9922',
+      ext: '2127',
+      avatar: 'avatar-rey.png',
+      url: '/contact/Contact',
+    },
+    {
+      firstName: 'Demarius',
+      lastName: 'DeSantis',
+      status: 'offline',
+      phone: '(123) 321-5454',
+      ext: '2129',
+      avatar: 'avatar-finn.png',
+      url: '/contact/Contact',
+    },
+    {
+      firstName: 'Donald',
+      lastName: 'Deiterhoffen',
+      status: 'online',
+      phone: '(123) 456-7890',
+      ext: '2122',
+      avatar: 'avatar-poe.png',
+      url: '/contact/Contact',
+    },
   ];
 
   public dashPages = [
@@ -315,38 +536,4 @@ export class AppComponent implements OnInit {
         color: 'medium'
       }
   ];   
-	
-
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
-  ) {
-    this.initializeApp();
-  }
-
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-  }
-
-  ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
-    if (path !== undefined) {
-      this.selectedIndex = this.mailPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    }
-    /*
-    const path = window.location.pathname.split('folder/')[1];
-    if (path !== undefined) {
-      this.selectedIndex = this.mailPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    }
-    /*
-    const path = window.location.pathname.split('contacts/')[1];
-    if (path !== undefined) {
-      this.selectedIndex = this.contactFolders.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
-    }
-    */
-  }
 }

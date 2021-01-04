@@ -1,0 +1,16 @@
+.rev-popover-keypad {
+  --width: 400px;
+  --min-width: 400px;
+}
+
+.rev-keypad {
+  margin: 0;
+  --width: 400px;
+}
+.rev-keypad .rev-keys div {
+  display: flex;
+  justify-content: center;
+  background-color: var(--ion-color-light-shade);
+  font-size: 2em;
+  padding: 1em;
+}

@@ -8,12 +8,12 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'dashboard/:id',
-    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
-  },
-  {
     path: 'communicator/:id',
     loadChildren: () => import('./communicator/communicator.module').then( m => m.CommunicatorPageModule)
+  },
+  {
+    path: 'dashboard/:id',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
   },
   {
     path: 'folder/:id',
@@ -24,20 +24,12 @@ const routes: Routes = [
     loadChildren: () => import('./appointments/appointments.module').then( m => m.AppointmentsPageModule)
   },
   {
-    path: 'contacts/:id',
-    loadChildren: () => import('./contacts/contacts.module').then( m => m.ContactsPageModule)
-  },
-  {
     path: 'settings/:id',
     loadChildren: () => import('./settings/settings.module').then( m => m.SettingsPageModule)
   },
   {
     path: 'account/:id',
     loadChildren: () => import('./account/account.module').then( m => m.AccountPageModule)
-  },
-  {
-    path: 'modal/:id',
-    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   },
   {
     path: 'contact/:id',

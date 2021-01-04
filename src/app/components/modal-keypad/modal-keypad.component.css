@@ -1,0 +1,51 @@
+.rev-keypad {
+  margin: 0;
+  height: 100%;
+}
+.rev-keypad .rev-key-container {
+  height: calc(100% - 60px);
+  display: grid;
+  place-items: center;
+}
+.rev-keypad .rev-key-grid {
+  width: 300px;
+}
+.rev-keypad .rev-keys {
+  width: 100%;
+}
+.rev-keypad .rev-keys div {
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  padding: 0;
+  width: 100%;
+}
+.rev-keypad .rev-keys div .rev-btn-key {
+  display: grid;
+  width: 80px;
+  height: 80px;
+  padding: 0;
+  border-radius: 0.25em;
+  align-items: center;
+  white-space: normal;
+}
+.rev-keypad .rev-keys div .rev-btn-key .rev-btn-digit {
+  display: block;
+  font-size: 2.5em;
+  line-height: 1em;
+}
+.rev-keypad .rev-keys div .rev-btn-key .rev-btn-alpha {
+  display: block;
+  font-size: 0.875em;
+  line-height: 1.25em;
+  letter-spacing: 3px;
+  margin-left: 3px;
+}
+.rev-keypad .rev-keys div .rev-btn-key .rev-btn-alpha-tite {
+  letter-spacing: 1px;
+  margin-left: 1px;
+}
+
+.rev-key-input {
+  font-size: 1.5em;
+}

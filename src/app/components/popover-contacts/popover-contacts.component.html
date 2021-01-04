@@ -1,0 +1,16 @@
+<ion-card style="margin: 0;">
+	<ion-card-header color="primary">
+		<ion-card-title>Display Name</ion-card-title>
+	</ion-card-header>
+	<ion-list>
+		<ion-menu-toggle auto-hide="false">
+			<ion-item button  (click)="dismissPopover()"><ion-icon slot="start" name="chatbox-ellipses" color="primary"></ion-icon>Start Messaging</ion-item>
+			<ion-item button  (click)="dismissPopover()"><ion-icon slot="start" name="people-circle" color="primary"></ion-icon>Add to Conference</ion-item>
+			<ion-item button  (click)="dismissPopover()"><ion-icon slot="start" name="call" color="primary"></ion-icon>Start Voice Call</ion-item>
+			<ion-item button  (click)="dismissPopover()"><ion-icon slot="start" name="mail" color="primary"></ion-icon>Send Secure Mail</ion-item>
+			<ion-item button  (click)="dismissPopover()"><ion-icon slot="start" name="copy" color="primary"></ion-icon>Copy Email Address</ion-item>
+			<ion-item button  (click)="dismissPopover()"><ion-icon slot="start" name="person-circle" color="primary"></ion-icon>Properties</ion-item>
+		</ion-menu-toggle>
+		<ion-item lines="none" detail="false" button  (click)="dismissPopover()"><ion-icon slot="start" name="close-circle" color="danger"></ion-icon>Close</ion-item>
+	</ion-list>
+</ion-card>

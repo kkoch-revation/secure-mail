@@ -4,8 +4,7 @@
 			<ion-header lines="none">
 				<ion-toolbar color="primary" style="position: relative;">
 					<ion-label class="rev-h1 rev-logo">
-						<!--h1 ><svg><use xlink:href="#R"></use></svg>Communicator</h1-->
-						<div class="logo-bug" style="position: absolute; top: 0; left: 0; width: 64px; height: 60px; background-color: var(--ion-color-dark);">
+						<div class="rev-logo-bug">
 						<img src="../assets/R.png"  alt="Revation"/>
 						</div>
 						<h1 >Communicator</h1>
@@ -18,7 +17,7 @@
 					<div class="rev-apps">
 						<ion-list id="app-list" class="rev-apps">
 							<ion-menu-toggle auto-hide="false" *ngFor="let p of apps; let i = index">
-								<ion-item class="app-link" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+								<ion-item class="rev-app-link" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
 									<ion-icon size="large"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
 									<ion-label>{{ p.title }}</ion-label>
 									<ion-badge color="danger">{{ p.badge }}</ion-badge>
@@ -27,8 +26,8 @@
 						</ion-list>
 						<ion-list id="user-menu" class="rev-apps rev-userSettings">
 							<div class="grid-spacer"></div>	
-							<ion-menu-toggle auto-hide="false" *ngFor="let p of userMenu; let i = index">
-								<ion-item class="app-link" (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == i">
+							<ion-menu-toggle auto-hide="false" *ngFor="let p of userMenu; let x = index">
+								<ion-item class="rev-app-link" (click)="selectedIndex = x" routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" [class.selected]="selectedIndex == x">
 									<ion-icon size="large"  [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
 									<ion-label>{{ p.title }}</ion-label>
 									<ion-badge color="danger">{{ p.badge }}</ion-badge>
@@ -39,12 +38,100 @@
 					<!-- Right side menu dynamically served based on what page you are accessing -->
 					<div class="rev-menu">
 						<div class="rev-menu-communicator">
-
-							<ion-toolbar>
-								<ion-label class="rev-h1"><h1>Speed Dials</h1></ion-label>
-								<ion-buttons slot="end"><ion-button><ion-icon slot="icon-only" size="large" name="add"></ion-icon></ion-button></ion-buttons>
+							<!-- Ion Segment select Contacts/Speed Dials/Recent Sessions -->
+							<ion-segment color="primary" value="contacts">
+								<ion-segment-button value="contacts" (click)="showContacts()">
+									<ion-label class="ion-hide-xl-down">Contacts</ion-label>
+									<ion-icon name="person-circle"></ion-icon>
+								</ion-segment-button>
+								<ion-segment-button value="speedDials" (click)="showSpeedDials()">
+									<ion-label class="ion-hide-xl-down">Speed Dial</ion-label>
+									<ion-icon name="call"></ion-icon>
+								</ion-segment-button>
+								<ion-segment-button value="recentSessions" (click)="showRecentSessions()">
+									<ion-label class="ion-hide-xl-down">Recent</ion-label>
+									<ion-icon name="time"></ion-icon>
+								</ion-segment-button>
+							</ion-segment>
+							<ion-toolbar color="light">
+								<ion-searchbar showCancelButton="focus" animated></ion-searchbar>
+								<!--ion-item>
+									 <ion-input type="search" placeholder="Search" showCancelButton="focus"></ion-input>
+									 <button fill="clear" slot="end"><ion-icon slot="icon-only" name="search"></ion-icon></button>
+								</ion-item-->
 							</ion-toolbar>
-							<ion-list id="communicatorFolders" class=""  lines="full">	
+							
+							<div id="contacts" class="rev-show">
+								<ion-list id="contacts-list-A" class=""  lines="full">
+									<ion-item-divider sticky="true" color="light">
+										<ion-label>Administration</ion-label>
+										<ion-icon class="mr-12" slot="end" name="chevron-down" size="small"></ion-icon>
+									</ion-item-divider>							
+									<ion-item  button (click)="presentPopoverContacts($event)" detail="false" *ngFor="let p of contactPagesA;">
+										<ion-label>
+											<h2>{{ p.firstName }} {{ p.lastName }} <span class="rev-status">&#8212;{{ p.status }}</span></h2>
+											<h3>{{ p.phone }} ext. {{ p.ext }}</h3>
+										</ion-label>
+										<ion-avatar slot="start">
+											<img src="../../assets/{{ p.avatar }}">
+											<ion-icon class="rev-status {{ p.status }}" name="ellipse"></ion-icon>
+										</ion-avatar>
+										<!--ion-icon slot="end" name="ellipsis-vertical" class="ion-hide-xl-down"></ion-icon-->
+									</ion-item>
+								</ion-list>
+								<ion-list id="contacts-list-B" class=""  lines="full">
+									<ion-item-divider sticky="true" color="light">
+										<ion-label>Sales &amp; Marketing</ion-label>
+										<ion-icon class="mr-12" slot="end" name="chevron-down" size="small"></ion-icon>
+									</ion-item-divider>	
+									<ion-item  button (click)="presentPopoverContacts($event)" detail="false" *ngFor="let p of contactPagesB;">
+										<ion-label>
+											<h2>{{ p.firstName }} {{ p.lastName }} <span class="rev-status">&#8212;{{ p.status }}</span></h2>
+											<h3>{{ p.phone }} ext. {{ p.ext }}</h3>
+										</ion-label>
+										<ion-avatar slot="start">
+											<img src="../../assets/{{ p.avatar }}">
+											<ion-icon class="rev-status {{ p.status }}" name="ellipse"></ion-icon>
+										</ion-avatar>
+										<!--ion-icon slot="end" name="ellipsis-vertical" class="ion-hide-xl-down"></ion-icon-->
+									</ion-item>
+								</ion-list>
+								<ion-list id="contacts-list-C" class=""  lines="full">
+									<ion-item-divider sticky="true" color="light">
+										<ion-label>Core Development</ion-label>
+										<ion-icon class="mr-12" slot="end" name="chevron-down" size="small"></ion-icon>
+									</ion-item-divider>	
+									<ion-item  button (click)="presentPopoverContacts($event)" detail="false" *ngFor="let p of contactPagesC;">
+										<ion-label>
+											<h2>{{ p.firstName }} {{ p.lastName }} <span class="rev-status">&#8212;{{ p.status }}</span></h2>
+											<h3>{{ p.phone }} ext. {{ p.ext }}</h3>
+										</ion-label>
+										<ion-avatar slot="start">
+											<img src="../../assets/{{ p.avatar }}">
+											<ion-icon class="rev-status {{ p.status }}" name="ellipse"></ion-icon>
+										</ion-avatar>
+										<!--ion-icon slot="end" name="ellipsis-vertical" class="ion-hide-xl-down"></ion-icon-->
+									</ion-item>
+								</ion-list>
+								<ion-list id="contacts-list-D" class=""  lines="full">
+									<ion-item-divider sticky="true" color="light">
+										<ion-label>Support &amp; Systems Engineering</ion-label>
+										<ion-icon class="mr-12" slot="end" name="chevron-down" size="small"></ion-icon>
+									</ion-item-divider>	
+									<ion-item  button (click)="presentPopoverContacts($event)" detail="false" *ngFor="let p of contactPagesD;">
+										<ion-label>
+											<h2>{{ p.firstName }} {{ p.lastName }} <span class="rev-status">&#8212;{{ p.status }}</span></h2>
+											<h3>{{ p.phone }} ext. {{ p.ext }}</h3>
+										</ion-label>
+										<ion-avatar slot="start">
+											<img src="../../assets/{{ p.avatar }}">
+											<ion-icon class="rev-status {{ p.status }}" name="ellipse"></ion-icon>
+										</ion-avatar>
+										<!--ion-icon slot="end" name="ellipsis-vertical" class="ion-hide-xl-down"></ion-icon-->
+									</ion-item>
+								</ion-list>
+							</div>
+							<div id="speedDials" class="rev-hide">
 								<ion-item-group class="rev-speedDials">
 									<ion-item-divider sticky="true" color="light">
 										<ion-label>Internal</ion-label>
@@ -72,6 +159,9 @@
 										<ion-label>Personal</ion-label>
 										<ion-icon class="mr-12" slot="end" name="chevron-down" size="small"></ion-icon>
 									</ion-item-divider>
+									<ion-toolbar>
+										<ion-buttons slot="end"><ion-button><ion-icon slot="icon-only" size="large" name="add"></ion-icon></ion-button></ion-buttons>
+									</ion-toolbar>
 									<ion-menu-toggle auto-hide="false" *ngFor="let p of speedDialsPersonal">
 										<ion-item-sliding>
 											<ion-item  button (click)="buttonClick()">
@@ -84,7 +174,28 @@
 										</ion-item-sliding>
 									</ion-menu-toggle>
 								</ion-item-group>
-							</ion-list>				
+							</div>
+							<div id="recentSessions" class="rev-hide">
+								<ion-list id="" class=""  lines="full">
+									<ion-item-divider sticky="true" color="light">
+										<ion-label>Recent Sessions</ion-label>
+										<ion-icon class="mr-12" slot="end" name="chevron-down" size="small"></ion-icon>
+									</ion-item-divider>	
+									<ion-menu-toggle auto-hide="false" *ngFor="let p of contactPagesA; let i = index">
+										<ion-item   button (click)="presentPopoverContacts($event)" detail="false">
+											<ion-label>
+												<h2>{{ p.firstName }} {{ p.lastName }} <span class="rev-status">&#8212;{{ p.status }}</span></h2>
+												<h3>{{ p.phone }} ext. {{ p.ext }}</h3>
+											</ion-label>
+											<ion-avatar slot="start">
+												<img src="../../assets/{{ p.avatar }}">
+												<ion-icon class="rev-status {{ p.status }}" name="ellipse"></ion-icon>
+											</ion-avatar>
+											<!--ion-icon slot="end" name="ellipsis-vertical"></ion-icon-->
+										</ion-item>
+									</ion-menu-toggle>
+								</ion-list>
+							</div>
 						</div>
 						
 					  <div class="rev-menu-mail">
@@ -112,25 +223,6 @@
 										<ion-icon slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
 										<ion-label>{{ p.title }}</ion-label>
 										<ion-badge color="{{ p.color }}">{{ p.badge }}</ion-badge>
-									</ion-item>
-								</ion-menu-toggle>
-							</ion-list>
-						</div>
-						
-						
-						<div class="rev-menu-contacts">
-							<ion-toolbar>
-								<ion-label class="rev-h1"><h1>Contacts</h1></ion-label>
-								<ion-buttons slot="end"><ion-button><ion-icon slot="icon-only" size="large" name="add"></ion-icon></ion-button></ion-buttons>
-							</ion-toolbar>
-							<!--ion-searchbar showCancelButton="focus"></ion-searchbar-->
-							<ion-list id="contactFolders" class=""  lines="full">
-								<!--ion-list-header>LinkLive 9</ion-list-header>
-							  <ion-note>kkoch@revation.com</ion-note-->
-								<ion-menu-toggle auto-hide="false" *ngFor="let p of contactFolders; let i = index">
-									<ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]"  detail="false" [class.selected]="selectedIndex == i">
-										<ion-icon slot="start" class="mr-12" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-										<ion-label>{{ p.title }}</ion-label>
 									</ion-item>
 								</ion-menu-toggle>
 							</ion-list>
@@ -185,13 +277,6 @@
 						</ion-card>
 					</ion-fab-list>
 				</ion-fab>
-				<!-- REVATION Logo Bug SVG -->
-				<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-					<symbol id="R" data-name="Layer 1" viewBox="0 0 85.38 85.38">
-						<circle cx="42.69" cy="42.69" r="42.69" style="fill:#39b54a" />
-						<path d="M30.23,49.27,27.47,64.61A4.16,4.16,0,0,1,23.55,68H16.92a2.73,2.73,0,0,1-2.71-3.36l8-44.41a4.09,4.09,0,0,1,3.85-3.35h29c10.52,0,17.27,6.13,15.45,16.21C69.14,41,62.5,44.6,55,46.06c2.76,1.09,4.46,3.65,6.51,8.25L66,64.61c.81,1.9,0,3.36-1.83,3.36H55.76A5.78,5.78,0,0,1,51,64.61l-4.27-9.5c-1.28-2.84-3.34-5.84-7.88-5.84Zm4-22.35L32.05,39.2H47c4,0,9.42-1.47,10.26-6.14s-4-6.14-8-6.14Z" transform="translate(-0.82 -0.72)" style="fill:#fff" />
-					</symbol>
-				</svg>
 			</ion-content>
 		</ion-menu>
 		<ion-router-outlet id="page"></ion-router-outlet>

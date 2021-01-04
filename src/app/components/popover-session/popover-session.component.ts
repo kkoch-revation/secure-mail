@@ -1,18 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { PopoverController } from '@ionic/angular';  
-import { PopoverSessionComponent } from '../popover-session/popover-session.component';
-
+import { PopoverController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-session-card',
-  templateUrl: './session-card.component.html',
-  styleUrls: ['./session-card.component.scss'],
+  selector: 'app-popover-session',
+  templateUrl: './popover-session.component.html',
+  styleUrls: ['./popover-session.component.scss'],
 })
-export class SessionCardComponent implements OnInit {
+export class PopoverSessionComponent implements OnInit {
 
-  constructor(public popoverController: PopoverController) { 
-    
-  }
+  constructor(public popoverController: PopoverController) {}
 
   async presentPopoverSession(ev: any) {
     const popover = await this.popoverController.create({

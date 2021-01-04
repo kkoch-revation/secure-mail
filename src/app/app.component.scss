@@ -59,7 +59,7 @@ ion-menu.md ion-item.selected ion-icon {
   color: var(--ion-color-primary);
 }
 
-ion-menu.md ion-item ion-icon {
+ion-menu.md ion-item ion-icon, ion-menu.md ion-item-divider ion-icon {
   color: #616e7e;
 }
 
@@ -91,7 +91,7 @@ ion-menu.ios ion-item.selected ion-icon {
   color: var(--ion-color-primary);
 }
 
-ion-menu.ios ion-item ion-icon {
+ion-menu.ios ion-item ion-icon, ion-menu.ios ion-item-divider ion-icon {
   font-size: 24px;
   color: #73849a;
 }
@@ -123,6 +123,8 @@ ion-item.selected {
 
 // APPS: CUSTOM MENU
 
+// 12/29/2020 Rendering these styles as unused to support latest deisgn input from team 
+/*
 @media screen and (min-width: 992px) {
 	ion-menu{
 	max-width:315px !important;
@@ -138,6 +140,7 @@ ion-item.selected {
 	max-width:400px!important;
 	}
 }
+*/
 
 .rev-grid {
 	display: grid;
@@ -158,11 +161,11 @@ ion-item.selected {
 }
 
 
-
 .rev-menu {
 	height: calc(100vh - 136px); // 100vh - ion-header (56px) - account component (80px)
 	overflow: hidden;
 	overflow-y:auto;
+
 	ion-icon.mr-12 {
 		//margin-left:0rem;
 		margin-right: 0.625rem;
@@ -296,14 +299,15 @@ ion-menu.rev-main-menu ion-content, ion-menu.md.rev-main-menu ion-content, ion-m
 
 
 
-// Speed Dials List
-.rev-speedDials {
+// Item Dividers
+
 	ion-item-divider {
 		ion-label {
 			text-transform: uppercase;
+			font-weight: 500;
 		}
 	}
-}
+
 
 // REV Content Wrapper 
 .rev-content-wrapper {
@@ -347,4 +351,36 @@ ion-label.rev-h1.rev-logo {
   left: 12px;
 	border-radius: 10em;
 	border: 3px solid rgba(255,255,255,1);
+}
+.rev-logo-bug {
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 64px; 
+	height: 60px; 
+	background-color: var(--ion-color-dark);
+}
+
+// Rev Status
+ion-avatar {position: relative;}
+ion-avatar ion-icon.rev-status {position: absolute; top: 0.2em; right: -0.625em;}
+ion-label h2 .rev-status {font-size: 0.875em; color: var(--ion-color-medium-shade); text-transform: capitalize;}
+.rev-status.online {fill: var(--ion-color-success);}
+.rev-status.busy {fill: var(--ion-color-warning);}
+.rev-status.on /* the phone */ {fill: var(--ion-color-warning);}
+.rev-status.away {fill: var(--ion-color-tertiary);}
+.rev-status.out /* to lunch */ {fill: var(--ion-color-tertiary);}
+.rev-status.be /* right back */ {fill: var(--ion-color-tertiary);}
+.rev-status.offline {fill: var(--ion-color-medium);}
+
+.rev-hide {
+	display: none;
+}
+.rev-show {
+	display: block;
+}
+
+.rev-popover-keypad {
+--width: 400px;
+	--min-width: 400px;
 }
