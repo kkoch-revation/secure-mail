@@ -14,7 +14,7 @@ export class ModalKeypadComponent implements OnInit {
   async presentModalKeypad() {
     const modal = await this.modalController.create({
       component: ModalKeypadComponent,
-      cssClass: 'my-custom-class'
+      cssClass: 'rev-keypad-component'
     });
     return await modal.present();
   }

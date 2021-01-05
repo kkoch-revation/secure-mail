@@ -1,16 +1,17 @@
-.rev-modal-keypad {
-}
 .rev-keypad {
 	margin: 0;
 	height: 100%;
 	.rev-key-container {
-		height: calc(100% - 60px);
+		//height: calc(100% - 60px);
 		display: grid;
 		place-items: center;
 	}
+	.rev-key-input {
+		font-size: 1.25em;
+	}
 	.rev-key-grid {
-		
-		width: 300px;
+		margin-top: 1em;
+		width: 220px;
 	}
 	.rev-keys {
 		width: 100%;
@@ -24,23 +25,23 @@
 
 		.rev-btn-key {
 			display: grid;
-			width: 80px;
-			height: 80px;
+			width: 50px;
+			height: 50px;
 			padding: 0;
 			border-radius: 0.25em;
-			align-items: center;
+			align-items: top;
 			white-space: normal;
 			.rev-btn-digit {
 				display: block;
-				font-size: 2.5em;
+				font-size: 2em;
 				line-height: 1em;
 			}
 			.rev-btn-alpha {
 				display: block;
-				font-size: 0.875em;
-				line-height: 1.25em;
-				letter-spacing: 3px;
-				margin-left: 3px;
+				font-size: 0.625em;
+				line-height: 1em;
+				letter-spacing: 2px;
+				margin-left: 2px;
 			}
 			.rev-btn-alpha-tite {
 				letter-spacing: 1px;
@@ -49,6 +50,4 @@
 		}		
 	}
 }
-.rev-key-input {
-	font-size: 1.5em;
-}
+

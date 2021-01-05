@@ -50,7 +50,7 @@ export class CommunicatorPage implements OnInit {
   async presentModalKeypad() {
     const modal = await this.modalController.create({
       component: ModalKeypadComponent,
-      cssClass: 'my-custom-class'
+      cssClass: 'rev-modal-keypad'
     });
     return await modal.present();
   }

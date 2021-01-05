@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';  
+import { ModalController } from '@ionic/angular'; 
 import { PopoverContactsComponent } from './components/popover-contacts/popover-contacts.component';
 import { PopoverSessionComponent } from './components/popover-session/popover-session.component';
+import { ModalKeypadComponent } from './components/modal-keypad/modal-keypad.component';
 
 
 import { Platform } from '@ionic/angular';
@@ -19,7 +21,8 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public popoverController: PopoverController
+    public popoverController: PopoverController,
+    public modalController: ModalController
   ) {
     this.initializeApp();
   }
@@ -59,6 +62,16 @@ export class AppComponent implements OnInit {
   dismissPopover() {
     this.popoverController.dismiss();
   }
+  async presentModalKeypad() {
+    const modal = await this.modalController.create({
+      component: ModalKeypadComponent,
+      cssClass: 'rev-keypad-component'
+    });
+    return await modal.present();
+  }
+  dismissModal() {
+    this.modalController.dismiss();
+  }
 
   showContacts() {
     var element = document.getElementById("contacts");
@@ -72,6 +85,10 @@ export class AppComponent implements OnInit {
     var element = document.getElementById("recentSessions");
     element.classList.remove("rev-show");
     var element = document.getElementById("recentSessions");
+    element.classList.add("rev-hide");
+    var element = document.getElementById("outboundDialer");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("outboundDialer");
     element.classList.add("rev-hide");
   }
   showSpeedDials() {
@@ -87,10 +104,16 @@ export class AppComponent implements OnInit {
     element.classList.remove("rev-show");
     var element = document.getElementById("recentSessions");
     element.classList.add("rev-hide");
+    var element = document.getElementById("outboundDialer");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("outboundDialer");
+    element.classList.add("rev-hide");
   }
   showRecentSessions() {
     var element = document.getElementById("recentSessions");
     element.classList.add("rev-show");
+    var element = document.getElementById("recentSessions");
+    element.classList.remove("rev-hide");
     var element = document.getElementById("contacts");
     element.classList.remove("rev-show");
     var element = document.getElementById("contacts");
@@ -98,6 +121,28 @@ export class AppComponent implements OnInit {
     var element = document.getElementById("speedDials");
     element.classList.remove("rev-show");
     var element = document.getElementById("speedDials");
+    element.classList.add("rev-hide");
+    var element = document.getElementById("outboundDialer");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("outboundDialer");
+    element.classList.add("rev-hide");
+  }
+  showOutboundDialer() {
+    var element = document.getElementById("outboundDialer");
+    element.classList.add("rev-show");
+    var element = document.getElementById("outboundDialer");
+    element.classList.remove("rev-hide");
+    var element = document.getElementById("contacts");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("contacts");
+    element.classList.add("rev-hide");
+    var element = document.getElementById("speedDials");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("speedDials");
+    element.classList.add("rev-hide");
+    var element = document.getElementById("recentSessions");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("recentSessions");
     element.classList.add("rev-hide");
   }
 

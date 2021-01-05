@@ -41,27 +41,33 @@
 							<!-- Ion Segment select Contacts/Speed Dials/Recent Sessions -->
 							<ion-segment color="primary" value="contacts">
 								<ion-segment-button value="contacts" (click)="showContacts()">
-									<ion-label class="ion-hide-xl-down">Contacts</ion-label>
+									<!--ion-label class="ion-hide-xl-down">Contacts</ion-label-->
 									<ion-icon name="person-circle"></ion-icon>
 								</ion-segment-button>
 								<ion-segment-button value="speedDials" (click)="showSpeedDials()">
-									<ion-label class="ion-hide-xl-down">Speed Dial</ion-label>
+									<!--ion-label class="ion-hide-xl-down">Speed Dial</ion-label-->
 									<ion-icon name="call"></ion-icon>
 								</ion-segment-button>
 								<ion-segment-button value="recentSessions" (click)="showRecentSessions()">
-									<ion-label class="ion-hide-xl-down">Recent</ion-label>
+									<!--ion-label class="ion-hide-xl-down">Recent</ion-label-->
 									<ion-icon name="time"></ion-icon>
 								</ion-segment-button>
+								<ion-segment-button value="keypad" (click)="showOutboundDialer()">
+									<!--ion-label class="ion-hide-xl-down">Dialer</ion-label-->
+									<ion-icon name="keypad"></ion-icon>
+								</ion-segment-button>
 							</ion-segment>
-							<ion-toolbar color="light">
-								<ion-searchbar showCancelButton="focus" animated></ion-searchbar>
+							
 								<!--ion-item>
 									 <ion-input type="search" placeholder="Search" showCancelButton="focus"></ion-input>
 									 <button fill="clear" slot="end"><ion-icon slot="icon-only" name="search"></ion-icon></button>
 								</ion-item-->
-							</ion-toolbar>
+
 							
 							<div id="contacts" class="rev-show">
+								<ion-toolbar color="light">
+									<ion-searchbar showCancelButton="focus" animated></ion-searchbar>
+								</ion-toolbar>
 								<ion-list id="contacts-list-A" class=""  lines="full">
 									<ion-item-divider sticky="true" color="light">
 										<ion-label>Administration</ion-label>
@@ -132,6 +138,9 @@
 								</ion-list>
 							</div>
 							<div id="speedDials" class="rev-hide">
+								<ion-toolbar color="light">
+									<ion-searchbar showCancelButton="focus" animated></ion-searchbar>
+								</ion-toolbar>
 								<ion-item-group class="rev-speedDials">
 									<ion-item-divider sticky="true" color="light">
 										<ion-label>Internal</ion-label>
@@ -176,6 +185,9 @@
 								</ion-item-group>
 							</div>
 							<div id="recentSessions" class="rev-hide">
+								<ion-toolbar color="light">
+									<ion-searchbar showCancelButton="focus" animated></ion-searchbar>
+								</ion-toolbar>
 								<ion-list id="" class=""  lines="full">
 									<ion-item-divider sticky="true" color="light">
 										<ion-label>Recent Sessions</ion-label>
@@ -195,6 +207,10 @@
 										</ion-item>
 									</ion-menu-toggle>
 								</ion-list>
+							</div>
+							<div id="outboundDialer" class="rev-outboundDialer rev-hide">
+								<app-modal-keypad></app-modal-keypad>
+								<app-popover-keypad></app-popover-keypad>
 							</div>
 						</div>
 						

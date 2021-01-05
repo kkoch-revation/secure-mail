@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { PopoverController } from '@ionic/angular';
+//import { PopoverController } from '@ionic/angular';
+//import { ModalController } from '@ionic/angular'; 
 import { CollapseComponent } from './collapse/collapse.component';
 import { ContactCardComponent } from './contact-card/contact-card.component';
 import { SessionCardComponent } from './session-card/session-card.component';
@@ -12,7 +13,8 @@ import { ModalKeypadComponent } from './modal-keypad/modal-keypad.component';
 
 @NgModule({
   declarations: [
-    PopoverController, 
+    //PopoverController, 
+    //ModalController,
     CollapseComponent, 
     ContactCardComponent, 
     SessionCardComponent, 
@@ -24,7 +26,8 @@ import { ModalKeypadComponent } from './modal-keypad/modal-keypad.component';
     ModalKeypadComponent
   ],
   exports: [
-    PopoverController, 
+    //PopoverController, 
+    //ModalController,
     CollapseComponent, 
     ContactCardComponent, 
     SessionCardComponent, 
