@@ -38,3 +38,10 @@
 .rev-modal-keypad .rev-modal-keypad-toolbar {
   display: block;
 }
+
+ion-segment#rev-contact-lists ion-segment-button {
+  min-width: 20px !important;
+}
+ion-segment#rev-contact-lists ion-segment-button::part(native) {
+  min-width: 20px !important;
+}

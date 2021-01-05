@@ -40,3 +40,12 @@
 .rev-modal-keypad .rev-modal-keypad-toolbar {
 	display: block;
 }
+// ION SEGMENT: Target ion-segment-button in the shadow dom using a "::part" pseudo-class, thus overriding the default 90px wide (android) segment button with something smaller and tideir to fit in the narrow menu
+ion-segment#rev-contact-lists {
+	ion-segment-button {
+	min-width: 20px !important;
+	}
+	ion-segment-button::part(native) {
+	min-width: 20px !important;
+	}
+}

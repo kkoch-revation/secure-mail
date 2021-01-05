@@ -39,8 +39,8 @@
 					<div class="rev-menu">
 						<div class="rev-menu-communicator">
 							<!-- Ion Segment select Contacts/Speed Dials/Recent Sessions -->
-							<ion-segment color="primary" value="contacts">
-								<ion-segment-button value="contacts" (click)="showContacts()">
+							<ion-segment id="rev-contact-lists" color="primary" value="contacts">
+								<ion-segment-button value="contacts" (click)="showContacts()" style="min-width: 20px;">
 									<!--ion-label class="ion-hide-xl-down">Contacts</ion-label-->
 									<ion-icon name="person-circle"></ion-icon>
 								</ion-segment-button>
