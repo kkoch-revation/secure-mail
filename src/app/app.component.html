@@ -210,7 +210,25 @@
 							</div>
 							<div id="outboundDialer" class="rev-outboundDialer rev-hide">
 								<app-modal-keypad></app-modal-keypad>
-								<app-popover-keypad></app-popover-keypad>
+								<ion-list id="" class=""  lines="full">
+									<ion-item-divider sticky="true" color="light">
+										<ion-label>Recent Outbound Calls</ion-label>
+										<ion-icon class="mr-12" slot="end" name="chevron-down" size="small"></ion-icon>
+									</ion-item-divider>	
+									<ion-menu-toggle auto-hide="false" *ngFor="let p of contactPagesA; let i = index">
+										<ion-item   button (click)="presentPopoverContacts($event)" detail="false">
+											<ion-label>
+												<h2>{{ p.firstName }} {{ p.lastName }} <span class="rev-status">&#8212;{{ p.status }}</span></h2>
+												<h3>{{ p.phone }} ext. {{ p.ext }}</h3>
+											</ion-label>
+											<ion-avatar slot="start">
+												<img src="../../assets/{{ p.avatar }}">
+												<ion-icon class="rev-status {{ p.status }}" name="ellipse"></ion-icon>
+											</ion-avatar>
+											<!--ion-icon slot="end" name="ellipsis-vertical"></ion-icon-->
+										</ion-item>
+									</ion-menu-toggle>
+								</ion-list>
 							</div>
 						</div>
 						
