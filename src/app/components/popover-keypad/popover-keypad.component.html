@@ -1,54 +1,150 @@
-<ion-card class="rev-keypad">
-	<ion-card-header color="primary">
-		<ion-card-title>Keypad</ion-card-title>
-	</ion-card-header>
-	<ion-grid class="rev-keys">
-		<ion-row>
-			<ion-col>
-				<div>1</div>
-			</ion-col>
-			<ion-col>
-				<div>2</div>
-			</ion-col>
-			<ion-col>
-				<div>3</div>
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col>
-				<div>4</div>
-			</ion-col>
-			<ion-col>
-				<div>5</div>
-			</ion-col>
-			<ion-col>
-				<div>6</div>
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col>
-				<div>7</div>
-			</ion-col>
-			<ion-col>
-				<div>8</div>
-			</ion-col>
-			<ion-col>
-				<div>9</div>
-			</ion-col>
-		</ion-row>
-		<ion-row>
-			<ion-col>
-				<div></div>
-			</ion-col>
-			<ion-col>
-				<div>0</div>
-			</ion-col>
-			<ion-col>
-				<div></div>
-			</ion-col>
-		</ion-row>
-	</ion-grid>
-	<ion-list>
-		<ion-item lines="none" detail="false" button  (click)="dismissPopover()"><ion-icon slot="start" name="close-circle" color="danger"></ion-icon>Close</ion-item>
-	</ion-list>
-</ion-card>
+<div class="rev-keypad">
+	<ion-toolbar color="primary" class="rev-modal-keypad-toolbar">
+		<ion-title>Keypad</ion-title>
+		<ion-buttons slot="end">
+			<ion-button fill="clear" (click)="dismissPopover()"><ion-icon slot="icon-only" name="close"></ion-icon></ion-button>
+		</ion-buttons>
+	</ion-toolbar>
+	<div class="rev-key-container">
+		<ion-toolbar>
+		<ion-item>
+		 <ion-input type="text" placeholder="Numbers" class="rev-key-input"></ion-input>
+			<ion-buttons slot="end">
+				<ion-button size="large" fill="clear" color="primary"><ion-icon slot="icon-only" name="call"></ion-icon></ion-button>
+			</ion-buttons>
+		</ion-item>
+		</ion-toolbar>
+		<div class="rev-key-grid">
+			<ion-grid class="rev-keys">
+				<ion-row>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">1</span>
+									<span class="rev-btn-alpha"></span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">2</span>
+									<span class="rev-btn-alpha">ABC</span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">3</span>
+									<span class="rev-btn-alpha">DEF</span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">4</span>
+									<span class="rev-btn-alpha">GHI</span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">5</span>
+									<span class="rev-btn-alpha">JKL</span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">6</span>
+									<span class="rev-btn-alpha">MNO</span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">7</span>
+									<span class="rev-btn-alpha rev-btn-alpha-tite">PQRS</span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">8</span>
+									<span class="rev-btn-alpha">TUV</span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">9</span>
+									<span class="rev-btn-alpha rev-btn-alpha-tite">WXYZ</span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">*</span>
+									<span class="rev-btn-alpha"></span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">0</span>
+									<span class="rev-btn-alpha"></span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+					<ion-col>
+						<div>
+							<ion-button class="rev-btn-key" shape="round">
+								<ion-label class="ion-text-wrap">
+									<span class="rev-btn-digit">#</span>
+									<span class="rev-btn-alpha"></span>
+								</ion-label>
+							</ion-button>
+						</div>
+					</ion-col>
+				</ion-row>
+			</ion-grid>
+		</div>
+	</div>
+</div>

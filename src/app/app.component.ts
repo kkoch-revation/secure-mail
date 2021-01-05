@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
 
   async presentPopoverContacts(ev: any) {
     const popover = await this.popoverController.create({
-      component: PopoverContactsComponent,
+      component: ModalKeypadComponent,
       cssClass: 'rev-popover-contacts',
       event: ev,
       translucent: true

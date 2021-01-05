@@ -30,7 +30,8 @@ export class CommunicatorPage implements OnInit {
   async presentPopoverKeypad(ev: any) {
     const popover = await this.popoverController.create({
       component: PopoverKeypadComponent,
-      cssClass: 'rev-popover-keypad',
+      cssClass: 'rev-modal-keypad',
+      event: ev,
       translucent: true
     });
     return await popover.present();
