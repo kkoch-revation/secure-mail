@@ -9,6 +9,7 @@ import { AgentMetricsComponent } from './agent-metrics/agent-metrics.component';
 import { StatusFabComponent } from './status-fab/status-fab.component';
 import { PopoverContactsComponent } from './popover-contacts/popover-contacts.component';
 import { PopoverSessionComponent } from './popover-session/popover-session.component';
+import { PopoverKeypadComponent } from './popover-keypad/popover-keypad.component';
 import { ModalKeypadComponent } from './modal-keypad/modal-keypad.component';
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ModalKeypadComponent } from './modal-keypad/modal-keypad.component';
     StatusFabComponent, 
     PopoverContactsComponent, 
     PopoverSessionComponent,
+    PopoverKeypadComponent,
     ModalKeypadComponent
   ],
   exports: [
@@ -36,6 +38,7 @@ import { ModalKeypadComponent } from './modal-keypad/modal-keypad.component';
     StatusFabComponent, 
     PopoverContactsComponent, 
     PopoverSessionComponent,
+    PopoverKeypadComponent,
     ModalKeypadComponent
   ]
   
