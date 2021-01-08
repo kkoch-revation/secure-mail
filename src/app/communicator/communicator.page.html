@@ -18,15 +18,59 @@
 			<div id="rev-flex-grid" class="rev-column-grid rev-default">
 				<div class="rev-column media">
 					<div class="rev-grid-container rev-media-container">
-						<ion-header>
+						<!--ion-header-->
 							<ion-toolbar color="light">
 								<ion-buttons slot="start">
 									<ion-button (click)="focusMedia()" class="ion-hide-xl-down"><ion-icon name="videocam" slot="icon-only"></ion-icon></ion-button>
 								</ion-buttons>
 								<ion-title>Video &amp; Sharing</ion-title>
 							</ion-toolbar>
-						</ion-header>
-						<ion-content>
+						<!--/ion-header-->
+						<!--ion-content-->
+							<div class="rev-video-composite">                  
+								<div class="rev-row">                     
+									<div id="rev-video-thumbnails" class="rev-video-thumbnails">                      
+										<div class="rev-video rev-video-user">
+											<video id="rwc_local_video_player" autoplay="" playsinline=""></video>
+											<div id="local-video-thumbnail" class="rev-display-name">Test User</div>
+										</div>
+										<div class="rev-video rev-video-user">
+											<video id="rwc_local_video_player" autoplay="" playsinline=""></video>
+											<div id="local-video-thumbnail" class="rev-display-name">Test User</div>
+										</div>
+										<div class="rev-video rev-video-user">
+											<video id="rwc_local_video_player" autoplay="" playsinline=""></video>
+											<div id="local-video-thumbnail" class="rev-display-name">Test User</div>
+										</div>
+										<div class="rev-video rev-video-user">
+											<video id="rwc_local_video_player" autoplay="" playsinline=""></video>
+											<div id="local-video-thumbnail" class="rev-display-name">Test User</div>
+										</div>
+										<div class="rev-video rev-video-user">
+											<video id="rwc_local_video_player" autoplay="" playsinline=""></video>
+											<div id="local-video-thumbnail" class="rev-display-name">Test User</div>
+										</div>
+										<div class="rev-video rev-video-user">
+											<video id="rwc_local_video_player" autoplay="" playsinline=""></video>
+											<div id="local-video-thumbnail" class="rev-display-name">Test User</div>
+										</div>
+										<div class="rev-video rev-video-user">
+											<video id="rwc_local_video_player" autoplay="" playsinline=""></video>
+											<div id="local-video-thumbnail" class="rev-display-name">Test User</div>
+										</div>
+										<div id="local-desktop" class="rev-video rev-video-desktop rev-display_none">
+											<video id="rwc_rds" autoplay="" playsinline=""></video>
+											<div class="rev-display-name">My Desktop Sharing</div>
+										</div>
+									</div>
+									<div class="rev-video-primary">
+										<div class="rev-video rev-video-agent">
+											<video id="rwc_primary_video" autoplay="" playsinline=""></video>
+											<div id="primary-display-name" class="rev-display-name">Luke Skywalker</div>
+										</div>
+									</div>
+								</div>
+							</div>
 							<!-- Photo examples used to show positioning and retention of aspect ratio -->
 							<!-- Icon examples used to show positioning and retention of aspect ratio -->
 							<!--div class="rev-media-grid">
@@ -47,7 +91,7 @@
 									<div class="rev-video-parent"><div class="rev-video"><ion-icon size="large" name="person" color="light"></ion-icon></div></div>
 									<div class="rev-video-parent"><div class="rev-video"><ion-icon size="large" name="person" color="light"></ion-icon></div></div>
 								</div-->
-							<div class="rev-confirmation-div">
+							<!--div class="rev-confirmation-div">
 								<div class="rev-confirmation-content">
 									<ion-icon name="videocam-outline" class="rev-confirmation-icon"></ion-icon>
 									<h1>Start Video</h1>
@@ -59,14 +103,14 @@
 										<ion-button size="large" fill="clear" (click)="videoCancel();">Cancel</ion-button>
 									</div>
 								</div>
-							</div>
+							</div-->
 							
-						</ion-content>
+						<!--/ion-content-->
 					</div>
 				</div>
 				<div class="rev-column chat">
 					<div id="rev-chat-container" class="rev-chat-container">
-							<ion-header>
+							<!--ion-header-->
 								<ion-toolbar color="light">
 									<ion-buttons slot="start">
 										<ion-button (click)="focusMessages()" class="ion-hide-xl-down"><ion-icon name="chatbox-ellipses" slot="icon-only"></ion-icon></ion-button>
@@ -77,7 +121,7 @@
 										<ion-button (click)="toggleDisposition()"><ion-icon name="create" slot="icon-only" color="danger"></ion-icon></ion-button>
 									</ion-buttons>
 								</ion-toolbar>
-							</ion-header>
+							<!--/ion-header-->
 							<div id="rev-disposition" class="rev-disposition">
 								<form  #form="ngForm" (ngSubmit)="submitForm(form)">
 									<ion-item>
@@ -199,7 +243,7 @@
 								</ion-content>
 							</div>
 							<div class="rev-message-toolbar">
-								<ion-content>
+								<!--ion-content-->
 									<ion-toolbar>
 									<ion-buttons slot="start">
 										<ion-button fill="clear">
@@ -224,24 +268,24 @@
 										</ion-button>
 									</ion-buttons>
 									</ion-toolbar>
-								</ion-content>
+								<!--/ion-content-->
 							</div>
 						
 					</div>
 				</div>
 				<div class="rev-column sessions">
 					<div class="rev-sessions-container">
-						<ion-header>
+						<!--ion-header-->
 							<ion-toolbar color="light">
 								<ion-buttons slot="start">
 									<ion-button (click)="focusSessions()" class="ion-hide-xl-down"><ion-icon name="people-circle" slot="icon-only"></ion-icon></ion-button>
 								</ion-buttons>
 								<ion-title>Sessions</ion-title>
 							</ion-toolbar>
-						</ion-header>
-						<ion-content color="light">
-							<app-session-card></app-session-card>
-						</ion-content>
+						<!--/ion-header-->
+						<!--ion-content color="light"-->
+							<app-session-card class="rev-session-component-container"></app-session-card>
+						<!--/ion-content-->
 					</div>
 				</div>
 			</div>

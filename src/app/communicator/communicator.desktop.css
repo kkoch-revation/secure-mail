@@ -17,13 +17,13 @@
   .rev-column-grid.rev-default {
     border-top: 10px solid var(--ion-color-light-shade);
   }
-  .rev-column-grid.rev-default .rev-column:nth-child(3n + 1) ion-content {
+  .rev-column-grid.rev-default .rev-column:nth-child(3n + 1) .rev-video-composite {
     opacity: 1;
   }
-  .rev-column-grid.rev-default .rev-column:nth-child(3n + 2) ion-content {
+  .rev-column-grid.rev-default .rev-column:nth-child(3n + 2) .rev-disposition, .rev-column-grid.rev-default .rev-column:nth-child(3n + 2) .rev-message-window, .rev-column-grid.rev-default .rev-column:nth-child(3n + 2) .rev-message-toolbar {
     opacity: 1;
   }
-  .rev-column-grid.rev-default .rev-column:nth-child(3n + 3) ion-content {
+  .rev-column-grid.rev-default .rev-column:nth-child(3n + 3) .rev-session-component-container {
     opacity: 1;
   }
 
@@ -46,7 +46,7 @@
     border-left: 10px solid var(--ion-color-light-shade);
     background-color: var(--ion-color-light);
   }
-  .rev-column-grid.rev-default .rev-column:nth-child(3n + 1) ion-content {
+  .rev-column-grid.rev-default .rev-column:nth-child(3n + 1) .rev-video-composite {
     opacity: 0;
   }
 
@@ -56,7 +56,7 @@
     background-color: var(--ion-color-light);
     border-left: 10px solid var(--ion-color-light-shade);
   }
-  .rev-column-grid.rev-mediaMessages .rev-column:nth-child(3n + 3) ion-content {
+  .rev-column-grid.rev-mediaMessages .rev-column:nth-child(3n + 3) .rev-session-component-container {
     opacity: 0;
     height: 0px;
   }
@@ -65,18 +65,18 @@
     min-width: 66px;
     border-left: 10px solid var(--ion-color-light-shade);
   }
-  .rev-column-grid.rev-mediaMessages .rev-column:nth-child(3n + 1) ion-content {
+  .rev-column-grid.rev-mediaMessages .rev-column:nth-child(3n + 1) .rev-video-composite {
     opacity: 1;
   }
   .rev-column-grid.rev-mediaMessages .rev-column:nth-child(3n + 2) {
     flex: 0.375;
     border-left: 1px solid var(--ion-color-light-shade);
   }
-  .rev-column-grid.rev-mediaMessages .rev-column:nth-child(3n + 2) ion-content, .rev-column-grid.rev-mediaMessages .rev-column:nth-child(3n + 2) .rev-disposition, .rev-column-grid.rev-mediaMessages .rev-column:nth-child(3n + 2) .rev-message-window {
+  .rev-column-grid.rev-mediaMessages .rev-column:nth-child(3n + 2) .rev-disposition, .rev-column-grid.rev-mediaMessages .rev-column:nth-child(3n + 2) .rev-message-window {
     opacity: 1;
   }
   .rev-column-grid.rev-mediaMessages .rev-column:nth-child(3n + 3) {
-    min-width: 66px;
+    min-width: 76px;
   }
 
   .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 1) {
@@ -85,7 +85,7 @@
     background-color: var(--ion-color-light);
     border-left: 1px solid var(--ion-color-light-shade);
   }
-  .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 1) ion-content {
+  .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 1) .rev-video-composite {
     opacity: 0;
     height: 0px;
   }
@@ -97,14 +97,14 @@
     flex: 1;
     border-left: 1px solid var(--ion-color-light-shade);
   }
-  .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 2) ion-content, .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 2) .rev-disposition, .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 2) .rev-message-window {
+  .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 2) .rev-disposition, .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 2) .rev-message-window, .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 2) .rev-message-toolbar {
     opacity: 1;
   }
   .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 3) {
     flex: 0.5;
     border-left: 1px solid var(--ion-color-light-shade);
   }
-  .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 3) ion-content {
+  .rev-column-grid.rev-messagesSessions .rev-column:nth-child(3n + 3) .rev-session-component-container {
     opacity: 1;
   }
 
@@ -113,8 +113,9 @@
     flex: 1;
     border-left: 10px solid var(--ion-color-light-shade);
   }
-  .rev-column-grid.rev-showAll .rev-column:nth-child(3n + 1) ion-content,
-  .rev-column-grid.rev-showAll .rev-column:nth-child(3n + 4) ion-content {
+  .rev-column-grid.rev-showAll .rev-column:nth-child(3n + 1) ion-content, .rev-column-grid.rev-showAll .rev-column:nth-child(3n + 1) .rev-video-composite,
+  .rev-column-grid.rev-showAll .rev-column:nth-child(3n + 4) ion-content,
+  .rev-column-grid.rev-showAll .rev-column:nth-child(3n + 4) .rev-video-composite {
     opacity: 1;
   }
   .rev-column-grid.rev-showAll .rev-column:nth-child(3n + 2) {
@@ -129,10 +130,11 @@
     background-color: var(--ion-color-light);
     border-left: 1px solid var(--ion-color-light-shade);
   }
-  .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 2) ion-content, .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 2) .rev-disposition, .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 2) .rev-message-window,
-  .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 3) ion-content,
+  .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 2) .rev-disposition, .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 2) .rev-message-window, .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 2) .rev-message-toolbar, .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 2) .rev-session-component-container,
   .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 3) .rev-disposition,
-  .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 3) .rev-message-window {
+  .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 3) .rev-message-window,
+  .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 3) .rev-message-toolbar,
+  .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 3) .rev-session-component-container {
     opacity: 0;
     height: 0px;
   }
@@ -140,7 +142,7 @@
     flex: 1;
     border-left: 10px solid var(--ion-color-light-shade);
   }
-  .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 1) ion-content {
+  .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 1) .rev-video-composite {
     opacity: 1;
   }
   .rev-column-grid.rev-focusMedia .rev-column:nth-child(3n + 2) {
@@ -158,8 +160,9 @@
     border-left: 1px solid var(--ion-color-light-shade);
     background-color: var(--ion-color-light);
   }
-  .rev-column-grid.rev-focusMessages .rev-column:nth-child(3n + 1) ion-content,
-  .rev-column-grid.rev-focusMessages .rev-column:nth-child(3n + 3) ion-content {
+  .rev-column-grid.rev-focusMessages .rev-column:nth-child(3n + 1) .rev-video-composite, .rev-column-grid.rev-focusMessages .rev-column:nth-child(3n + 1) .rev-session-component-container,
+  .rev-column-grid.rev-focusMessages .rev-column:nth-child(3n + 3) .rev-video-composite,
+  .rev-column-grid.rev-focusMessages .rev-column:nth-child(3n + 3) .rev-session-component-container {
     opacity: 0;
     height: 0px;
   }
@@ -173,7 +176,7 @@
   }
   .rev-column-grid.rev-focusMessages .rev-column:nth-child(3n + 3) {
     border-left: 10px solid var(--ion-color-light-shade);
-    min-width: 66px;
+    min-width: 76px;
   }
 
   .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 1),
@@ -183,10 +186,11 @@
     background-color: var(--ion-color-light);
     border-left: 1px solid var(--ion-color-light-shade);
   }
-  .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 1) ion-content, .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 1) .rev-disposition, .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 1) .rev-message-window,
-  .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 2) ion-content,
+  .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 1) .rev-video-composite, .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 1) .rev-disposition, .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 1) .rev-message-window, .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 1) .rev-message-toolbar,
+  .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 2) .rev-video-composite,
   .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 2) .rev-disposition,
-  .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 2) .rev-message-window {
+  .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 2) .rev-message-window,
+  .rev-column-grid.rev-focusSessions .rev-column:nth-child(3n + 2) .rev-message-toolbar {
     opacity: 0;
     height: 0px;
   }

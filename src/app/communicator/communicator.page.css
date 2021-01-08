@@ -195,6 +195,10 @@ ion-header.rev-comm-header::after {
   transition: all 0.4s ease-out;
 }
 
+.rev-session-component-container {
+  background-color: var(--ion-color-light);
+}
+
 .relative {
   position: relative;
 }
@@ -361,53 +365,49 @@ ion-header.rev-comm-header::after {
   font-weight: 400;
 }
 
+/*
 .rev-media-grid-container {
-  width: 100%;
-  height: calc(100% - 0);
-  display: grid;
-  place-items: center;
-  padding: 1em;
-  overflow-y: auto;
+	width: 100%;
+	height: calc(100% - 0);
+	display: grid;
+	place-items: center;
+	padding: 1em; 
+	overflow-y: auto;
 }
-
 .rev-media-grid {
-  display: grid;
-  padding: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-template-rows: minmax(1fr, 1fr);
-  grid-gap: 0.5em;
-  width: 100%;
+	display: grid;
+	padding: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-template-rows: minmax(1fr, 1fr);
+	grid-gap: 0.5em;
+	width: 100%;
 }
-
 .rev-video-parent {
-  background: rgba(255, 255, 255, 0.125);
-  display: flex;
-  justify-content: center;
-  overflow-y: hidden;
+	background: rgba(255,255,255,0.125);
+	display: flex;
+	justify-content: center;
+	overflow-y: hidden;
 }
-
-.rev-video-parent:before {
-  content: "";
-  display: block;
-  height: 0;
-  width: 0;
-  padding-bottom: calc(9/16 * 100%);
+.rev-video-parent:before { // Set a 16:9 aspect ratio
+	content: "";
+	display: block;
+	height: 0;
+	width: 0;
+	padding-bottom: calc(9/16 * 100%);
 }
-
 .rev-video {
-  min-width: 100%;
-  display: grid;
-  place-items: center;
-  position: relative;
-  overflow-y: hidden;
+	min-width: 100%;
+	display: grid;
+	place-items: center;
+	position: relative;
+	overflow-y: hidden;
 }
-
 .rev-video img {
-  position: absolute;
-  width: 100%;
-  height: auto;
+	position: absolute;
+	width:100%;
+	height: auto;
 }
-
+*/
 .rev-confirmation-div {
   min-width: 100%;
   height: 100%;
@@ -436,8 +436,103 @@ ion-header.rev-comm-header::after {
   line-height: 1.6em;
 }
 
-@media (min-width: 1200px) {
-  .rev-grid-communicator.focus-media .rev-grid-media-module .rev-video-grid {
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  }
+.rev-video-composite {
+  position: relative;
+  background-color: #000;
 }
+
+.rev-row {
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.rev-video {
+  max-width: 100%;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  width: 100%;
+  background-color: #333;
+  min-height: auto;
+}
+
+.rev-video::before {
+  content: "";
+  background-image: url("../../assets/icon/person.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.125;
+}
+
+.rev-video-thumbnails {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0.5em;
+  z-index: +1;
+  flex-direction: column;
+  width: 20%;
+  max-width: 200px;
+  min-width: 100px;
+  height: auto;
+  max-height: 100%;
+  justify-content: flex-start;
+  padding: 1em 0 0 0;
+}
+.rev-video-thumbnails .rev-video {
+  margin-top: 2px;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+.rev-video-thumbnails .rev-video video {
+  width: 100%;
+  height: auto;
+  max-height: 110px;
+}
+
+.rev-video-primary {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  min-height: 100%;
+  max-height: 100%;
+  padding: 0;
+}
+.rev-video-primary .rev-display-name {
+  font-size: 1.125em;
+}
+
+.rev-display-name {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  padding: 0 0.5em;
+  background-color: rgba(0, 0, 0, 0.65);
+  font-size: 0.5em;
+  color: #ffffff;
+  line-height: 1.5;
+}
+
+/*
+	@media (min-width: 1200px) {
+		.rev-grid-communicator.focus-media {
+			.rev-grid-media-module {
+				.rev-video-grid {
+					grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+				}
+			}
+		}
+	}
+*/
