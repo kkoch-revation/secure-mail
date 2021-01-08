@@ -10,6 +10,9 @@
 					</ion-button>
 				</ion-menu-toggle>
 			</ion-buttons>
+			<ion-buttons slot="end">
+				<ion-button><ion-icon slot="icon-only" name="mail"></ion-icon></ion-button>
+			</ion-buttons>
 		</ion-toolbar>
 	</ion-header>
 	
@@ -24,10 +27,19 @@
 									<ion-button (click)="focusMedia()" class="ion-hide-xl-down"><ion-icon name="videocam" slot="icon-only"></ion-icon></ion-button>
 								</ion-buttons>
 								<ion-title>Video &amp; Sharing</ion-title>
+								<ion-buttons slot="end">
+									<ion-button><ion-icon slot="icon-only" name="apps-sharp"></ion-icon></ion-button>
+									<ion-button (click)="expandFullscreen()"><ion-icon slot="icon-only" name="expand"></ion-icon></ion-button>
+								</ion-buttons>
 							</ion-toolbar>
 						<!--/ion-header-->
 						<!--ion-content-->
-							<div class="rev-video-composite">                  
+							<div id="rev-video-composite" class="rev-video-composite"> 
+								<ion-toolbar id="rev-fullscreen-toolbar" class="rev-fullscreen-toolbar">
+									<ion-buttons slot="end">
+										<ion-button (click)="contractFullscreen()"><ion-icon slot="icon-only" name="contract"></ion-icon></ion-button>
+									</ion-buttons>
+								</ion-toolbar>
 								<div class="rev-row">                     
 									<div id="rev-video-thumbnails" class="rev-video-thumbnails">                      
 										<div class="rev-video rev-video-user">

@@ -141,6 +141,11 @@ ion-item.selected {
 	}
 }
 */
+.rev-main-menu.rev-video-fullscreen {
+	width: 0;
+	min-width: 0;
+	border-right: 0px;
+} 
 
 .rev-grid {
 	display: grid;

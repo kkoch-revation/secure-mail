@@ -438,7 +438,26 @@ ion-header.rev-comm-header::after {
 
 .rev-video-composite {
   position: relative;
-  background-color: #000;
+  z-index: 0;
+}
+
+.rev-video-composite.rev-video-fullscreen {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: +11;
+}
+
+.rev-video-composite ion-toolbar {
+  --color: #fff;
+  --background: transparent;
+  --opacity: 1.0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 
 .rev-row {
@@ -488,7 +507,9 @@ ion-header.rev-comm-header::after {
   height: auto;
   max-height: 100%;
   justify-content: flex-start;
-  padding: 1em 0 0 0;
+  padding: 0.25em 0 0 0;
+  overflow: hidden;
+  overflow-y: auto;
 }
 .rev-video-thumbnails .rev-video {
   margin-top: 2px;
@@ -523,6 +544,15 @@ ion-header.rev-comm-header::after {
   font-size: 0.5em;
   color: #ffffff;
   line-height: 1.5;
+  z-index: +1;
+}
+
+.rev-fullscreen-toolbar.rev-show {
+  display: block;
+}
+
+.rev-fullscreen-toolbar {
+  display: none;
 }
 
 /*

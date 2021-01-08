@@ -145,6 +145,22 @@ export class CommunicatorPage implements OnInit {
     var element = document.getElementById("rev-chat-container");
     element.classList.toggle("rev-toggle-disposition");
   }
+  expandFullscreen() {
+    var element = document.getElementById("rev-video-composite");
+    element.classList.add("rev-video-fullscreen");
+    var element = document.getElementById("ion-menu");
+    element.classList.add("rev-video-fullscreen");
+    var element = document.getElementById("rev-fullscreen-toolbar");
+    element.classList.add("rev-show");
+  }
+  contractFullscreen() {
+    var element = document.getElementById("rev-video-composite");
+    element.classList.remove("rev-video-fullscreen");
+    var element = document.getElementById("ion-menu");
+    element.classList.remove("rev-video-fullscreen");
+    var element = document.getElementById("rev-fullscreen-toolbar");
+    element.classList.remove("rev-show");
+  }
 
   ngOnInit() {
   }
