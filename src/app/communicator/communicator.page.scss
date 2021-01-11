@@ -46,10 +46,17 @@ ion-header.rev-comm-header::after {
     transition: all 0.3s ease-out;
     flex: 0;
   }
-	.rev-column ion-content {
-		opacity: 1;
-		height: 100%;
-		transition: all 0.3s ease-out;
+	.rev-column:nth-child(3n + 1) {
+		.rev-video-composite {
+			opacity: 1; height: 100%; transition: all 0.3s ease-in;}
+	}
+	.rev-column:nth-child(3n + 2) {
+		.rev-disposition, .rev-message-window, .rev-message-input, .rev-message-toolbar {
+			opacity: 1; transition: all 0.3s ease-out;}
+	}
+	.rev-column:nth-child(3n + 3) {
+		.rev-session-component-container {
+			opacity: 1; transition: all 0.3s ease-out;}
 	}
 }
 .rev-column {
@@ -62,26 +69,23 @@ ion-header.rev-comm-header::after {
   overflow-y: scroll;
 	opacity: 1;
 }
-.rev-column:nth-child(3n + 1),
-.rev-column:nth-child(3n + 2) {
- ion-content { opacity: 0;}
-}
+
 .rev-column-grid.rev-default {
-	.rev-column:nth-child(3n + 1),
-	.rev-column:nth-child(3n + 2) { flex: 0; ion-content { opacity: 0;}}
-	.rev-column:nth-child(3n + 3) { flex: 1; ion-content { opacity: 1;}}}
+	.rev-column:nth-child(3n + 1) { flex: 0; .rev-video-composite {opacity: 0; transition: all 0.5s ease-out;}}
+	.rev-column:nth-child(3n + 2) { flex: 0; .rev-disposition, .rev-message-window, .rev-message-input, .rev-message-toolbar {opacity: 0;}}
+	.rev-column:nth-child(3n + 3) { flex: 1; .rev-session-component-container { opacity: 1;}}}
 .rev-column-grid.rev-focusMedia {
-	.rev-column:nth-child(3n + 2),
-	.rev-column:nth-child(3n + 3) { flex: 0; ion-content { opacity: 0;}}
-	.rev-column:nth-child(3n + 1) { flex: 1; ion-content { opacity: 1;}}}
+	.rev-column:nth-child(3n + 2) { flex: 0; .rev-disposition, .rev-message-window, .rev-message-input, .rev-message-toolbar {opacity: 0;}}
+	.rev-column:nth-child(3n + 3) { flex: 0; .rev-session-component-container { opacity: 0;}}
+	.rev-column:nth-child(3n + 1) { flex: 1; .rev-video-composite {opacity: 1; transition: all 0.3s ease-out;}}}
 .rev-column-grid.rev-focusMessages {
-	.rev-column:nth-child(3n + 1),
-	.rev-column:nth-child(3n + 3) { flex: 0; ion-content { opacity: 0;}}
-	.rev-column:nth-child(3n + 2) { flex: 1; ion-content { opacity: 1;}}}
+	.rev-column:nth-child(3n + 1) { flex: 0; .rev-video-composite {opacity: 0; transition: all 0.5s ease-out;}}
+	.rev-column:nth-child(3n + 3) { flex: 0; .rev-session-component-container { opacity: 0;}}
+	.rev-column:nth-child(3n + 2) { flex: 1; .rev-disposition, .rev-message-window, .rev-message-input, .rev-message-toolbar {opacity: 1;}}}
 .rev-column-grid.rev-focusSessions {
-	.rev-column:nth-child(3n + 1),
-	.rev-column:nth-child(3n + 2) { flex: 0; ion-content { opacity: 0;}}
-	.rev-column:nth-child(3n + 3) { flex: 1; ion-content { opacity: 1;}}}
+	.rev-column:nth-child(3n + 1) { flex: 0; .rev-video-composite {opacity: 0; transition: all 0.5s ease-out;}}
+	.rev-column:nth-child(3n + 2) { flex: 0; .rev-disposition, .rev-message-window, .rev-message-input, .rev-message-toolbar {opacity: 0;}}
+	.rev-column:nth-child(3n + 3) { flex: 1; .rev-session-component-container { opacity: 1;}}}
 
 // Manage Layouts for horizontal accordion
 @media (min-width: 1200px) {
@@ -322,51 +326,6 @@ ion-header.rev-comm-header::after {
 	font-weight: 400;
 }
 
-// Brady Bunch video grid: style the video container (grid thumbnails etc)
-/*
-.rev-media-grid-container {
-	width: 100%;
-	height: calc(100% - 0);
-	display: grid;
-	place-items: center;
-	padding: 1em; 
-	overflow-y: auto;
-}
-.rev-media-grid {
-	display: grid;
-	padding: 10px;
-	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-	grid-template-rows: minmax(1fr, 1fr);
-	grid-gap: 0.5em;
-	width: 100%;
-}
-.rev-video-parent {
-	background: rgba(255,255,255,0.125);
-	display: flex;
-	justify-content: center;
-	overflow-y: hidden;
-}
-.rev-video-parent:before { // Set a 16:9 aspect ratio
-	content: "";
-	display: block;
-	height: 0;
-	width: 0;
-	padding-bottom: calc(9/16 * 100%);
-}
-.rev-video {
-	min-width: 100%;
-	display: grid;
-	place-items: center;
-	position: relative;
-	overflow-y: hidden;
-}
-.rev-video img {
-	position: absolute;
-	width:100%;
-	height: auto;
-}
-*/
-
 // Rev Confirmation content (confirm video etc) 
 .rev-confirmation-div {
 	min-width: 100%;
@@ -408,6 +367,7 @@ ion-header.rev-comm-header::after {
 	bottom: 0;
 	left: 0;
 	z-index: +11;
+	transition: all 0 linear;
 }
 // add a transparent toolbar atop the video when going fullscreen
 .rev-video-composite ion-toolbar { 
@@ -508,7 +468,58 @@ ion-header.rev-comm-header::after {
 .rev-fullscreen-toolbar {
 	display: none;
 }
+/* Video Grid View */
+.rev-video-composite.rev-grid-view {
+	width: 100%;
+	height: calc(100% - 0);
+	display: grid;
+	place-items: center;
+	padding: 1em; 
+	overflow-y: auto;
+	
+	padding: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-template-rows: minmax(1fr, 1fr);
+	grid-gap: 0.5em;
 
+.rev-video-thumbnails {
+	
+	display: grid;
+	padding: 10px;
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+	grid-template-rows: minmax(1fr, 1fr, 1fr, 1fr);
+	grid-gap: 0.5em;
+	width: 100%;
+	max-width: 100%;
+}
+/*.rev-video-parent {
+	background: rgba(255,255,255,0.125);
+	display: flex;
+	justify-content: center;
+	overflow-y: hidden;
+}*/
+
+.rev-video {
+	min-width: 100%;
+	display: grid;
+	place-items: center;
+	position: relative;
+	overflow-y: hidden;
+	video {background-color: green;}
+}
+	.rev-video:before { // Set a 16:9 aspect ratio
+	content: "";
+	display: block;
+	height: 0;
+	width: 0;
+	padding-bottom: calc(9/16 * 100%);
+}
+.rev-video img {
+	position: absolute;
+	width:100%;
+	height: auto;
+}
+}
 /*
 	@media (min-width: 1200px) {
 		.rev-grid-communicator.focus-media {

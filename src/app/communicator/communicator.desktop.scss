@@ -17,7 +17,7 @@
 	}
 	.rev-column-grid.rev-default {
 	.rev-column:nth-child(3n + 1) {.rev-video-composite {opacity: 1;}}
-	.rev-column:nth-child(3n + 2) {.rev-disposition, .rev-message-window, .rev-message-toolbar {opacity: 1;}}
+	.rev-column:nth-child(3n + 2) {.rev-disposition, .rev-message-window, .rev-message-input, .rev-message-toolbar {opacity: 1;}}
 	.rev-column:nth-child(3n + 3) {.rev-session-component-container {opacity: 1;}}
 		border-top: 10px solid var(--ion-color-light-shade);
 	}
@@ -94,7 +94,7 @@
 		.rev-column:nth-child(3n + 2) {
 			flex: 1;
 			border-left: 1px solid var(--ion-color-light-shade);
-			.rev-disposition, .rev-message-window, .rev-message-toolbar {
+			.rev-disposition, .rev-message-window, .rev-message-input, .rev-message-toolbar {
 				opacity: 1;
 			}
 		}
@@ -131,7 +131,7 @@
 			min-width: 57px;
 			background-color: var(--ion-color-light);
 			border-left: 1px solid var(--ion-color-light-shade);
-			.rev-disposition, .rev-message-window, .rev-message-toolbar, .rev-session-component-container {
+			.rev-disposition, .rev-message-window, .rev-message-input, .rev-message-toolbar, .rev-session-component-container {
 				opacity: 0;
 				height: 0px;
 			}
@@ -185,7 +185,7 @@
 			min-width: 57px;
 			background-color: var(--ion-color-light);
 			border-left: 1px solid var(--ion-color-light-shade);
-			.rev-video-composite, .rev-disposition, .rev-message-window, .rev-message-toolbar {
+			.rev-video-composite, .rev-disposition, .rev-message-window, .rev-message-input, .rev-message-toolbar {
 				opacity: 0;
 				height: 0px;
 			}
