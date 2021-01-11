@@ -427,8 +427,8 @@ ion-header.rev-comm-header::after {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: +11;
-  transition: all 0 linear;
+  z-index: 101;
+  transition: all 0s linear;
 }
 
 .rev-video-composite ion-toolbar {
@@ -494,25 +494,12 @@ ion-header.rev-comm-header::after {
 }
 .rev-video-thumbnails .rev-video {
   margin-top: 2px;
-  background-color: rgba(0, 0, 0, 0.65);
+  background-color: black;
 }
 .rev-video-thumbnails .rev-video video {
   width: 100%;
   height: auto;
   max-height: 110px;
-}
-
-.rev-video-primary {
-  position: absolute;
-  width: 100%;
-  display: flex;
-  align-items: stretch;
-  min-height: 100%;
-  max-height: 100%;
-  padding: 0;
-}
-.rev-video-primary .rev-display-name {
-  font-size: 1.125em;
 }
 
 .rev-display-name {
@@ -528,6 +515,21 @@ ion-header.rev-comm-header::after {
   z-index: +1;
 }
 
+.rev-video-primary {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  min-height: 100%;
+  max-height: 100%;
+  padding: 0;
+}
+.rev-video-primary .rev-display-name {
+  font-size: 1.125em;
+  left: auto;
+  right: 0;
+}
+
 .rev-fullscreen-toolbar.rev-show {
   display: block;
 }
@@ -536,65 +538,80 @@ ion-header.rev-comm-header::after {
   display: none;
 }
 
-/* Video Grid View */
 .rev-video-composite.rev-grid-view {
   width: 100%;
-  height: calc(100% - 0);
-  display: grid;
-  place-items: center;
-  padding: 1em;
-  overflow-y: auto;
-  padding: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-template-rows: minmax(1fr, 1fr);
-  grid-gap: 0.5em;
-  /*.rev-video-parent {
-  	background: rgba(255,255,255,0.125);
-  	display: flex;
-  	justify-content: center;
-  	overflow-y: hidden;
-  }*/
+  background-color: #333;
+  transition: none;
 }
 .rev-video-composite.rev-grid-view .rev-video-thumbnails {
+  left: 0;
   display: grid;
-  padding: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-template-rows: minmax(1fr, 1fr, 1fr, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   grid-gap: 0.5em;
+  padding: 10px;
   width: 100%;
   max-width: 100%;
+  position: absolute;
+  overflow-y: auto;
+  top: auto;
+  bottom: auto;
+}
+.rev-video-composite.rev-grid-view .rev-video-primary {
+  display: none;
 }
 .rev-video-composite.rev-grid-view .rev-video {
   min-width: 100%;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
   position: relative;
   overflow-y: hidden;
+  margin: 0;
 }
 .rev-video-composite.rev-grid-view .rev-video video {
-  background-color: green;
-}
-.rev-video-composite.rev-grid-view .rev-video:before {
-  content: "";
-  display: block;
-  height: 0;
-  width: 0;
-  padding-bottom: calc(9/16 * 100%);
+  max-height: 100%;
 }
 .rev-video-composite.rev-grid-view .rev-video img {
   position: absolute;
-  width: 100%;
   height: auto;
 }
 
-/*
-	@media (min-width: 1200px) {
-		.rev-grid-communicator.focus-media {
-			.rev-grid-media-module {
-				.rev-video-grid {
-					grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-				}
-			}
-		}
-	}
-*/
+@media (min-width: 1080px) {
+  .rev-video-composite.rev-grid-view .rev-video-thumbnails {
+    align-items: center;
+    justify-items: center;
+    overflow-y: auto;
+  }
+}
+.rev-video-composite.rev-grid-view.rev-video-fullscreen .rev-video-thumbnails {
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  transition: all 0s linear;
+  align-items: center;
+  justify-items: center;
+  overflow-y: auto;
+}
+
+@media (min-width: 1080px) {
+  .rev-video-composite.rev-grid-view.rev-video-fullscreen .rev-video-thumbnails {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    align-content: center;
+    top: 0;
+    bottom: 0;
+  }
+}
+@media (min-width: 1400px) {
+  .rev-video-composite.rev-grid-view.rev-video-fullscreen .rev-video-thumbnails {
+    grid-template-columns: repeat(auto-fill, minmax(28rem, 1fr));
+  }
+}
+@media (min-width: 2000px) {
+  .rev-video-composite.rev-grid-view.rev-video-fullscreen .rev-video-thumbnails {
+    grid-template-columns: repeat(auto-fill, minmax(36rem, 1fr));
+  }
+}
+.rev-btn-video-grid-view, .rev-btn-video-grid-view-fullscreen, .rev-btn-video-default-view, .rev-btn-video-default-view-fullscreen {
+  display: none;
+}
+
+.rev-btn-video-grid-view.rev-show, .rev-btn-video-grid-view-fullscreen.rev-show, .rev-btn-video-default-view.rev-show, .rev-btn-video-default-view-fullscreen.rev-show {
+  display: inline-block;
+}

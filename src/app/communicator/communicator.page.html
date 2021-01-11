@@ -29,7 +29,8 @@
 								</ion-buttons>
 								<ion-title>Video &amp; Sharing</ion-title>
 								<ion-buttons slot="end">
-									<ion-button><ion-icon slot="icon-only" name="apps-sharp"></ion-icon></ion-button>
+									<ion-button id="rev_btn_video_grid_view" class="rev-btn-video-grid-view rev-show" (click)="videoGridView()"><ion-icon slot="icon-only" name="apps-sharp"></ion-icon></ion-button>
+									<ion-button id="rev_btn_video_default_view" class="rev-btn-video-default-view" (click)="videoDefaultView()"><ion-icon slot="icon-only" name="square-sharp"></ion-icon></ion-button>
 									<ion-button (click)="expandFullscreen()"><ion-icon slot="icon-only" name="expand"></ion-icon></ion-button>
 								</ion-buttons>
 							</ion-toolbar>
@@ -38,6 +39,8 @@
 							<div id="rev-video-composite" class="rev-video-composite"> 
 								<ion-toolbar id="rev-fullscreen-toolbar" class="rev-fullscreen-toolbar">
 									<ion-buttons slot="end">
+										<ion-button id="rev_btn_video_grid_view_fullscreen" class="rev-btn-video-grid-view-fullscreen rev-show" (click)="videoGridView()"><ion-icon slot="icon-only" name="apps-sharp"></ion-icon></ion-button>
+										<ion-button id="rev_btn_video_default_view_fullscreen" class="rev-btn-video-default-view-fullscreen"  (click)="videoDefaultView()"><ion-icon slot="icon-only" name="square-sharp"></ion-icon></ion-button>
 										<ion-button (click)="contractFullscreen()"><ion-icon slot="icon-only" name="contract"></ion-icon></ion-button>
 									</ion-buttons>
 								</ion-toolbar>
@@ -71,10 +74,15 @@
 											<video id="rwc_local_video_player" autoplay="" playsinline=""></video>
 											<div id="local-video-thumbnail" class="rev-display-name">Test User</div>
 										</div>
-										<div id="local-desktop" class="rev-video rev-video-desktop rev-display_none">
-											<video id="rwc_rds" autoplay="" playsinline=""></video>
-											<div class="rev-display-name">My Desktop Sharing</div>
+										<div class="rev-video rev-video-user">
+											<video id="rwc_local_video_player" autoplay="" playsinline=""></video>
+											<div id="local-video-thumbnail" class="rev-display-name">Test User</div>
 										</div>
+										<div class="rev-video rev-video-user">
+											<video id="rwc_local_video_player" autoplay="" playsinline=""></video>
+											<div id="local-video-thumbnail" class="rev-display-name">Test User</div>
+										</div>
+										
 									</div>
 									<div class="rev-video-primary">
 										<div class="rev-video rev-video-agent">

@@ -140,6 +140,7 @@
 			flex: 1;
 			border-left: 10px solid var(--ion-color-light-shade);
 			.rev-video-composite {
+				transition: none;
 				opacity: 1;
 			}
 		}

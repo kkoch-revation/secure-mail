@@ -161,6 +161,30 @@ export class CommunicatorPage implements OnInit {
     var element = document.getElementById("rev-fullscreen-toolbar");
     element.classList.remove("rev-show");
   }
+  videoGridView() {
+    var element = document.getElementById("rev-video-composite");
+    element.classList.add("rev-grid-view");
+    var element = document.getElementById("rev_btn_video_grid_view");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("rev_btn_video_grid_view_fullscreen");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("rev_btn_video_default_view");
+    element.classList.add("rev-show");
+    var element = document.getElementById("rev_btn_video_default_view_fullscreen");
+    element.classList.add("rev-show");
+  }
+  videoDefaultView() {
+    var element = document.getElementById("rev-video-composite");
+    element.classList.remove("rev-grid-view");
+    var element = document.getElementById("rev_btn_video_grid_view");
+    element.classList.add("rev-show");
+    var element = document.getElementById("rev_btn_video_grid_view_fullscreen");
+    element.classList.add("rev-show");
+    var element = document.getElementById("rev_btn_video_default_view");
+    element.classList.remove("rev-show");
+    var element = document.getElementById("rev_btn_video_default_view_fullscreen");
+    element.classList.remove("rev-show");
+  }
 
   ngOnInit() {
   }
