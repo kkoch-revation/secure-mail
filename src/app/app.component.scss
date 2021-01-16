@@ -179,7 +179,7 @@ ion-item.selected {
 	/* Temp mockup styles */
 	
 	.rev-menu-dashboard, .rev-menu-mail, .rev-menu-communicator, .rev-menu-appointments, .rev-menu-contacts {
-		height: 100vh;
+		min-height: 100vh;
 	}
 	
 }
@@ -302,14 +302,31 @@ ion-menu.rev-main-menu ion-content, ion-menu.md.rev-main-menu ion-content, ion-m
 	}
 }
 
-
-
 // Item Dividers
-
 	ion-item-divider {
-		ion-label {
-			text-transform: uppercase;
+		ion-label h1 {
 			font-weight: 500;
+			margin: 0;
+			font-size: 1em;	
+		}
+	}
+	ion-item-divider.rev-lvl-1  {
+		font-size: 1em;	
+		text-transform: uppercase;
+		margin: 0;
+		cursor: pointer;
+	}
+	ion-item-divider.rev-lvl-2 {
+		margin: 0;
+		text-transform: uppercase;
+		cursor: pointer;
+	}
+	ion-item-divider.rev-lvl-3  {
+		padding: 0 0 0 0.75em;
+		text-transform: none;
+		cursor: pointer;
+		ion-icon {
+			margin-left: 0.875em;
 		}
 	}
 
@@ -369,7 +386,7 @@ ion-label.rev-h1.rev-logo {
 // Rev Status
 ion-avatar {position: relative;}
 ion-avatar ion-icon.rev-status {position: absolute; top: 0.2em; right: -0.625em;}
-ion-label h2 .rev-status {font-size: 0.875em; color: var(--ion-color-medium-shade); text-transform: capitalize;}
+ion-label h2 .rev-status, ion-item-divider ion-label h1 .rev-status  {font-size: 0.875em; color: var(--ion-color-medium-shade); text-transform: capitalize;}
 .rev-status.online {fill: var(--ion-color-success);}
 .rev-status.busy {fill: var(--ion-color-warning);}
 .rev-status.on /* the phone */ {fill: var(--ion-color-warning);}
@@ -377,6 +394,14 @@ ion-label h2 .rev-status {font-size: 0.875em; color: var(--ion-color-medium-shad
 .rev-status.out /* to lunch */ {fill: var(--ion-color-tertiary);}
 .rev-status.be /* right back */ {fill: var(--ion-color-tertiary);}
 .rev-status.offline {fill: var(--ion-color-medium);}
+
+ion-avatar img.queue {
+	background-color: cornflowerblue;
+}
+ion-avatar img.queue svg {
+	fill: white;
+	font-size: 1em;
+}
 
 .rev-hide {
 	display: none;

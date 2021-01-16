@@ -113,7 +113,7 @@
 		.rev-column:nth-child(3n + 4) {
 			flex: 1;
 			border-left: 10px solid var(--ion-color-light-shade);
-			ion-content, .rev-video-composite {
+			.rev-video-composite {
 				opacity: 1;
 			}
 		}
@@ -140,7 +140,6 @@
 			flex: 1;
 			border-left: 10px solid var(--ion-color-light-shade);
 			.rev-video-composite {
-				transition: none;
 				opacity: 1;
 			}
 		}

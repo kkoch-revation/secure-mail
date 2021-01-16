@@ -3,33 +3,103 @@
 		<ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Account Settings</ion-title>
+    <ion-title>{{ account }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" color="light">
 	<form  #form="ngForm" (ngSubmit)="submitForm(form)">
-  <ion-item>
-    <ion-label position="floating">First Name</ion-label>
-    <ion-input type="text" required="true"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Last Name</ion-label>
-    <ion-input type="text" required="true"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Email</ion-label>
-    <ion-input type="email" required="true"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Password</ion-label>
-    <ion-input type="password" required="true"></ion-input>
-  </ion-item>
+		<ion-grid>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-text>
+						<h1>Change Password</h1>
+						<p>To change to your password, input your Current Password then set and verify a New Password in both fields.  You cannot change your User Name.</p>
+					</ion-text>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-item>
+						<ion-label for="username" position="floating">User Name</ion-label>
+						<ion-input id="username" type="text" required="true" value="lskywalker@revation.com" readonly></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label for="currentPassword" position="floating">Current Password</ion-label>
+						<ion-input id="currentPassword" type="password" required="true" value="JubJub"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label for="newPassword" position="floating">New Password</ion-label>
+						<ion-input id="newPassword" type="password" required="true"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label for="confirmNewPassword" position="floating">Confirm New Password</ion-label>
+						<ion-input id="confirmNewPassword" type="password" required="true"></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col size="12" size-lg>
+					<ul>
+						<li>6 characters minimum</li>
+						<li>1 minimum upper-case character (A-Z)</li>
+						<li>1 minimum lower-case character (a-z)</li>
+						<li>1 minimum numeric character (0-9)</li>
+						<li>3 maximum identical sequential characters</li>
+						<li>6 maximum characters from user name</li>
+						<li>6 maximum characters from previous password</li>
+						<li>6 previous passwords may not be re-used</li>
+						<li>2 password change(s) per 1 hour(s)</li>
+						<li>Can not be in the common/restricted list</li>
+					</ul>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12">
+					<ion-item-divider color="light"></ion-item-divider>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col>
+					<ion-text>
+						<h1>Voicemail PIN</h1>
+						<p>If set, your Voicemail PIN can be used to retrieve voicemail via a phone. Note that for security purposes, this field will show 4 characters regardless of how many your PIN has.</p>
+					</ion-text>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-item>
+						<ion-label for="voicemailPIN" position="floating">Voicemail PIN</ion-label>
+						<ion-input id="voicemailPIN" type="password" required="true" value="123456"></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col size="12" size-lg>
+					<p>4 minimum digits (0-9)</p>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12">
+					<ion-item-divider color="light"></ion-item-divider>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12">
+					<ion-button TYPE="submit" color="primary" class="ion-margin-vertical" >
+							Save Settings
+					</ion-button>
+				</ion-col>
+			</ion-row>
+			
+			
+			
+			
+			
 
-    <ion-button TYPE="submit" color="primary" class="ion-margin-vertical" >
-        <ion-icon slot="start" name="save"></ion-icon>
-        Save Settings
-    </ion-button>
+		</ion-grid>
+  
+		
+	
+
+    
 	</form>
 	
 </ion-content>

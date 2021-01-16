@@ -3,33 +3,345 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>App Settings</ion-title>
+    <ion-title>{{ settings }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
+<ion-content class="ion-padding" color="light">
 	<form  #form="ngForm" (ngSubmit)="submitForm(form)">
-  <ion-item>
-    <ion-label position="floating">Setting 1</ion-label>
-    <ion-input type="text" required="true"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Setting 2</ion-label>
-    <ion-input type="text" required="true"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Setting 3</ion-label>
-    <ion-input type="email" required="true"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Setting 4</ion-label>
-    <ion-input type="password" required="true"></ion-input>
-  </ion-item>
+		<ion-grid>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-text>
+						<h1>Notification: Email</h1>
+						<p>This email address will be used to contact you regarding reset passwords, new unread secure mail messages, and calendar appointment notifications.</p>
+					</ion-text>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-item>
+						<ion-label for="notificationEmail" position="floating">Notification Email Address</ion-label>
+						<ion-input id="notificationEmail" type="email" required="true" value="lskywalker@revation.com" ></ion-input>
+					</ion-item>
+					<ion-list class="rev-pb-0">
+						<ion-radio-group value="every">
+							<ion-list-header>
+								<ion-label>Send email notification for secure mail:</ion-label>
+							</ion-list-header>
+							<ion-item>
+								<ion-label>Never</ion-label>
+								<ion-radio slot="start" color="success" value="never"></ion-radio>
+							</ion-item>
+							<ion-item>
+								<ion-label>First Unseen Message</ion-label>
+								<ion-radio slot="start" color="success" value="first"></ion-radio>
+							</ion-item>
+							<ion-item>
+								<ion-label>Every Unseen Message</ion-label>
+								<ion-radio slot="start" color="success" value="every"></ion-radio>
+							</ion-item>
+						</ion-radio-group>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-text>
+						<h1>Notification: Phone</h1>
+						<p>This phone number will be used to contact you regarding calendar appointment notifications.</p>
+					</ion-text>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-item>
+						<ion-label for="notificationPhone" position="floating">Notification Phone Number</ion-label>
+						<ion-input id="notificationPhone" type="text" required="true" placeholder="Your phone number" value="" ></ion-input>
+					</ion-item>
+					<ion-list class="rev-pb-0">
+						<ion-radio-group value="textMessages">
+							<ion-list-header>
+								<ion-label>Use phone number:</ion-label>
+							</ion-list-header>
+							<ion-item>
+								<ion-label>Never</ion-label>
+								<ion-radio slot="start" color="success" value="never"></ion-radio>
+							</ion-item>
+							<ion-item>
+								<ion-label>For Phone Calls</ion-label>
+								<ion-radio slot="start" color="success" value="phoneCalls"></ion-radio>
+							</ion-item>
+							<ion-item>
+								<ion-label>For Text Messages</ion-label>
+								<ion-radio slot="start" color="success" value="textMessages"></ion-radio>
+							</ion-item>
+							<ion-item>
+								<ion-label>For Both</ion-label>
+								<ion-radio slot="start" color="success" value="both"></ion-radio>
+							</ion-item>
+						</ion-radio-group>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12">
+					<ion-button TYPE="submit" color="primary" class="ion-margin-vertical" >
+							Save Settings
+					</ion-button>
+					<ion-button type="submit" color="primary" fill="clear" class="ion-margin-vertical" >
+						Cancel
+					</ion-button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</form>
+	
+	<form  #form="ngForm" (ngSubmit)="submitForm(form)">
+		<ion-grid>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-text>
+						<h1>Email Signature</h1>
+						<p>The text in this signature will automatically be placed at the bottom of all new emails that are composed.</p>
+					</ion-text>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-item>
+						<ion-label position="floating">Email Signature</ion-label>
+						<ion-textarea></ion-textarea>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-text>
+						<h1>Automatic Replies</h1>
+						<p>If enabled, the auto-reply message will be sent one-time to any users sending messages to your Inbox. If To your domain only, then the auto-reply only goes to email addresses that match your domain (after the @).</p>
+					</ion-text>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-list class="rev-pb-0">
+						<ion-radio-group value="off">
+							<ion-list-header>
+								<ion-label>Send Automatic Replies:</ion-label>
+							</ion-list-header>
+							<ion-item>
+								<ion-label>Off</ion-label>
+								<ion-radio slot="start" color="success" value="off"></ion-radio>
+							</ion-item>
+							<ion-item>
+								<ion-label>To my domain</ion-label>
+								<ion-radio slot="start" color="success" value="domain"></ion-radio>
+							</ion-item>
+							<ion-item>
+								<ion-label>To everyone</ion-label>
+								<ion-radio slot="start" color="success" value="everyone"></ion-radio>
+							</ion-item>
+						</ion-radio-group>
+					</ion-list>
+					<ion-item>
+						<ion-label>Start Date</ion-label>
+						<ion-datetime value="2021-02-19" placeholder="Select Date"></ion-datetime>
+					</ion-item>
+					<ion-item>
+						<ion-label>Start Time</ion-label>
+						<ion-datetime display-format="h:mm A" picker-format="h:mm A" value="2021-02-19T14:00Z"></ion-datetime>
+					</ion-item>
+					<ion-item>
+						<ion-label>End Date</ion-label>
+						<ion-datetime value="2021-02-20" placeholder="Select Date"></ion-datetime>
+					</ion-item>
+					<ion-item>
+						<ion-label>End Time</ion-label>
+						<ion-datetime display-format="h:mm A" picker-format="h:mm A" value="2021-02-19T06:00Z"></ion-datetime>
+					</ion-item>
+					<ion-item>
+						<ion-label for="subject" position="floating">Subject</ion-label>
+						<ion-input id="subject" type="text" required="false" placeholder="Out of office reply" value="" ></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label position="floating">Auto Reply Message</ion-label>
+						<ion-textarea placeholder="Out of office reply message"></ion-textarea>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12">
+					<ion-button type="submit" color="primary" class="ion-margin-vertical" >
+						Save Settings
+					</ion-button>
+					<ion-button type="submit" color="primary" fill="clear" class="ion-margin-vertical" >
+						Cancel
+					</ion-button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</form>
+	
+	<form  #form="ngForm" (ngSubmit)="submitForm(form)">
+		<ion-grid>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-text>
+						<h1>aVoice</h1>
+						<p>Advanced voice options</p>
+					</ion-text>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-item>
+						<ion-label for="nums1" position="floating">Number(s) to Ring</ion-label>
+						<ion-input id="nums1" type="text" required="false" placeholder="" value="13216540987"></ion-input>
+					</ion-item>
+				</ion-col>
+				<ion-col size="12" size-lg>
+					<ion-item>
+						<ion-label for="secs1" position="floating">Seconds to Ring</ion-label>
+						<ion-input id="secs1" type="text" required="false" placeholder="" value="30"></ion-input>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-list class="rev-pb-0">
+							<ion-item>
+								<ion-label>Disable this forwarder</ion-label>
+								<ion-checkbox color="primary" slot="start"></ion-checkbox>
+							</ion-item>
+							<ion-item>
+								<ion-label>Ring with previous</ion-label>
+								<ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+							</ion-item>
+							<ion-item>
+								<ion-label>Copy session to log</ion-label>
+								<ion-checkbox slot="start"></ion-checkbox>
+							</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-list class="rev-pb-0">
+						<ion-list-header>Day(s)</ion-list-header>
+							<ion-item>
+								<ion-label>Monday</ion-label>
+								<ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+							</ion-item>
+							<ion-item>
+								<ion-label>Tuesday</ion-label>
+								<ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+							</ion-item>
+							<ion-item>
+								<ion-label>Wednesday</ion-label>
+								<ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+							</ion-item>
+							<ion-item>
+								<ion-label>Thursday</ion-label>
+								<ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+							</ion-item>
+							<ion-item>
+								<ion-label>Friday</ion-label>
+								<ion-checkbox color="primary" checked slot="start"></ion-checkbox>
+							</ion-item>
+							<ion-item>
+								<ion-label>Saturday</ion-label>
+								<ion-checkbox color="primary"  slot="start"></ion-checkbox>
+							</ion-item>
+							<ion-item>
+								<ion-label>Sunday</ion-label>
+								<ion-checkbox color="primary"  slot="start"></ion-checkbox>
+							</ion-item>
+					</ion-list>
+				</ion-col>
+				<ion-col size="12" size-lg>
+					<ion-list class="rev-pb-0">
+						<ion-list-header>Time</ion-list-header>
+							<ion-item>
+								<ion-label>From</ion-label>
+								<ion-datetime display-format="h:mm A" picker-format="h:mm A" value="2021-02-19T14:00Z"></ion-datetime>
+							</ion-item>
+							<ion-item>
+								<ion-label>To</ion-label>
+								<ion-datetime display-format="h:mm A" picker-format="h:mm A" value="2021-02-19T23:00Z"></ion-datetime>
+							</ion-item>
+					</ion-list>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12" size-lg>
+					<ion-list class="rev-pb-0">
+						<ion-radio-group value="off">
+							<ion-list-header>
+								<ion-label>Send Automatic Replies:</ion-label>
+							</ion-list-header>
+							<ion-item>
+								<ion-label>Off</ion-label>
+								<ion-radio slot="start" color="success" value="off"></ion-radio>
+							</ion-item>
+							<ion-item>
+								<ion-label>To my domain</ion-label>
+								<ion-radio slot="start" color="success" value="domain"></ion-radio>
+							</ion-item>
+							<ion-item>
+								<ion-label>To everyone</ion-label>
+								<ion-radio slot="start" color="success" value="everyone"></ion-radio>
+							</ion-item>
+						</ion-radio-group>
+					</ion-list>
+					<ion-item>
+						<ion-label>Start Date</ion-label>
+						<ion-datetime value="2021-02-19" placeholder="Select Date"></ion-datetime>
+					</ion-item>
+					<ion-item>
+						<ion-label>Start Time</ion-label>
+						<ion-datetime display-format="h:mm A" picker-format="h:mm A" value="2021-02-19T14:00Z"></ion-datetime>
+					</ion-item>
+					<ion-item>
+						<ion-label>End Date</ion-label>
+						<ion-datetime value="2021-02-20" placeholder="Select Date"></ion-datetime>
+					</ion-item>
+					<ion-item>
+						<ion-label>End Time</ion-label>
+						<ion-datetime display-format="h:mm A" picker-format="h:mm A" value="2021-02-19T06:00Z"></ion-datetime>
+					</ion-item>
+					<ion-item>
+						<ion-label for="subject" position="floating">Subject</ion-label>
+						<ion-input id="subject" type="text" required="false" placeholder="Out of office reply" value="" ></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label position="floating">Auto Reply Message</ion-label>
+						<ion-textarea placeholder="Out of office reply message"></ion-textarea>
+					</ion-item>
+				</ion-col>
+			</ion-row>
+			<ion-row>
+				<ion-col size="12">
+					<ion-button type="submit" color="primary" class="ion-margin-vertical" >
+						Save Settings
+					</ion-button>
+					<ion-button type="submit" color="medium" color="primary" fill="clear" class="ion-margin-vertical" >
+						Cancel
+					</ion-button>
+				</ion-col>
+			</ion-row>
+			
+			
+			
+			
+			
 
-    <ion-button TYPE="submit" color="primary" class="ion-margin-vertical" >
-        <ion-icon slot="start" name="save"></ion-icon>
-        Save Settings
-    </ion-button>
+		</ion-grid>
+  
+		
+	
+
+    
 	</form>
 	
 

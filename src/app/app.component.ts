@@ -35,11 +35,18 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const path = window.location.pathname.split('folder/')[1];
+    const path = window.location.pathname[1];
     if (path !== undefined) {
       this.selectedIndex = this.mailPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+    if (path !== undefined) {
+      this.selectedIndex = this.accountSettingsPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+    }
+    if (path !== undefined) {
+      this.selectedIndex = this.settingsPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
+    }
   }
+
 
   async presentPopoverContacts(ev: any) {
     const popover = await this.popoverController.create({
@@ -168,6 +175,11 @@ export class AppComponent implements OnInit {
       title: 'Dashboard',
       url: '/dashboard/Dashboard',
       icon: 'apps'
+    },
+    {
+      title: 'Contacts',
+      url: '/contacts/Test',
+      icon: 'people'
     }
   ];
   public userMenu = [
@@ -185,40 +197,40 @@ export class AppComponent implements OnInit {
 
   public contactPagesA = [ 
     {
-      firstName: 'Aaron',
-      lastName: 'Aanistadt',
+      firstName: 'Sales',
+      lastName: 'ACD',
       status: 'online',
-      phone: '(123) 456-7890',
-      ext: '2122',
-      avatar: 'avatar-luke.png',
-      url: '/contact/Contact',
+      phone: '(952) 392-1831',
+      ext: '1',
+      avatar: 'avatar-queue.png',
+      url: '',
     },
     {
-      firstName: 'Andrew',
-      lastName: 'Amundson',
+      firstName: 'Service',
+      lastName: 'ACD',
       status: 'online',
-      phone: '(123) 321-5454',
-      ext: '2129',
-      avatar: 'avatar-han.png',
-      url: '/contact/Contact',
+      phone: '(952) 392-1831',
+      ext: '2',
+      avatar: 'avatar-queue.png',
+      url: '',
     },
     {
-      firstName: 'Ariel',
-      lastName: 'Atkins',
+      firstName: 'Support',
+      lastName: 'ACD',
       status: 'online',
-      phone: '(123) 321-9922',
-      ext: '2127',
-      avatar: 'avatar-leia.png',
-      url: '/contact/Contact',
+      phone: '(952) 392-1831',
+      ext: '3',
+      avatar: 'avatar-queue.png',
+      url: '',
     },
     {
-      firstName: 'Armond',
-      lastName: 'Arnold',
-      status: 'busy - conference external',
-      phone: '(123) 456-4321',
-      ext: '2125',
-      avatar: 'avatar-poe.png',
-      url: '/contact/Contact',
+      firstName: 'link.revation.com',
+      lastName: '',
+      status: 'online',
+      phone: '',
+      ext: '',
+      avatar: 'avatar-queue.png',
+      url: '',
     },
   ];
   public contactPagesB = [ 
@@ -392,17 +404,23 @@ export class AppComponent implements OnInit {
     {
       name: 'Carol',
       number: '(952) 392-1831',
-      ext: '6200'
+      ext: '6200',
+      status: '',
+      avatar: 'avatar-rey.png',
     },
     {
       name: 'Steve',
       number: '(952) 392-1831',
-      ext: '6201'
+      ext: '6201',
+      status: '',
+      avatar: 'avatar-han.png',
     },
     {
       name: 'Jasmine',
       number: '(952) 392-1831',
-      ext: '6232'
+      ext: '6232',
+      status: '',
+      avatar: 'avatar-leia.png',
     },
     
   ];
@@ -416,29 +434,14 @@ export class AppComponent implements OnInit {
         color: 'danger'
       },
       {
-        title: 'Outbox',
-        url: '/folder/Outbox',
-        icon: 'paper-plane',
+        title: 'Drafts',
+        url: '/folder/Drafts',
+        icon: 'document',
       },
       {
-        title: 'Calls',
-        url: '/folder/Calls',
-        icon: 'call'
-      },
-      {
-        title: 'Chats',
-        url: '/folder/Chats',
-        icon: 'chatbox-ellipses'
-      },
-      {
-        title: 'Favorites',
-        url: '/folder/Favorites',
-        icon: 'heart'
-      },
-      {
-        title: 'Archived',
-        url: '/folder/Archived',
-        icon: 'archive'
+        title: 'Sent',
+        url: '/folder/Sent',
+        icon: 'paper-plane'
       },
       {
         title: 'Trash',
@@ -446,12 +449,39 @@ export class AppComponent implements OnInit {
         icon: 'trash'
       },
       {
+        title: 'Chats',
+        url: '/folder/Chats',
+        icon: 'chatbox-ellipses'
+      },
+      {
+        title: 'Calls',
+        url: '/folder/Calls',
+        icon: 'call'
+      },
+      {
+        title: 'Voicemail',
+        url: '/folder/Voicemail',
+        icon: 'recording',
+        badge: '3',
+        color: 'danger'
+      },
+      {
+        title: 'eFolders',
+        url: '/folder/eFolders',
+        icon: 'folder'
+      }/*,
+      {
+        title: 'Archived',
+        url: '/folder/Archived',
+        icon: 'archive'
+      },
+      {
         title: 'Spam',
         url: '/folder/Spam',
         icon: 'warning',
         badge: '87',
         color: 'warning'
-      }
+      }*/
   ];
   public appointmentPages = [
     {
@@ -463,6 +493,35 @@ export class AppComponent implements OnInit {
       title: 'All Appointments',
       url: '/appointments/All Appointments',
       icon: 'file-tray-full',
+    },
+  ];
+  public accountSettingsPages = [
+    {
+      title: 'Password Reset',
+      url: '/account/Password Reset',
+      icon: 'key',
+    },
+  ];
+  public settingsPages = [
+    {
+      title: 'Notification Settings',
+      url: '/settings/Notification Settings',
+      icon: 'notifications'
+    },
+    {
+      title: 'Mail Signature',
+      url: '/settings/Mail Signature',
+      icon: 'mail'
+    },
+    {
+      title: 'Mail Auto Reply',
+      url: '/settings/Mail Auto Reply',
+      icon: 'arrow-undo'
+    },
+    {
+      title: 'Call Forwarding',
+      url: '/settings/Call Forwarding',
+      icon: 'call'
     },
   ];
   public contactFolders = [

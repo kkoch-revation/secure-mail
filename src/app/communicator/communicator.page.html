@@ -11,7 +11,14 @@
 				</ion-menu-toggle>
 			</ion-buttons>
 			<ion-buttons slot="end">
-				<ion-button><ion-icon slot="icon-only" name="mail"></ion-icon></ion-button>
+				<ion-button>
+					<ion-icon slot="icon-only" name="recording-sharp"></ion-icon>
+					<ion-badge class="rev-icon-badge rev-numeric" color="danger" name="ellipse">3</ion-badge>
+				</ion-button>
+				<ion-button>
+					<ion-icon slot="icon-only" name="mail-sharp"></ion-icon>
+					<ion-badge class="rev-icon-badge rev-numeric" color="danger" name="ellipse">3</ion-badge>
+				</ion-button>
 			</ion-buttons>
 		</ion-toolbar>
 	</ion-header>
@@ -25,24 +32,24 @@
 						<!--ion-header-->
 							<ion-toolbar color="light">
 								<ion-buttons slot="start">
-									<ion-button (click)="focusMedia()" class="ion-hide-xl-down"><ion-icon name="videocam" slot="icon-only"></ion-icon></ion-button>
+									<ion-button (click)="focusMedia()" class="ion-hide-xl-down"><ion-icon name="videocam" slot="icon-only" size="small" ></ion-icon></ion-button>
 								</ion-buttons>
-								<ion-title>Video &amp; Sharing</ion-title>
+								<ion-title>Media</ion-title>
 								<ion-buttons slot="end">
-									<ion-button id="rev_btn_video_grid_view" class="rev-btn-video-grid-view rev-show" (click)="videoGridView()"><ion-icon slot="icon-only" name="apps-sharp"></ion-icon></ion-button>
-									<ion-button id="rev_btn_video_default_view" class="rev-btn-video-default-view" (click)="videoDefaultView()"><ion-icon slot="icon-only" name="square-sharp"></ion-icon></ion-button>
-									<ion-button (click)="expandFullscreen()"><ion-icon slot="icon-only" name="expand"></ion-icon></ion-button>
+									<ion-button id="rev_btn_video_grid_view" class="rev-btn-video-grid-view rev-show" (click)="videoGridView()"><ion-icon slot="icon-only" size="small" name="apps-sharp"></ion-icon></ion-button>
+									<ion-button id="rev_btn_video_default_view" class="rev-btn-video-default-view" (click)="videoDefaultView()"><ion-icon slot="icon-only" size="small" name="square-sharp"></ion-icon></ion-button>
+									<ion-button (click)="expandFullscreen()"><ion-icon slot="icon-only" size="small" name="expand"></ion-icon></ion-button>
 								</ion-buttons>
 							</ion-toolbar>
 						<!--/ion-header-->
 						<!--ion-content-->
 							<div id="rev-video-composite" class="rev-video-composite"> 
 								<ion-toolbar id="rev-fullscreen-toolbar" class="rev-fullscreen-toolbar">
-									<ion-buttons slot="end">
-										<ion-button id="rev_btn_video_grid_view_fullscreen" class="rev-btn-video-grid-view-fullscreen rev-show" (click)="videoGridView()"><ion-icon slot="icon-only" name="apps-sharp"></ion-icon></ion-button>
-										<ion-button id="rev_btn_video_default_view_fullscreen" class="rev-btn-video-default-view-fullscreen"  (click)="videoDefaultView()"><ion-icon slot="icon-only" name="square-sharp"></ion-icon></ion-button>
-										<ion-button (click)="contractFullscreen()"><ion-icon slot="icon-only" name="contract"></ion-icon></ion-button>
-									</ion-buttons>
+									<!--ion-buttons slot="end"-->
+										<ion-button id="rev_btn_video_grid_view_fullscreen" class="rev-btn-video-grid-view-fullscreen rev-show" (click)="videoGridView()" color="primary" slot="end"><ion-icon slot="icon-only" name="apps-sharp"></ion-icon></ion-button>
+										<ion-button id="rev_btn_video_default_view_fullscreen" class="rev-btn-video-default-view-fullscreen"  (click)="videoDefaultView()" color="primary" slot="end"><ion-icon slot="icon-only" name="square-sharp"></ion-icon></ion-button>
+										<ion-button (click)="contractFullscreen()" color="primary" slot="end"><ion-icon slot="icon-only" name="contract"></ion-icon></ion-button>
+									<!--/ion-buttons-->
 								</ion-toolbar>
 								<div class="rev-row">                     
 									<div id="rev-video-thumbnails" class="rev-video-thumbnails">                      
@@ -134,12 +141,12 @@
 							<!--ion-header-->
 								<ion-toolbar color="light">
 									<ion-buttons slot="start">
-										<ion-button (click)="focusMessages()" class="ion-hide-xl-down"><ion-icon name="chatbox-ellipses" slot="icon-only"></ion-icon></ion-button>
+										<ion-button (click)="focusMessages()" class="ion-hide-xl-down"><ion-icon name="chatbox-ellipses" slot="icon-only" size="small" ></ion-icon></ion-button>
 									</ion-buttons>
-									<ion-title>Ben Kenobi</ion-title>
+									<ion-title class="truncated">Ben Obi-Wan Kenobi Johnson Wainright</ion-title>
 									<ion-buttons slot="end">
-										<ion-button (click)="toggleToneAnalysis()"><ion-icon name="stats-chart" slot="icon-only" color="" style="transform: rotate(90deg);"></ion-icon></ion-button>
-										<ion-button (click)="toggleDisposition()"><ion-icon name="create" slot="icon-only" color="danger"></ion-icon></ion-button>
+										<ion-button (click)="toggleToneAnalysis()"><ion-icon name="stats-chart" slot="icon-only" size="small" color="" style="transform: rotate(90deg);"></ion-icon></ion-button>
+										<ion-button (click)="toggleDisposition()"><ion-icon name="create" slot="icon-only" size="small" color="danger"></ion-icon></ion-button>
 									</ion-buttons>
 								</ion-toolbar>
 							<!--/ion-header-->
@@ -274,6 +281,12 @@
 											<ion-icon slot="icon-only" name="document-attach-outline" size="small"></ion-icon>
 										</ion-button>
 										<ion-button>
+											<ion-icon slot="icon-only" name="list-outline" size="small"></ion-icon>
+										</ion-button>
+										<ion-button>
+											<ion-icon slot="icon-only" name="repeat-outline" size="small"></ion-icon>
+										</ion-button>
+										<ion-button>
 											<ion-icon slot="icon-only" name="call-outline" size="small"></ion-icon>
 										</ion-button>
 										<ion-button>
@@ -299,7 +312,7 @@
 						<!--ion-header-->
 							<ion-toolbar color="light">
 								<ion-buttons slot="start">
-									<ion-button (click)="focusSessions()" class="ion-hide-xl-down"><ion-icon name="people-circle" slot="icon-only"></ion-icon></ion-button>
+									<ion-button (click)="focusSessions()" class="ion-hide-xl-down"><ion-icon name="people-circle" slot="icon-only" size="small" ></ion-icon></ion-button>
 								</ion-buttons>
 								<ion-title>Sessions</ion-title>
 							</ion-toolbar>
@@ -320,11 +333,20 @@
 							</ion-button>
 						</ion-buttons>
 						<!-- Buttons for mobile -->
-							<ion-buttons slot="start" class="ion-hide-xl-up">
-								<ion-button (click)="focusMedia()"><ion-icon name="videocam" slot="icon-only"></ion-icon></ion-button>
-									<ion-button (click)="focusMessages()"><ion-icon name="chatbox-ellipses" slot="icon-only"></ion-icon></ion-button>
-									<ion-button (click)="focusSessions()"><ion-icon name="person-circle" slot="icon-only"></ion-icon></ion-button>
-								</ion-buttons>
+						<ion-buttons slot="start" class="ion-hide-xl-up">
+							<ion-button (click)="focusMedia()">
+								<ion-icon name="videocam" slot="icon-only"></ion-icon>
+								<ion-icon class="rev-icon-badge none" name="ellipse"></ion-icon>
+							</ion-button>
+							<ion-button (click)="focusMessages()">
+								<ion-icon name="chatbox-ellipses" slot="icon-only"></ion-icon>
+								<ion-icon class="rev-icon-badge success" name="ellipse"></ion-icon>
+							</ion-button>
+							<ion-button (click)="focusSessions()">
+								<ion-icon name="person-circle" slot="icon-only"></ion-icon>
+								<ion-icon class="rev-icon-badge warning" name="ellipse"></ion-icon>
+							</ion-button>
+						</ion-buttons>
 							<!-- End buttons for mobile -->
 						<div class="ion-hide-xl-down" style="display: flex; justify-content: center; ">
 							<ion-buttons>
