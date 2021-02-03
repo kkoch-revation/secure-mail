@@ -45,3 +45,43 @@ ion-segment#rev-contact-lists ion-segment-button {
 ion-segment#rev-contact-lists ion-segment-button::part(native) {
   min-width: 20px !important;
 }
+
+.rev-browser-check {
+  --height: 100vh;
+  --max-height: 100vh;
+  --max-width: 600px;
+  --min-height: 100vh;
+  --min-width: 280px;
+}
+.rev-browser-check .rev-alert-icon {
+  margin-left: 0.5em;
+}
+.rev-browser-check .ion-page {
+  justify-content: start;
+}
+.rev-browser-check .rev-header-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 1em;
+}
+.rev-browser-check h1, .rev-browser-check h2 {
+  font-size: inherit;
+}
+.rev-browser-check p {
+  line-height: 1.6em;
+  padding-right: 2em;
+}
+.rev-browser-check img {
+  width: 56px;
+  height: 56px;
+}
+
+@media (min-width: 576px) {
+  .rev-browser-check {
+    --height: auto;
+    --max-height: 100vh;
+    --max-width: 600px;
+    --min-height: 250px;
+    --min-width: 280px;
+  }
+}

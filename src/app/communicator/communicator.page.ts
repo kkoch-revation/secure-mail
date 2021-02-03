@@ -5,6 +5,7 @@ import { PopoverContactsComponent } from '../components/popover-contacts/popover
 import { PopoverSessionComponent } from '../components/popover-session/popover-session.component';
 import { PopoverKeypadComponent } from '../components/popover-keypad/popover-keypad.component';
 import { ModalKeypadComponent } from '../components/modal-keypad/modal-keypad.component';
+import { BrowserCheckComponent } from '../components/browser-check/browser-check.component';
 
 @Component({
   selector: 'app-communicator',
@@ -52,6 +53,14 @@ export class CommunicatorPage implements OnInit {
     const modal = await this.modalController.create({
       component: ModalKeypadComponent,
       cssClass: 'rev-modal-keypad'
+    });
+    return await modal.present();
+  }
+  async presentBrowserCheck() {
+    const modal = await this.modalController.create({
+      component: BrowserCheckComponent,
+      backdropDismiss: false,
+      cssClass: 'rev-browser-check'
     });
     return await modal.present();
   }

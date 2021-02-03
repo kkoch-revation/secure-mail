@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { PopoverContactsComponent } from './components/popover-contacts/popover-contacts.component';
 import { PopoverSessionComponent } from './components/popover-session/popover-session.component';
 import { ModalKeypadComponent } from './components/modal-keypad/modal-keypad.component';
+import { BrowserCheckComponent } from './components/browser-check/browser-check.component';
 
 
 import { Platform } from '@ionic/angular';
@@ -73,6 +74,13 @@ export class AppComponent implements OnInit {
     const modal = await this.modalController.create({
       component: ModalKeypadComponent,
       cssClass: 'rev-modal-keypad'
+    });
+    return await modal.present();
+  }
+  async presentBrowserCheck() {
+    const modal = await this.modalController.create({
+      component: BrowserCheckComponent,
+      cssClass: 'rev-browser-check'
     });
     return await modal.present();
   }

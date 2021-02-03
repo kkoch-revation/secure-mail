@@ -49,3 +49,42 @@ ion-segment#rev-contact-lists {
 	min-width: 20px !important;
 	}
 }
+.rev-browser-check {
+	--height: 100vh;
+	--max-height: 100vh;
+	--max-width: 600px;
+	--min-height: 100vh;
+	--min-width:	280px;
+
+	.rev-alert-icon {
+		margin-left: 0.5em;
+	}
+	.ion-page {
+		justify-content: start;
+	}
+	.rev-header-grid {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		grid-gap: 1em;
+	}
+	h1, h2 {
+		font-size: inherit;
+	}
+	p {
+		line-height: 1.6em;
+		padding-right: 2em;
+	}
+	img {
+		width: 56px;
+		height: 56px;
+	}
+}
+@media (min-width: 576px) {
+	.rev-browser-check {
+	--height: auto;
+	--max-height: 100vh;
+	--max-width: 600px;
+	--min-height: 250px;
+	--min-width:	280px;
+	}
+}
